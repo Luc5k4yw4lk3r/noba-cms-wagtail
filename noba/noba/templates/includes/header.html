@@ -1,0 +1,24 @@
+{% comment %} {% load navigation_tags static wagtailuserbar %} {% endcomment %}
+{% load wagtailcore_tags %}
+
+{% load static %}
+
+<header>
+    <div class="logo "></div>
+    <div class="logo-menu"></div>
+    <div class="container-menu" data-visualization="false">
+        <div class="menu">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Approach</a>
+                <a href="#">Corporates</a>
+                <a href="#">Business Factory</a>
+                <a href="#">Team</a>
+                <a href="#">Blog</a>
+                <a href="#">Keep in touch</a>
+            </nav>
+        </div>
+        <!-- <div class="btn-menu-close">x</div> -->
+        <img class="btn-menu-close" src="{% static 'images/btn-menu-close.svg' %}" alt="">
+    </div>
+</header>

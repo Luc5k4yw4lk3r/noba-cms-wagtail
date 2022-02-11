@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}{% endblock %}
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block content %}
+    <main class="post">
+        <div class="cointainer-title">
+            <div class="title">
+                <div class="breadcrums">
+                    <p>Home</p>
+                    <p>Blog</p>
+                    <p>Business prototyping kit</p>
+                </div>
+                <h1 class="display-1">
+                    {{page.title}}
+                </h1>
+                <div class="post-info">
+                    <p>Sep 28</p>
+                    <p>2 min</p>
+                </div>
+            </div>
+            <div class="main-info">
+                {% image self.post_image original as img%}
+                <img src="{{img.url}}" alt="">
+            </div>
+        </div>
+        <div class="container-body">
+            <div class="share-component">
+                <p>Share</p>
+                {% if settings.site_settings.SocialMediaSettings.facebook %}
+                    <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}"><i class="fab fa-facebook"></i></a>
+                {% endif %}
+                {% if settings.site_settings.SocialMediaSettings.twitter %}
+                    <a href="{{ settings.site_settings.SocialMediaSettings.twitter }}"><i class="fab fa-twitter"></i></a>
+                {% endif %}
+                {% if settings.site_settings.SocialMediaSettings.whatsapp %}
+                    <a href="{{ settings.site_settings.SocialMediaSettings.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
+                {% endif %}
+                {% if settings.site_settings.SocialMediaSettings.mail %}
+                    <a href="{{ settings.site_settings.SocialMediaSettings.mail }}"><i class="fab fa-envelope"></i></a>
+                {% endif %}
+                {% if settings.site_settings.SocialMediaSettings.instangram %}
+                    <a href="{{ settings.site_settings.SocialMediaSettings.instangram }}"><i class="fab fa-instangram"></i></a>
+                {% endif %}
+            </div>
+            <div class="paragraph">
+                {% for block in page.content %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
+        </div>
+        {% for block in page.blog_cards %}
+            {% include_block block %}
+        {% endfor %}
+    </main>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% load wagtailimages_tags %}
+
+<div class="container-blog">
+    <div class="container-blog-title">
+        <i class="fas fa-arrow-right"></i><p>{{self.title}}</p>
+    </div>
+    <div class="container-blog-items ">
+        {% for card in self.cards %}
+                <div class="card-blog">
+                    <a href="{% if card.link_page %}{{card.link_page}}{% else %}{% if card.link_external %}{{card.link_external}}{% else %} {% endif %}{% endif %}">
+                        <hr>
+                        <div class="card-blog-info">
+                            <p class="info">Sep 28 2min Article</p>
+                            <p class="description">{{card.text}}</p>
+                        </div>
+                        {% image card.image original  as img%}
+                        <img src="{{img.url}}" alt="{{img.alt}}">
+                    </a>
+                </div>
+        {% endfor %}
+    </div>
+    <div class="container-blog-footer">
+        <p></p>
+        <a href="#">View all blog articles</a>
+        <a href="#">[151]</a>
+    </div>
+</div>

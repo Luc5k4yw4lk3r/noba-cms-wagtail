@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}{% endblock %}
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block content %}
+    <main class="blog-index">
+        <div class="cointainer-title">
+            <div class="title">
+                {% include 'includes/breadcrum.html' %}
+                <h1 class="display-1">
+                    {{ page.title|richtext }}
+                </h1>
+            </div>
+        </div>
+        {% for block in page.blog_highlight_cards %}
+            {% include_block block %}
+        {% endfor %}
+        {% for block in page.blog_cards %}
+            {% include_block block %}
+        {% endfor %}
+    </main>
+
+{% endblock content %}

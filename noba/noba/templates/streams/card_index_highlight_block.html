@@ -1,0 +1,22 @@
+{% load wagtailimages_tags %}
+
+<div class="container-carousel-highlight">
+    <div class="carousel-highlight-title">
+        <i class="fas fa-arrow-right"></i><p>{{ self.title }}</p>
+    </div>
+    <div class="carousel-highlight-inner">
+        <div class="slider-inner">
+            {% for card in self.cards %}
+                <div class="card-highlight">
+                    <a href="{% if card.link_page %}{{card.link_page}}{% else %}{% if card.link_external %}{{card.link_external}}{% else %} {% endif %}{% endif %}">
+                        <h1>{{card.title}}</h1>
+                        <div class="card-footer">
+                            <hr>
+                            <p>{{card.text}}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
