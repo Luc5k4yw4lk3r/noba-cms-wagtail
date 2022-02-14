@@ -2,7 +2,8 @@
     <div class="signup-newletter">
         <div class="signup-newsletter-form">
             <p>Sign-up for our newsletter</p>
-            <form action="">
+            <form action="/contact-form/" method="POST" role="form">
+                {% csrf_token %}
                 <input type="email" name="email" placeholder="Email address" id="">
             </form>
         </div>
@@ -16,12 +17,4 @@
         <p>Privacy Policy</p>
         <p>Cookie Policy</p>
     </div>
-    <!-- <div class="uno">uno</div>
-    <div class="dos">dos</div>
-    <div class="tres">tres</div>
-    <div class="cuatro">cuatro</div>
-    <div class="cinco">cinco</div>
-    <div class="seis">seis</div>
-    <div class="siete">siete</div>
-    <div class="ocho">ocho</div> -->
 </footer>
