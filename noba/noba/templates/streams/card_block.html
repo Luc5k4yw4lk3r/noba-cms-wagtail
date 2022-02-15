@@ -1,7 +1,7 @@
 {% load wagtailimages_tags %}
 
 <div class="container-blog">
-    <div class="container-blog-title">
+    <div class="container-blog-title mar-xxl-bottom">
         <i class="fas fa-arrow-right"></i><p>{{self.title}}</p>
     </div>
     <div class="container-blog-items ">
@@ -9,9 +9,9 @@
                 <div class="card-blog">
                     <a href="{% if card.link_page %}{{card.link_page}}{% else %}{% if card.link_external %}{{card.link_external}}{% else %} {% endif %}{% endif %}">
                         <hr>
-                        <div class="card-blog-info">
+                        <div class="card-blog-info b200">
                             <p class="info">Sep 28 2min Article</p>
-                            <p class="description">{{card.text}}</p>
+                            <p class="description b300">{{card.text}}</p>
                         </div>
                         {% image card.image original  as img%}
                         <img src="{{img.url}}" alt="{{img.alt}}">
@@ -19,7 +19,7 @@
                 </div>
         {% endfor %}
     </div>
-    <div class="container-blog-footer">
+    <div class="container-blog-footer mar-xxl-top b300">
         <p></p>
         <a href="#">View all blog articles</a>
         <a href="#">[151]</a>

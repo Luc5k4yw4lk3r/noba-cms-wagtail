@@ -8,18 +8,18 @@
 {% endblock extra_css %}
 
 {% block content %}
-    <main class="post">
+    <main class="post mar-xxxl-top pad-xxl-right pad-mega-bottom pad-xxl-left">
         <div class="cointainer-title">
             <div class="title">
-                <div class="breadcrums">
+                <div class="breadcrums b100">
                     <p>Home</p>
                     <p>Blog</p>
                     <p>Business prototyping kit</p>
                 </div>
-                <h1 class="display-1">
+                <h1 class="h300">
                     {{page.title}}
                 </h1>
-                <div class="post-info">
+                <div class="post-info b200">
                     <p>Sep 28</p>
                     <p>2 min</p>
                 </div>
@@ -29,8 +29,8 @@
                 <img src="{{img.url}}" alt="">
             </div>
         </div>
-        <div class="container-body">
-            <div class="share-component">
+        <div class="container-body mar-huge-top mar-mega-bottom">
+            <div class="share-component b200">
                 <p>Share</p>
                 {% if settings.site_settings.SocialMediaSettings.facebook %}
                     <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}"><i class="fab fa-facebook"></i></a>
