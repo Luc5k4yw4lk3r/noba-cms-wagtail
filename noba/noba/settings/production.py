@@ -3,7 +3,7 @@ from .base import *
 
 DEBUG = False
 SECRET_KEY = 'q@v$$%!_4$@gn42(ifo17kdgxvusgz0s42i3!c)^j!0(+4_=52'
-ALLOWED_HOSTS = ['localhost', 'dns.wheteit.is.goingtolive', '134.122.78.176']
+ALLOWED_HOSTS = ['localhost', 'noba.wheteit.is.goingtolive', '134.122.78.176']
 cwd = os.getcwd()
 
 DATABASES = {
