@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'TWK Lausanne';
-    src:url("../fonts/twk-lausanne-300/Fonts/Web/WEB\ 3.2/TWKLausanne-300.woff2") format('woff2'), url("../fonts/twk-lausanne-300/Fonts/Web/WEB\ 3.2/TWKLausanne-300.woff") format('woff');
+    src:url("fonts/twk-lausanne-300/Fonts/Web/WEB\ 3.2/TWKLausanne-300.woff2") format('woff2'), url("fonts/twk-lausanne-300/Fonts/Web/WEB\ 3.2/TWKLausanne-300.woff") format('woff');
     font-style: normal;
     font-weight: 400;
 }
@@ -269,25 +269,25 @@ header{
 }
 
 header .logo{
-	background-image: url(../images/brand-logo-small-black.svg);
+	background-image: url(images/brand-logo-small-black.svg);
 	width: 170px;
 	height: 23px;
 	transition: all 700ms ease;
 }
 
 header .logo-menu{
-	background-image: url(../images/menu-logo-black.svg);
+	background-image: url(images/menu-logo-black.svg);
 	width: 28.88px;
 	height: 22.95px;
 	cursor: pointer;
 }
 
 body.dark header .logo{
-	background-image: url(../images/brand-logo-small-white.svg);
+	background-image: url(images/brand-logo-small-white.svg);
 }
 
 body.dark header .logo-menu{
-	background-image: url(../images/menu-logo-white.svg);
+	background-image: url(images/menu-logo-white.svg);
 }
 
 @media (min-width:870px) {
@@ -334,7 +334,7 @@ body.dark header .logo-menu{
 
 .btn-menu-close{
 	position: absolute;
-	/* background-image: url(../images/btn-menu-close.svg); */
+	/* background-image: url(images/btn-menu-close.svg); */
 	top: 40px;
 	right: 64px;
 	cursor: pointer;
@@ -380,7 +380,7 @@ footer .signup-newletter input{
 	line-height: 48px;
 	color: var(--font-color-grey);
 	max-width: 366px;
-	background: url(../images/arrow-right.svg) no-repeat right center;
+	background: url(images/arrow-right.svg) no-repeat right center;
 }
 
 
@@ -488,7 +488,7 @@ footer .form-arrow-right{
 }
 
 .modal-cookie-buttons label[for="input-cookie"]{
-	/* background: url(../images/circle-cookie.svg) no-repeat;
+	/* background: url(images/circle-cookie.svg) no-repeat;
 	background-position: 0 -32px; */
 }
 
