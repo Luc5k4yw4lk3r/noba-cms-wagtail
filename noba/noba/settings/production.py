@@ -5,6 +5,12 @@ DEBUG = False
 SECRET_KEY = 'q@v$$%!_4$@gn42(ifo17kdgxvusgz0s42i3!c)^j!0(+4_=52'
 ALLOWED_HOSTS = ['localhost', 'noba.wheteit.is.goingtolive', '134.122.78.176']
 cwd = os.getcwd()
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": f"{cwd}/.cache"
+    }
+}
 
 DATABASES = {
     "default": {
