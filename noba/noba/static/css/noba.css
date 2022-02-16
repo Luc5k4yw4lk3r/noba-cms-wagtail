@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-/* @font-face {
+@font-face {
     font-family: 'TWK Lausanne';
-    src:url("../fonts/twk-lausanne-300/Fonts/Web/WEB\ 3.2/TWKLausanne-300.woff2") format('woff2'), url("../fonts/twk-lausanne-300/Fonts/Web/WEB\ 3.2/TWKLausanne-300.woff") format('woff');
+    src:url("../fonts/twk-lausanne-300/TWKLausanne-300.woff2") format('woff2'), url("../fonts/twk-lausanne-300/TWKLausanne-300.woff") format('woff');
     font-style: normal;
     font-weight: 400;
-} */
+} 
 
 
 /* ====================
@@ -268,27 +268,27 @@ header{
 	z-index: var(--z-index-7);
 }
 
-/* header .logo{
+header .logo{
 	background-image: url(../images/brand-logo-small-black.svg);
 	width: 170px;
 	height: 23px;
 	transition: all 700ms ease;
-} */
+} 
 
-/* header .logo-menu{
+header .logo-menu{
 	background-image: url(../images/menu-logo-black.svg);
 	width: 28.88px;
 	height: 22.95px;
 	cursor: pointer;
-} */
+}
 
-/* body.dark header .logo{
+body.dark header .logo{
 	background-image: url(../images/brand-logo-small-white.svg);
-} */
+}
 
-/* body.dark header .logo-menu{
+body.dark header .logo-menu{
 	background-image: url(../images/menu-logo-white.svg);
-} */
+}
 
 @media (min-width:870px) {
 	header{
@@ -334,7 +334,7 @@ header{
 
 .btn-menu-close{
 	position: absolute;
-	/* background-image: url(../images/btn-menu-close.svg); */
+	background-image: url(../images/btn-menu-close.svg);
 	top: 40px;
 	right: 64px;
 	cursor: pointer;
@@ -380,7 +380,7 @@ footer .signup-newletter input{
 	line-height: 48px;
 	color: var(--font-color-grey);
 	max-width: 366px;
-	/* background: url(../images/arrow-right.svg) no-repeat right center; */
+	background: url(../images/arrow-right.svg) no-repeat right center;
 }
 
 
@@ -488,8 +488,8 @@ footer .form-arrow-right{
 }
 
 .modal-cookie-buttons label[for="input-cookie"]{
-	/* background: url(../images/circle-cookie.svg) no-repeat;
-	background-position: 0 -32px; */
+	background: url(../images/circle-cookie.svg) no-repeat;
+	background-position: 0 -32px;
 }
 
 .modal-cookie-buttons img{
