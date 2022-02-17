@@ -21,7 +21,10 @@ from streams.blocks import (
     RichTextBlock, 
     CardBlock, 
     CardIndexBlock, 
-    CardIndexHighlightBlock
+    CardIndexHighlightBlock,
+    CardEntrepreneurBlock,
+    CardValueBlock,
+    CardTeamMemberBlock
 )
 
 
@@ -170,4 +173,66 @@ class BlogIndexPage(Page):
         FieldPanel('title_highlight', classname="full"),
         StreamFieldPanel('blog_highlight_cards'),
         StreamFieldPanel('blog_cards'),
+    ]
+
+
+class EntrepreneurPage(Page):
+
+    body = RichTextField(blank=True, help_text='Body information')
+
+    card_entrepreneur_block = StreamField(
+        [
+            ('card_entrepreneur_block', CardEntrepreneurBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
+    orange = models.BooleanField(default=False)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
+        FieldPanel('orange', classname="full"),
+        StreamFieldPanel('card_entrepreneur_block'),
+    ]
+
+class SimplePage(Page):
+
+    body = RichTextField(blank=True, help_text='Body information')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
+    ]
+
+
+class ValuePage(Page):
+
+    body = RichTextField(blank=True, help_text='Body information')
+
+    footer_title = models.CharField(null=True, blank=True, max_length=250, help_text='Footer Title')
+
+    footer_body = RichTextField(blank=True, help_text='Footer Body information')
+
+    card_value_block = StreamField(
+        [
+            ('card_value_block', CardValueBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
+    card_team_member_block = StreamField(
+        [
+            ('card_team_member_block', CardTeamMemberBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
+        FieldPanel('footer_title', classname="full"),
+        FieldPanel('footer_body', classname="full"),
+        StreamFieldPanel('card_value_block'),
+        StreamFieldPanel('card_team_member_block'),
     ]

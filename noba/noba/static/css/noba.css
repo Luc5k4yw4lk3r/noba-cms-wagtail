@@ -91,6 +91,14 @@ body.dark{
 	background: var(--background-color-dark);
 }
 
+body.orange{
+	background: var(--background-color-orange);
+}
+
+body.white{
+	background: white;
+}
+
 body.dark main{
 	color: white;
 }
@@ -146,12 +154,11 @@ section{
 
 .container-team-members{
 	width: 100%;
-	height: 100%;
-	padding: 20px 64px 20px 32px;
-	background-color: darkslategrey;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
+	background-color: inherit;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 416px), 1fr));
+	grid-row-gap: var(--sp-xxxl);
+	grid-column-gap: var(--sp-lg) ;
 }
 
 .container-blog-items{
@@ -655,10 +662,10 @@ footer .form-arrow-right{
 /* Team member component */
 .card-team-member{
 	height: 556px;
-	max-width: 416px;
+	/* max-width: 416px; */
 	background-color: inherit;
-	margin-left: 32px;
-	margin-bottom: 130px;
+	/* margin-left: 32px; */
+	/* margin-bottom: 130px; */
 }
 
 .card-team-member hr{
@@ -670,9 +677,10 @@ footer .form-arrow-right{
 }
 
 .card-team-member img{
-	width: 416px;
+	width: 100%;
 	height: 424px;
 	border-radius: 32px;
+	object-fit: cover;
 }
 
 .card-team-member-info{
@@ -683,6 +691,11 @@ footer .form-arrow-right{
 .card-team-member-info p{
 	margin-bottom: 16px;
 	margin-top: 0px;
+	text-decoration: none;
+}
+
+.card-team-member a{
+	text-decoration: none;
 }
 
 .card-team-member-info span{
@@ -1192,13 +1205,13 @@ main.blog-index{
 
 /* Noba Help Launched */
 .container-projects-help{
-	padding: 0px 64px 182px 64px;
+	/* padding: 0px 64px 182px 64px; */
 	width: 100%;
 }
 
 .projects-help-title{
-	font-size: 51px;
-	line-height: 64px;
+	/* font-size: 51px;
+	line-height: 64px; */
 	/* margin-bottom: 64px; */
 	margin-top: 0px;
 }
@@ -1215,12 +1228,13 @@ main.blog-index{
 }
 
 .card-projects-help .project-description{
-	margin-bottom: 0px;
+	margin-bottom: 16px;
 	margin-top: 0px;
 }
 
 .card-projects-help table{
 	width: 100%;
+	height: 184px;
 }
 
 .projects-help-inner .slider-inner{
@@ -1342,7 +1356,54 @@ main.blog-index{
 	margin-top: 64px;
 }
 
+/* Simple Page */
+.container-projects-help{
+	/* padding: 0px 64px 182px 64px; */
+	width: 100%;
+}
 
+.simple-page-body{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+}
+.simple-page-body-paragraph{
+	grid-column: 1 / span 2;
+}
+
+@media screen and (max-width: 1024px) {
+
+	.simple-page-body{
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	
+	}
+	.simple-page-body-paragraph{
+		grid-column: 1 ;
+	}
+}
+
+/* Simple Page */
+.container-values-page{
+	width: 100%;
+	display: grid;
+	grid-row-gap: var(--sp-huge);
+}
+
+.container-simple-page-title{
+	margin-top: 0px;
+}
+
+.container-values-page .row{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 1024px) {
+	.container-values-page .row{
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
 /* ====================
 	* FONTS *
 ==================== */
@@ -1478,6 +1539,8 @@ form .input:focus {
 .pad-xl{ padding: var(--sp-xl);}
 .pad-xxl{ padding: var(--sp-xxl);}
 
+.pad-xl-top{padding-top: var(--sp-xl);}
+.pad-xxl-top{padding-top: var(--sp-xxl);}
 .pad-xxxl-top{padding-top: var(--sp-xxxl);}
 
 .pad-xxl-right{padding-right: var(--sp-xxl);}
@@ -1505,12 +1568,15 @@ form .input:focus {
 .mar-huge{ margin: var(--sp-huge);}
 .mar-mega{ margin: var(--sp-mega);}
 
+.mar-xl-top{ margin-top: var(--sp-xl);} 
 .mar-xxl-top{ margin-top: var(--sp-xxl);} 
 .mar-xxxl-top{ margin-top: var(--sp-xxxl);} 
 .mar-huge-top{ margin-top: var(--sp-huge);}
 
 .mar-xxl-rigth{margin-right: var(--sp-xxl); }
 
+.mar-md-bottom{ margin-bottom: var(--sp-md);} 
+.mar-xl-bottom{ margin-bottom: var(--sp-xl);} 
 .mar-xxl-bottom{ margin-bottom: var(--sp-xxl);} 
 .mar-mega-bottom{ margin-bottom: var(--sp-mega);} 
 

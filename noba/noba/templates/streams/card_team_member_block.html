@@ -1,0 +1,17 @@
+{% load wagtailimages_tags %}
+
+<div class="container-team-members">
+    {% for card in self.cards %}
+        <div class="card-team-member">
+            <a href="{% if card.link_page %}{{card.link_page.url}}{% else %}{% if card.link_external %}{{card.link_external.url}}{% else %} {% endif %}{% endif %}">
+                <hr>
+                <div class="card-team-member-info">
+                    <p class="b300" >{{card.name}}</p>
+                    <i class="b200 fab fa-linkedin-in"><span class="b200">{{card.role}}</span></i>
+                </div>
+                {% image card.image original  as img %}
+                <img src="{{img.url}}" alt="{{img.alt}}">
+            </a>
+        </div>
+    {% endfor %}
+</div>

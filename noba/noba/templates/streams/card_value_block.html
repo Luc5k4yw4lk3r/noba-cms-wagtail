@@ -1,0 +1,10 @@
+{% load wagtailimages_tags %}
+
+<div class="container-values-page">
+    {% for card in self.cards %}
+        <div class="row ">
+            <div class="h100 mar-md-bottom">{{card.title}}</div>
+            <div class="b300">{{card.text}}</div>
+        </div>
+    {% endfor %}
+</div>

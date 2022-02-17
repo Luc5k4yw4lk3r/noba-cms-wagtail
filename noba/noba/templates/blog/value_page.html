@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}white{% endblock %}
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block content %}
+    <main class="pad-xxxl-top pad-xxl-right pad-xxl-left pad-mega-bottom ">
+        <div class="container-simple-page">
+            <div class="container-simple-page-title h300 mar-xl-bottom">
+                {{page.title}}
+            </div>
+            <div class="b300" >
+                {{page.body|richtext}}
+            </div>
+            <div class="mar-mega-bottom"></div>
+            {% for block in page.card_value_block %}
+                {% include_block block %}
+            {% endfor %}
+            {% for block in page.card_team_member_block %}
+                {% include_block block %}
+            {% endfor %}
+            {% if page.footer_title or page.footer_body %}
+                <div class="mar-mega-bottom"></div>
+                <div class="simple-page-footer">
+                    <div class="simple-page-footer-title h300">{{page.footer_title}}</div>
+                    <div class="simple-page-footer-body h100">{{page.footer_body|richtext}}</div>
+                </div>
+            {% endif %}
+        </div>
+    </main>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}{% if page.orange %}orange{% else %}white{% endif%}{% endblock %}
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block content %}
+    <main class="pad-xxxl-top pad-xxl-right pad-xxl-left pad-mega-bottom ">
+        <div class="container-projects-help">
+            <div class="projects-help-title h300 mar-xl-bottom">
+                {{page.title}}
+            </div>
+            <div class="b300" >
+                {{page.body|richtext}}
+            </div>
+            <div class="mar-mega-bottom"></div>
+            {% for block in page.card_entrepreneur_block %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+    </main>
+{% endblock content %}
