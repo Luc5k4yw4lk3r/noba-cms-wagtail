@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}dark{% endblock %}
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block content %}
+    <main class="pad-xxxl-top pad-xxl-right pad-xxl-left pad-mega-bottom ">
+        <div class="container-approach">
+            <div class="approach-header">
+                <div class="approach-title h300 mar-xl-bottom">
+                    {{page.title}}
+                </div>
+                <div class="approach-body " >
+                    <div class="simple-page-body-paragraph b300">
+                        {{page.body|richtext}}
+                    </div>
+                </div>
+            </div>
+            <div class="mar-mega-bottom"></div>
+            {% for block in page.card_approach_block %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+    </main>
+{% endblock content %}

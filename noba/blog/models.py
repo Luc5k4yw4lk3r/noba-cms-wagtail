@@ -24,7 +24,8 @@ from streams.blocks import (
     CardIndexHighlightBlock,
     CardEntrepreneurBlock,
     CardValueBlock,
-    CardTeamMemberBlock
+    CardTeamMemberBlock,
+    CardApproachBlock
 )
 
 
@@ -236,3 +237,22 @@ class ValuePage(Page):
         StreamFieldPanel('card_value_block'),
         StreamFieldPanel('card_team_member_block'),
     ]
+
+
+class ApproachPage(Page):
+
+    body = RichTextField(blank=True, help_text='Body information')
+
+    card_approach_block = StreamField(
+        [
+            ('card_approach_block', CardApproachBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
+        FieldPanel('card_approach_block', classname="full"),
+    ]
+

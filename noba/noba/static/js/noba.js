@@ -82,5 +82,14 @@ document.addEventListener("DOMContentLoaded", function() {
         logoHeader.classList.remove('first-time');
     }
 
+    // Screen approach
+    let containerApproch = document.querySelector('.approach-cards-container');
+    containerApproch.addEventListener("click", (e) => {
+        let element = e.target.closest('.card-approach-contantainer');
+        if(element){
+            element.classList.toggle('active');
+        }
+    });
+
 
 });

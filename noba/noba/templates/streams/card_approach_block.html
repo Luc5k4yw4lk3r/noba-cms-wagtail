@@ -1,0 +1,27 @@
+{% load wagtailimages_tags %}
+{% load static %}
+
+<div class="approach-cards-container">
+    {% for card in self.cards %}
+        <div class="card-approach-contantainer">
+            <div class="card-approach">
+                <div class="card-approach-title ">
+                    <p class="h200">{{card.title}}</p>
+                    <img src="{% static 'images/arrow-down.svg' %}" alt="">
+                </div>
+                <div class="">
+                    <div class="card-approach-body">
+                        <p class="b300" >{{card.title}}</p>
+                        <img src="{% static 'images/arrow-down.svg' %}" alt="">
+                    </div>
+                    <div class="card-approach-description b300">
+                        <div class="mar-xl-bottom"></div>
+                        <p>{{card.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mar-xl-bottom"></div>
+            <hr>
+        </div>
+    {% endfor %}
+</div>

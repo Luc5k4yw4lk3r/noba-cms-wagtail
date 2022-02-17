@@ -139,3 +139,21 @@ class CardTeamMemberBlock(blocks.StructBlock):
         template = 'streams/card_team_member_block.html'
         icon = 'placeholder'
         label = 'Values Cards'
+
+
+class CardApproachBlock(blocks.StructBlock):
+
+    cards = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ('title', blocks.CharBlock(required=True, max_length=60, help_text='Add your card title')),
+                ('text', blocks.TextBlock(required=True, help_text='Add your card text')),
+                ('description', blocks.TextBlock(required=True, help_text='Add your card description')),
+            ]
+        )
+    )
+
+    class Meta:
+        template = 'streams/card_approach_block.html'
+        icon = 'placeholder'
+        label = 'Values Cards'
