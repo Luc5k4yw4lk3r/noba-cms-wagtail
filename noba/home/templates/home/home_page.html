@@ -45,82 +45,134 @@
         </section>
     {% endif %}
     {% if page.approach_section %}
-        <section class="approach">
-
+        <section class="approach pad-xxl-right pad-xxl-left">
+            <div class="container-approach">
+                <div class="pad-xxxl-top"></div>
+                <div class="approach-description">
+                    <i class="fas fa-arrow-right b300"></i><p class="b300">Approach</p>
+                </div>
+                <div class="mar-xxxl-bottom"></div>
+                <div class="approach-header">
+                    <div class="approach-title h300 mar-xl-bottom">
+                        {{page.approach_title}}
+                    </div>
+                    <div class="approach-body " >
+                        <div class="simple-page-body-paragraph b300">
+                            {{page.approach_body|richtext}}
+                        </div>
+                    </div>
+                </div>
+                <div class="mar-mega-bottom"></div>
+                {% for block in page.card_approach_block %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
+            <div class="pad-xxxl-top"></div>
+        </section>
+    {% endif %}
+    {% if page.entrepreneur_section %}
+        <section class="companies pad-xxl-right pad-xxl-left">
+            <div class="pad-xxxl-top"></div>
+            <div class="companies-description">
+                <i class="fas fa-arrow-right b300"></i><p class="b300">Services for Companies</p>
+            </div>
+            <div class="mar-xxxl-bottom"></div>
+            <div class="companies-title h200">
+                We support companies to build and launch new products and services that enhance their roster.
+            </div>
+            <div class="pad-mega-bottom"></div>
+            <div class="companies-cards-container">
+                {% for block in page.card_companies_block %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
+            <div class="mar-xxxl-top"></div>
+            <div class="companies-footer">
+                <div></div>
+                <a href="">Company Case Studies</a>
+                <a href="">[43]</a>
+            </div>
+            <div class="pad-xxxl-top"></div>
+        </section>
+        <section class="pad-xxl-left">
+            <div class="container-companies-we-work-with ">
+                <div class="h100 mar-xl-bottom">
+                    Companies we work with
+                </div>
+                <div class="companies-we-work-with-inner">
+                    <div class="slider-inner">
+                        <img src="{% static 'images/danone 2.svg' %}" class="company-logo" alt="">
+                        <img src="{% static 'images/danone 3.svg' %}" class="company-logo" alt="">
+                        <img src="{% static 'images/danone 4.svg' %}" class="company-logo" alt="">
+                        <img src="{% static 'images/danone 5.svg' %}" class="company-logo" alt="">
+                        <img src="{% static 'images/danone 6.svg' %}" class="company-logo" alt="">
+                        <img src="{% static 'images/danone 7.svg' %}" class="company-logo" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="mar-xxxl-bottom"></div>
+        </section>
+        <section class="companies pad-xxl-right pad-xxl-left section-entrepreneurs">
+            <div class="pad-xxxl-top"></div>
+            <div class="companies-description">
+                <i class="fas fa-arrow-right b300"></i><p class="b300">Services for Entrepreneurs</p>
+            </div>
+            <div class="mar-xxxl-bottom"></div>
+            <div class="companies-title h200">
+                We support individuals and visionary teams by turning their ideas into successful real-life businesses.
+            </div>
+            <div class="pad-mega-bottom"></div>
+            <div class="companies-cards-container">
+                {% for block in page.card_entrepreneurs_block %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
+            <div class="mar-xxxl-top"></div>
+            <div class="companies-footer">
+                <div></div>
+                <a href="">Entrepreneurs Case Studies</a>
+                <a href="">[43]</a>
+            </div>
+            <div class="pad-xxxl-top"></div>
         </section>
     {% endif %}
     {% if page.about_section %}
-        <section class="about">
-            
+        <section class="about pad-xxl-right pad-xxl-left">
+            <div class="pad-huge-top"></div>
+            <div class="about-title h300">
+                {{ page.about_title }}
+            </div>
+            <div class="mar-xxl-bottom"></div>
+            {% for block in page.card_team_member_block %}
+                {% include_block block %}
+            {% endfor %}
+            <div class="mar-xxxl-top"></div>
+            <div class="about-footer">
+                <div></div>
+                <a href="">Know our team</a>
+                <a href="">[43]</a>
+            </div>
+            <div class="pad-xxxl-top"></div>
         </section>
     {% endif %}
-    <section class="companies pad-xxl-right pad-xxl-left">
-        <div class="pad-xxxl-top"></div>
-        <div class="companies-description">
-            <i class="fas fa-arrow-right b300"></i><p class="b300">Services for Companies</p>
-        </div>
-        <div class="mar-xxxl-bottom"></div>
-        <div class="companies-title h200">
-            We support companies to build and launch new products and services that enhance their roster.
-        </div>
-        <div class="pad-mega-bottom"></div>
-        <div class="companies-cards-container">
-            {% for block in page.card_companies_block %}
-                {% include_block block %}
-            {% endfor %}
-        </div>
-        <div class="mar-xxxl-top"></div>
-        <div class="companies-footer">
-            <div></div>
-            <a href="">Company Case Studies</a>
-            <a href="">[43]</a>
-        </div>
-        <div class="pad-xxxl-top"></div>
-    </section>
-    <section class="pad-xxl-left">
-        <div class="container-companies-we-work-with ">
-            <div class="h100 mar-xl-bottom">
-                Companies we work with
-            </div>
-            <div class="companies-we-work-with-inner">
-                <div class="slider-inner">
-                    <img src="{% static 'images/danone 2.svg' %}" class="company-logo" alt="">
-                    <img src="{% static 'images/danone 3.svg' %}" class="company-logo" alt="">
-                    <img src="{% static 'images/danone 4.svg' %}" class="company-logo" alt="">
-                    <img src="{% static 'images/danone 5.svg' %}" class="company-logo" alt="">
-                    <img src="{% static 'images/danone 6.svg' %}" class="company-logo" alt="">
-                    <img src="{% static 'images/danone 7.svg' %}" class="company-logo" alt="">
+    {% if page.resources_section %}
+        <section class="resources pad-xxl-left">
+            <div class="pad-huge-top"></div>
+            <div class="cointainer-title">
+                <div class="title b100">
+                    <h1 class="h300">
+                        {{ page.resources_title|richtext }}
+                    </h1>
                 </div>
             </div>
-        </div>
-        <div class="mar-xxxl-bottom"></div>
-    </section>
-    <section class="companies pad-xxl-right pad-xxl-left section-entrepreneurs">
-        <div class="pad-xxxl-top"></div>
-        <div class="companies-description">
-            <i class="fas fa-arrow-right b300"></i><p class="b300">Services for Entrepreneurs</p>
-        </div>
-        <div class="mar-xxxl-bottom"></div>
-        <div class="companies-title h200">
-            We support individuals and visionary teams by turning their ideas into successful real-life businesses.
-        </div>
-        <div class="pad-mega-bottom"></div>
-        <div class="companies-cards-container">
-            {% for block in page.card_entrepreneurs_block %}
+            {% for block in page.blog_highlight_cards %}
                 {% include_block block %}
             {% endfor %}
-        </div>
-        <div class="mar-xxxl-top"></div>
-        <div class="companies-footer">
-            <div></div>
-            <a href="">Entrepreneurs Case Studies</a>
-            <a href="">[43]</a>
-        </div>
-        <div class="pad-xxxl-top"></div>
-    </section>
-    {% if page.resources_section %}
-        <section class="resources">
-           
+            <div class="mar-xxxl only-mar-botom"></div>
+            {% for block in page.blog_cards %}
+                {% include_block block %}
+            {% endfor %}
+            <div class="pad-xxxl-top"></div>
         </section>
     {% endif %}
 

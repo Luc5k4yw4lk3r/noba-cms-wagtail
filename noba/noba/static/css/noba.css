@@ -558,7 +558,7 @@ footer .form-arrow-right{
     margin-left: 32px;
     border: none;
 	color: black;
-	z-index: -1;
+	z-index: 1;
 }
 
 .card-highlight a{
@@ -992,6 +992,7 @@ main.blog-index{
 
 .card-blog-index a{
 	text-decoration: none;
+	color: white;
 }
 
 .container-blog-index-footer{
@@ -1014,7 +1015,7 @@ main.blog-index{
 
 .card-blog-index hr{
 	border: none;
-    background-color: black;
+    background-color: white;
     height: 2px;
 	margin-bottom: 16px;
 	margin-top: 0px;
@@ -1561,6 +1562,36 @@ main.blog-index{
 	background-color: var(--background-color-orange);
 }
 
+/* Section Approach */
+.approach{
+	background-color: black;
+	color: white;
+}
+
+.approach-description{
+	display: flex;
+	align-items:center;
+}
+
+.approach-description p{
+	margin-left: 12px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/* Resources Section */
+.resources{
+	background-color: black;
+	color: white;
+	/* z-index: -1; */
+}
+
+/* About Section */
+.about-footer{
+	display: flex;
+	justify-content: space-between;
+}
+
 /* ====================
 	* FONTS *
 ==================== */
@@ -1699,6 +1730,9 @@ form .input:focus {
 .pad-xl-top{padding-top: var(--sp-xl);}
 .pad-xxl-top{padding-top: var(--sp-xxl);}
 .pad-xxxl-top{padding-top: var(--sp-xxxl);}
+.pad-huge-top{padding-top: var(--sp-huge);}
+.pad-mega-top{padding-top: var(--sp-mega);}
+
 
 .pad-xxl-right{padding-right: var(--sp-xxl);}
 
