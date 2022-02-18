@@ -66,11 +66,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const openModalButton = document.querySelectorAll('[data-modal-target]');
     const closeModalButton =  document.querySelectorAll('[data-modal-close]');
     const overlayModal = document.querySelector('.overlay-modal');
+    const coockieModal = document.querySelector('.modal-cookie');
     const logoHeader = document.querySelector('.logo');
+
+
+    let coockiesChecked = sessionStorage.getItem("coockies-checked");
+    
+    if(coockiesChecked !== "True"){
+        coockieModal.classList.add('active');
+        overlayModal.classList.add('active');    
+    }
 
     closeModalButton.forEach( button => {
         button.addEventListener("click", () => {
-            let modal = button.closest('.modal-cookie')
+            let modal = button.closest('.modal-cookie');
             closeModal(modal);
         })
     });
@@ -80,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.classList.remove('active');
         overlayModal.classList.remove('active');
         logoHeader.classList.remove('first-time');
+        sessionStorage.setItem("coockies-checked", "True");
     }
 
     // Screen approach

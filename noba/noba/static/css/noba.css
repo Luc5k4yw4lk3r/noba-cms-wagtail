@@ -272,7 +272,7 @@ header{
 	/* background-color: inherit; */
 	opacity: 1;
 	gap: 48px;
-	z-index: var(--z-index-7);
+	z-index: var(--z-index-6);
 }
 
 header .logo{
@@ -466,7 +466,7 @@ footer .form-arrow-right{
 	left: 0;
 	right: 0;
 	margin: auto;
-	z-index: 1;
+	z-index: var(--z-index-7);
 	/* transform: translate(-50%, -50%) scale(0); */
 	transform: scale(0);
 	transition: 200ms ease-in-out;
@@ -519,6 +519,7 @@ footer .form-arrow-right{
 	opacity: 0;
 	pointer-events: none;
 	transition: 200ms ease-in-out;
+	z-index: var(--z-index-6);
 }
 
 .overlay-modal.active{
@@ -1516,6 +1517,13 @@ main.blog-index{
 }
 
 /* HOME PAGE */
+/* Section initial */
+.initial{
+	height: 100vh;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
 /* Section Companies */
 .companies-cards-container{
 	display: grid;

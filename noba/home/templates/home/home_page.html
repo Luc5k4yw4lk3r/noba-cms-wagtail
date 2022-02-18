@@ -8,9 +8,21 @@
 {% endblock extra_css %}
 
 {% block content %}
-    <section class="intial">
-
+    <section class="initial">
+        <p class="initial-text-1 b200">Afraid of a blank canvas?</p>
     </section>
+    <div class="modal-cookie">
+        <p class="b200">By using our site you agree to our use of cookies policy in order to deliver a better site experience.</p>
+        <div class="modal-cookie-buttons">
+            <a href="#" class="dismiss b200">Dismiss</a>
+            <div>
+                <input type="radio" name="" id="input-cookie">
+                <img src="{% static 'images/circle-cookie.svg' %}"  data-modal-close="modal-cookie" alt="">
+                <label for="input-cookie b200">I agree</label>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-modal "></div>
     {% if page.video_section %}
         <section class="showcase">
             <video src="{% static 'videos/rain.mp4' %}" muted loop autoplay></video>
