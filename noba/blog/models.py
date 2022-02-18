@@ -253,6 +253,6 @@ class ApproachPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
-        FieldPanel('card_approach_block', classname="full"),
+        StreamFieldPanel('card_approach_block'),
     ]
 

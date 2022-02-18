@@ -2,12 +2,127 @@
 {% load static %}
 {% load wagtailcore_tags %}
 
-{% block body_class %}{% endblock %}
+{% block body_class %}white{% endblock %}
 
 {% block extra_css %}
 {% endblock extra_css %}
 
 {% block content %}
-    {{ page.body|richtext }}
+    <section class="intial">
+
+    </section>
+    {% if page.video_section %}
+        <section class="showcase">
+            <video src="{% static 'videos/rain.mp4' %}" muted loop autoplay></video>
+        </section>
+    {% endif %}
+    {% if page.knowledge_section %}
+        <section >
+            <div class="container-noba-knowledge">
+                <div class="noba-knowledge-title">
+                    <i class="fas fa-arrow-right"></i>  NOBA Knowledge
+                </div>
+                <div class="container-noba-knowledge-inner">
+                    <div class="slider-inner">
+                        <div class="card-noba-knowledge">
+                            <hr>
+                            <h1>$5b+</h1>
+                            <p>Equity value<br><br>More than $5b USD in equity value created.</p>
+                        </div>
+                        <div class="card-noba-knowledge">
+                            <hr>
+                            <h1>932</h1>
+                            <p>Ventures<br><br>We’ve built, invested in and accelerated hundreds of ventures, globally.</p>
+                        </div>
+                        <div class="card-noba-knowledge">
+                            <hr>
+                            <h1>81%</h1>
+                            <p>Successful pilots<br><br>We have facilitated hundreds of pilots between corporates and startups with an unmatched success rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    {% if page.approach_section %}
+        <section class="approach">
+
+        </section>
+    {% endif %}
+    {% if page.about_section %}
+        <section class="about">
+            
+        </section>
+    {% endif %}
+    <section class="companies pad-xxl-right pad-xxl-left">
+        <div class="pad-xxxl-top"></div>
+        <div class="companies-description">
+            <i class="fas fa-arrow-right b300"></i><p class="b300">Services for Companies</p>
+        </div>
+        <div class="mar-xxxl-bottom"></div>
+        <div class="companies-title h200">
+            We support companies to build and launch new products and services that enhance their roster.
+        </div>
+        <div class="pad-mega-bottom"></div>
+        <div class="companies-cards-container">
+            {% for block in page.card_companies_block %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+        <div class="mar-xxxl-top"></div>
+        <div class="companies-footer">
+            <div></div>
+            <a href="">Company Case Studies</a>
+            <a href="">[43]</a>
+        </div>
+        <div class="pad-xxxl-top"></div>
+    </section>
+    <section class="pad-xxl-left">
+        <div class="container-companies-we-work-with ">
+            <div class="h100 mar-xl-bottom">
+                Companies we work with
+            </div>
+            <div class="companies-we-work-with-inner">
+                <div class="slider-inner">
+                    <img src="{% static 'images/danone 2.svg' %}" class="company-logo" alt="">
+                    <img src="{% static 'images/danone 3.svg' %}" class="company-logo" alt="">
+                    <img src="{% static 'images/danone 4.svg' %}" class="company-logo" alt="">
+                    <img src="{% static 'images/danone 5.svg' %}" class="company-logo" alt="">
+                    <img src="{% static 'images/danone 6.svg' %}" class="company-logo" alt="">
+                    <img src="{% static 'images/danone 7.svg' %}" class="company-logo" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="mar-xxxl-bottom"></div>
+    </section>
+    <section class="companies pad-xxl-right pad-xxl-left section-entrepreneurs">
+        <div class="pad-xxxl-top"></div>
+        <div class="companies-description">
+            <i class="fas fa-arrow-right b300"></i><p class="b300">Services for Entrepreneurs</p>
+        </div>
+        <div class="mar-xxxl-bottom"></div>
+        <div class="companies-title h200">
+            We support individuals and visionary teams by turning their ideas into successful real-life businesses.
+        </div>
+        <div class="pad-mega-bottom"></div>
+        <div class="companies-cards-container">
+            {% for block in page.card_entrepreneurs_block %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+        <div class="mar-xxxl-top"></div>
+        <div class="companies-footer">
+            <div></div>
+            <a href="">Entrepreneurs Case Studies</a>
+            <a href="">[43]</a>
+        </div>
+        <div class="pad-xxxl-top"></div>
+    </section>
+    {% if page.resources_section %}
+        <section class="resources">
+           
+        </section>
+    {% endif %}
+
 {% endblock content %}
 

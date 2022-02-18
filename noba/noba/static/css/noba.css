@@ -1296,17 +1296,12 @@ main.blog-index{
 
 /* Companies we work with */
 .container-companies-we-work-with{
-	padding: 0px 0px 182px 64px;
+	/* padding: 0px 0px 182px 64px; */
 	width: 100%;
 	position: relative;
 	overflow: hidden;
 }
 
-.companies-we-work-with-title{
-	font-size: 51px;
-	line-height: 64px;
-	margin-bottom: 94px;
-}
 
 .companies-we-work-with-inner{
 	position: relative;
@@ -1519,6 +1514,53 @@ main.blog-index{
 	
 }
 
+/* HOME PAGE */
+/* Section Companies */
+.companies-cards-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 416px), 1fr));
+	grid-column-gap: var(--sp-lg);
+	grid-row-gap: var(--sp-xl);
+}
+
+.companies-cards-container hr{
+	border: none;
+    background-color: black;
+    height: 2px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.companies-description{
+	display: flex;
+	align-items:center;
+}
+
+.companies-description p{
+	margin-left: 12px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.card-companies-title{
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.card-companies-description{
+	margin-top: 0;
+	margin-bottom: var(--sp-lg);
+}
+
+.companies-footer{
+	display: flex;
+	justify-content: space-between;
+}
+
+.section-entrepreneurs{
+	background-color: var(--background-color-orange);
+}
+
 /* ====================
 	* FONTS *
 ==================== */
@@ -1692,7 +1734,8 @@ form .input:focus {
 
 .mar-md-bottom{ margin-bottom: var(--sp-md);} 
 .mar-xl-bottom{ margin-bottom: var(--sp-xl);} 
-.mar-xxl-bottom{ margin-bottom: var(--sp-xxl);} 
+.mar-xxl-bottom{ margin-bottom: var(--sp-xxl);}
+.mar-xxxl-bottom{ margin-bottom: var(--sp-xxxl);}
 .mar-mega-bottom{ margin-bottom: var(--sp-mega);} 
 
 .mar-xxl-left{margin-left: var(--sp-xxl); }
