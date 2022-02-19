@@ -2,7 +2,7 @@
 {% load static %}
 {% load wagtailcore_tags %}
 
-{% block body_class %}white{% endblock %}
+{% block body_class %}white {% endblock %}
 
 {% block extra_css %}
 {% endblock extra_css %}
@@ -11,18 +11,15 @@
     <section class="initial">
         <p class="initial-text-1 b200">Afraid of a blank canvas?</p>
     </section>
-    <div class="modal-cookie">
-        <p class="b200">By using our site you agree to our use of cookies policy in order to deliver a better site experience.</p>
-        <div class="modal-cookie-buttons">
-            <a href="#" class="dismiss b200">Dismiss</a>
-            <div>
-                <input type="radio" name="" id="input-cookie">
-                <img src="{% static 'images/circle-cookie.svg' %}"  data-modal-close="modal-cookie" alt="">
-                <label for="input-cookie b200">I agree</label>
-            </div>
-        </div>
-    </div>
-    <div class="overlay-modal "></div>
+    <section class="initial-one pad-xxl-right pad-xxl-left">
+        <div class="pad-xxxl-top"></div>
+        <p class="h200">We take a blank canvas…<br>And turn it into your next viable<br> business venture.</p>
+        <div class="pad-xxxl-top"></div>
+        <p class="h200">We are NOBA, The Business<br> Prototyping Agency.</p>
+        <div class="pad-xxxl-top"></div>
+        <p class="h200">We support companies and<br> entrepreneurs in launching new<br> products, services and business<br> models.</p>
+        <div class="pad-xxxl-top"></div>
+    </section>
     {% if page.video_section %}
         <section class="showcase">
             <video src="{% static 'videos/rain.mp4' %}" muted loop autoplay></video>
@@ -189,4 +186,20 @@
     {% endif %}
 
 {% endblock content %}
+
+{% block modals %}
+    <div class="modal-cookie">
+        <p class="b200">By using our site you agree to our use of cookies policy in order to deliver a better site experience.</p>
+        <div class="modal-cookie-buttons">
+            <a href="#" class="dismiss b200">Dismiss</a>
+            <div>
+                <input type="radio" name="" id="input-cookie">
+                <img src="{% static 'images/circle-cookie.svg' %}"  data-modal-close="modal-cookie" alt="">
+                <label for="input-cookie b200">I agree</label>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-modal "></div>
+{% endblock modals %}
+
 

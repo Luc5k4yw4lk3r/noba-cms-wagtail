@@ -1524,6 +1524,12 @@ main.blog-index{
 	justify-content:center;
 	align-items: center;
 }
+
+.initial-one p{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 /* Section Companies */
 .companies-cards-container{
 	display: grid;

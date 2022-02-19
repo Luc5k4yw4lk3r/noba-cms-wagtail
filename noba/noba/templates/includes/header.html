@@ -1,22 +1,27 @@
-{% comment %} {% load navigation_tags static wagtailuserbar %} {% endcomment %}
-{% load wagtailcore_tags %}
-
+{% load wagtailcore_tags menus_tags %}
 {% load static %}
 
+{% get_menu "main" as nvagation %}
 <header>
     <div class="logo "></div>
     <div class="logo-menu"></div>
     <div class="container-menu" data-visualization="false">
         <div class="menu">
             <nav>
-                <a class="h100" href="#">Home</a>
-                <a class="h100" href="#">Approach</a>
+                {% for item in nvagation.menu_items.all %}
+                    <a class="h100" 
+                        href="{% if item.link_page %}{{item.link_page.url}}{% else %}{{item.link_url}}{% endif %}"
+                        {% if item.open_in_new_tab %}taget="_blank"{% endif %}
+                        >
+                        {{item.link_title}}</a>
+                {% endfor %}
+                <!-- <a class="h100" href="#">Approach</a>
                 <a class="h100" href="#">Companies</a>
                 <a class="h100" href="#">Entrepreneurs</a>
                 <a class="h100" href="#">Team</a>
                 <a class="h100" href="#">Values</a>
                 <a class="h100" href="#">Resources</a>
-                <a class="h100" href="#">Keep in touch</a>
+                <a class="h100" href="#">Keep in touch</a> -->
             </nav>
         </div>
         <!-- <div class="btn-menu-close">x</div> -->

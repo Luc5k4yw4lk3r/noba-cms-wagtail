@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let coockiesChecked = sessionStorage.getItem("coockies-checked");
     
     if(coockiesChecked !== "True"){
+        // document.body.classList.remove('initial-overflow');
         coockieModal.classList.add('active');
         overlayModal.classList.add('active');    
     }
