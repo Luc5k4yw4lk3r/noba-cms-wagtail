@@ -78,6 +78,10 @@
 /* ====================
 	* GENERAL STYLES *
 ==================== */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: var(--background-color-purple);
 	font-family: var(--font);
@@ -85,6 +89,8 @@ body {
 	font-style: normal;
 	font-size: 16px;
 	/* height: 100vh; */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body.dark{
@@ -523,7 +529,7 @@ footer .form-arrow-right{
 }
 
 .overlay-modal.active{
-	opacity: 0.5;
+	opacity: 0;
 	pointer-events: all;
 }
 
@@ -532,7 +538,7 @@ footer .form-arrow-right{
 		width: 445px;
 		height: 160px;
 		padding: 24px 32px 12px 32px;
-		bottom: 0;
+		bottom: var(--sp-xl);
 		left: auto;
 		right: 64px;
 	}

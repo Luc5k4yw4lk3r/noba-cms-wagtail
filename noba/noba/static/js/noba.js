@@ -3,15 +3,20 @@ document.addEventListener("DOMContentLoaded", function() {
     // Menu
     let logoMenu = document.querySelector('.logo-menu');
     let btnMenuClose = document.querySelector('.btn-menu-close');
-
+    let linkMenuNav = document.querySelector('.menu nav');
+    let containerMenu = document.querySelector('.container-menu');
     logoMenu.addEventListener("click", (e) => {
-        let containerMenu = document.querySelector('.container-menu');
         containerMenu.setAttribute('data-visualization', 'true');
     });
 
     btnMenuClose.addEventListener("click", (e) => {
-        let containerMenu = document.querySelector('.container-menu');
         containerMenu.setAttribute('data-visualization', 'false');
+    });
+
+    linkMenuNav.addEventListener("click", (e) => {
+        if(e.target && e.target.tagName == "A"){
+            containerMenu.setAttribute('data-visualization', 'false');
+        }
     });
 
     //Slider
