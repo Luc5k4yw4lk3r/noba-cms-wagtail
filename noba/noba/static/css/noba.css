@@ -399,7 +399,7 @@ footer p {
 }
 
 footer .signup-newletter p{
-	margin-bottom: 16px;
+	margin-bottom: var(--sp-lg);
 	/* font-size: 17px;
 	line-height: 24px; */
 }
@@ -463,6 +463,8 @@ footer .form-arrow-right{
 	footer .signup-newletter input{
 		/* width: auto; */
 		max-width: 639px;
+		font-size: 51px;
+		line-height: 64px;
 	}
 
 	footer .address{
@@ -1442,6 +1444,11 @@ main.blog-index{
 
 .container-simple-page-title{
 	margin-top: 0px;
+	max-width: 976px;
+}
+
+.container-simple-page-text{
+	max-width: 976px;
 }
 
 .container-values-page .row{
