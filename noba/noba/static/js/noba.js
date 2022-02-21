@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         slider.addEventListener('mousedown', (e) => {
             sliderGrabbed = true;
-            slider.style.cursor = 'grabbing';
+            // slider.style.cursor = 'grabbing';
         })
     
         slider.addEventListener('mouseup', (e) => {
             sliderGrabbed = false;
-            slider.style.cursor = 'grab';
+            // slider.style.cursor = 'grab';
         })
     
         slider.addEventListener('mouseleave', (e) => {
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const overlayModal = document.querySelector('.overlay-modal');
     const coockieModal = document.querySelector('.modal-cookie');
     const logoHeader = document.querySelector('.logo');
+    const header = document.querySelector('header');
 
 
     let coockiesChecked = sessionStorage.getItem("coockies-checked");
@@ -80,8 +81,11 @@ document.addEventListener("DOMContentLoaded", function() {
     if(coockiesChecked !== "True"){
         // document.body.classList.remove('initial-overflow');
         coockieModal.classList.add('active');
-        overlayModal.classList.add('active');    
+        overlayModal.classList.add('active');
+        header.classList.add('first');
+
     }
+
 
     closeModalButton.forEach( button => {
         button.addEventListener("click", () => {
@@ -95,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.classList.remove('active');
         overlayModal.classList.remove('active');
         logoHeader.classList.remove('first-time');
+        // header.classList.remove('first');
+        header.classList.add('first-clicked');
         sessionStorage.setItem("coockies-checked", "True");
     }
 

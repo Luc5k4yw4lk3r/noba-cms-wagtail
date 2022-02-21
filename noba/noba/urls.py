@@ -5,6 +5,10 @@ from django.contrib import admin
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
+from home import views
+from django.conf.urls import (
+    handler400, handler403, handler404, handler500
+)
 
 from search import views as search_views
 
@@ -18,6 +22,8 @@ urlpatterns = [
 
 ]
 
+handler404 = views.page_not_found
+handler500 = views.internal_error
 
 if settings.DEBUG:
     from django.conf.urls.static import static
