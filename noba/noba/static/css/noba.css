@@ -729,6 +729,11 @@ footer .form-arrow-right{
 	margin-left: 12px;
 }
 
+.icon-linkedin{
+	width: 21px !important;
+	height: 21px !important;
+}
+
 /* Blog component */
 .card-blog{
 	/* max-width: 389px; */
@@ -1020,6 +1025,11 @@ main.blog-index{
 .card-blog-index a{
 	text-decoration: none;
 	color: white;
+	display: flex;
+	flex-direction: column;
+	background-color: inherit;
+	height: 100%;
+	justify-content:space-between;
 }
 
 .container-blog-index-footer{
@@ -1342,17 +1352,25 @@ main.blog-index{
 
 .companies-we-work-with-inner{
 	position: relative;
+	height: 50px;
+	background-color: inherit;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	cursor: url('../images/cursor-drag.svg'), auto;
 }
 
 .companies-we-work-with-inner .slider-inner{
-	position: relative;
+	position: absolute;
 	display: flex;
-	gap: 93px;
+	gap: var(--sp-xxxl);
+	top: 0;
+	left: 0;
 }
 
 .company-logo{
-	width: 170px;
-	height: 33.3px;
+	width: 199px;
+	height: 45px;
 }
 
 /* Teams */
@@ -1599,6 +1617,22 @@ main.blog-index{
 	margin-left: 15px;
 	margin-top: 0px;
 	margin-bottom: 0px;
+}
+
+.card-companies{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+}
+
+.card-companies hr{
+	border: none;
+    background-color: black;
+    height: 2px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	width: 100%;
 }
 
 .card-companies-title{

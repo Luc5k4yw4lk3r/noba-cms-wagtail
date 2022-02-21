@@ -3,8 +3,10 @@
 
 {% for card in self.cards %}
     <div class="card-companies">
-        <p class="card-companies-title b300">{{card.title}}</p>
-        <p class="card-companies-description b200">{{card.text}}</p>
+        <div>
+            <p class="card-companies-title b300">{{card.title}}</p>
+            <p class="card-companies-description b200">{{card.text}}</p>
+        </div>
         <hr>
     </div>
 {% endfor %}
