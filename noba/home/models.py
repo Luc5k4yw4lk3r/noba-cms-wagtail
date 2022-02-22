@@ -8,7 +8,8 @@ from wagtail.admin.edit_handlers import (
     InlinePanel ,
     PageChooserPanel, 
     StreamFieldPanel, 
-    MultiFieldPanel
+    MultiFieldPanel,
+    PageChooserPanel
 )
 
 from streams.blocks import (
@@ -42,6 +43,15 @@ class HomePage(Page):
 
     resources_title = models.CharField(null=True, blank=True, max_length=250, help_text='About Title')
     resources_body = RichTextField(blank=True)
+
+    modal_privacy_policy_link = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text='Choose a page to link your privacy policy',
+    )
 
     card_companies_block = StreamField(
         [
@@ -104,6 +114,7 @@ class HomePage(Page):
         # StreamFieldPanel('card_entrepreneurs_block'),
         MultiFieldPanel([
             FieldPanel('body'),
+            PageChooserPanel('modal_privacy_policy_link'),
         ], heading='Initial Section'
         ),
         MultiFieldPanel([

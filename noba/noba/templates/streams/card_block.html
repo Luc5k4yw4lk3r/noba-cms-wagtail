@@ -8,8 +8,8 @@
         {% for card in self.cards %}
                 <div class="card-blog">
                     <a href="{% if card.link_page %}{{card.link_page}}{% else %}{% if card.link_external %}{{card.link_external}}{% else %} {% endif %}{% endif %}">
-                        <hr>
                         <div class="card-blog-info b200">
+                            <hr>
                             <p class="info">Sep 28 2min Article</p>
                             <p class="description b300">{{card.text}}</p>
                         </div>

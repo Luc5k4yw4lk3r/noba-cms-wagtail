@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(coockiesChecked !== "True"){
         // document.body.classList.remove('initial-overflow');
         coockieModal.classList.add('active');
-        overlayModal.classList.add('active');
+        // overlayModal.classList.add('active');
         header.classList.add('first');
 
     }

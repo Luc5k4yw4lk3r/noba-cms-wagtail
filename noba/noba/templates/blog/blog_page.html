@@ -1,21 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags navegation_tags %}
 
 {% block body_class %}dark{% endblock %}
 
 {% block extra_css %}
 {% endblock extra_css %}
 
+
 {% block content %}
     <main class="post mar-xxxl-top pad-xxl-right pad-mega-bottom pad-xxl-left">
         <div class="cointainer-title">
             <div class="title">
-                <div class="breadcrums b100">
-                    <p>Home</p>
-                    <p>Blog</p>
-                    <p>Business prototyping kit</p>
-                </div>
+                {# breadcrumbs is defined in noba/templatetags/navigation_tags.py #}
+                {% breadcrumbs %}           
                 <h1 class="h300">
                     {{page.title}}
                 </h1>

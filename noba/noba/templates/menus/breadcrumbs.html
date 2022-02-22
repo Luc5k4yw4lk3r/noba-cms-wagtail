@@ -1,0 +1,22 @@
+{% load wagtailcore_tags %}
+
+
+<nav class="breadcrumb-container" >
+    {% if ancestors %}
+      <div class="breadcrum">
+        <p class="" ><</p>
+        <a href="/"><p class="">Home</p></a>
+        <p class="" >/</p>
+          {% for ancestor in ancestors|slice:"1:" %}
+            {% if forloop.last %}
+              <p class="active" >
+                {{ ancestor }}
+              </p>
+            {% else %}
+              <a href="{% pageurl ancestor %}" >{{ ancestor }}</a>
+              <p class="" >/</p>
+            {% endif %}
+          {% endfor %}
+      </div>
+    {% endif %}
+</nav>
