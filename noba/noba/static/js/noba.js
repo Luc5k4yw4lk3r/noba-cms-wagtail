@@ -51,15 +51,15 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     
-        slider.addEventListener('wheel', (e) =>{
-            e.preventDefault();
-            console.log('wheel');
-            console.log('e.deltaY');
-            console.log(e.deltaY);
-            console.log('slider.parentElement.scrollLeft');
-            console.log(slider.parentElement.scrollLeft);
-            slider.parentElement.scrollLeft += e.deltaY;
-        })
+        // slider.addEventListener('wheel', (e) =>{
+        //     e.preventDefault();
+        //     console.log('wheel');
+        //     console.log('e.deltaY');
+        //     console.log(e.deltaY);
+        //     console.log('slider.parentElement.scrollLeft');
+        //     console.log(slider.parentElement.scrollLeft);
+        //     slider.parentElement.scrollLeft += e.deltaY;
+        // })
 
     })
 

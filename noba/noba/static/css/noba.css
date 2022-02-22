@@ -531,7 +531,7 @@ footer .form-arrow-right{
     margin-left: 32px;
     border: none;
 	color: black;
-	z-index: 1;
+	/* z-index: 1; */
 }
 
 .card-highlight a{
@@ -544,10 +544,15 @@ footer .form-arrow-right{
     align-items: center;
     border: none;
 	color: black;
-	z-index: -1;
+	/* z-index: -1; */
 	text-decoration: none;
-	cursor: pointer;
+	/* cursor: pointer; */
 	border: none !important;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
 }
 
 .card-highlight a:hover{
@@ -1068,7 +1073,6 @@ main.blog-index{
   background: #111;
   transition: 0.5s;
   /* z-index: -1; */
-  cursor: url('../images/cursor-video.svg'), auto;
 }
 
 .showcase.active{
@@ -1124,7 +1128,6 @@ main.blog-index{
 	overflow: hidden;
 	/* position: relative; */
 	padding: 110px 0px 110px 0px;
-	cursor: url('../images/cursor-drag.svg'), auto;
 }
 
 .container-noba-knowledge-inner .slider-inner {
@@ -1330,7 +1333,6 @@ main.blog-index{
 	top: 0;
 	left: 0;
 	overflow: hidden;
-	cursor: url('../images/cursor-drag.svg'), auto;
 }
 
 .companies-we-work-with-inner .slider-inner{
@@ -1344,6 +1346,11 @@ main.blog-index{
 .company-logo{
 	width: 199px;
 	height: 45px;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
 }
 
 /* Teams */
@@ -1881,6 +1888,39 @@ form .input:focus {
 .text-right {text-align: right;}
 
 .width-colum-project-help{ width: 30%;}
+
+
+/* Cursor */
+.cursor-drag{
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently */
+	cursor: url('../images/cursor-drag.svg'), auto;
+}
+
+.cursor-drag-black{
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently */
+  	cursor: url('../images/cursor-drag-black.svg'), auto;
+}
+
+.cursor-video{
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently */
+  	cursor: url('../images/cursor-video.svg'), auto;
+}
+
 
 /* ====================
 	* DEBUGGING *
