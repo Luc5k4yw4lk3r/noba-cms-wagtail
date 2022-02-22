@@ -830,6 +830,18 @@ main .container-body{
 
 main .container-body .paragraph{
 	grid-column: 2/4;
+	font-size: 22px;
+	line-height: 32px;
+}
+
+main .container-body .paragraph p{
+	margin-top: 0px;
+	margin-bottom: var(--sp-xl);
+}
+
+main .container-body .paragraph img{
+	margin-top: calc(var(--sp-huge) - var(--sp-xl));
+	margin-bottom: var(--sp-huge);
 }
 
 main .breadcrum{
@@ -884,6 +896,11 @@ main .post-info{
 
 }
 
+.share-component p{
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
 .share-component i{
 	width: 20px;
 	height: 24px;
@@ -919,6 +936,10 @@ main .post-info{
 		position: unset;
 		align-items: center;
     	justify-content: center;
+	}
+
+	.share-comp-container{
+		margin-bottom: var(--sp-huge);
 	}
 
 }

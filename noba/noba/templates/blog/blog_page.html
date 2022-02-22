@@ -27,23 +27,25 @@
             </div>
         </div>
         <div class="container-body mar-huge-top mar-mega-bottom">
-            <div class="share-component b200">
-                <p>Share</p>
-                {% if settings.site_settings.SocialMediaSettings.facebook %}
-                    <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}"><i class="fab fa-facebook"></i></a>
-                {% endif %}
-                {% if settings.site_settings.SocialMediaSettings.twitter %}
-                    <a href="{{ settings.site_settings.SocialMediaSettings.twitter }}"><i class="fab fa-twitter"></i></a>
-                {% endif %}
-                {% if settings.site_settings.SocialMediaSettings.whatsapp %}
-                    <a href="{{ settings.site_settings.SocialMediaSettings.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
-                {% endif %}
-                {% if settings.site_settings.SocialMediaSettings.mail %}
-                    <a href="{{ settings.site_settings.SocialMediaSettings.mail }}"><i class="fab fa-envelope"></i></a>
-                {% endif %}
-                {% if settings.site_settings.SocialMediaSettings.instangram %}
-                    <a href="{{ settings.site_settings.SocialMediaSettings.instangram }}"><i class="fab fa-instangram"></i></a>
-                {% endif %}
+            <div class="share-comp-container">
+                <div class="share-component b200">
+                    <p>Share</p>
+                    {% if settings.site_settings.SocialMediaSettings.facebook %}
+                        <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}"><i class="fab fa-facebook"></i></a>
+                    {% endif %}
+                    {% if settings.site_settings.SocialMediaSettings.twitter %}
+                        <a href="{{ settings.site_settings.SocialMediaSettings.twitter }}"><i class="fab fa-twitter"></i></a>
+                    {% endif %}
+                    {% if settings.site_settings.SocialMediaSettings.whatsapp %}
+                        <a href="{{ settings.site_settings.SocialMediaSettings.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
+                    {% endif %}
+                    {% if settings.site_settings.SocialMediaSettings.mail %}
+                        <a href="{{ settings.site_settings.SocialMediaSettings.mail }}"><i class="fab fa-envelope"></i></a>
+                    {% endif %}
+                    {% if settings.site_settings.SocialMediaSettings.instangram %}
+                        <a href="{{ settings.site_settings.SocialMediaSettings.instangram }}"><i class="fab fa-instangram"></i></a>
+                    {% endif %}
+                </div>
             </div>
             <div class="paragraph">
                 {% for block in page.content %}
