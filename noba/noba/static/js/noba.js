@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const coockieModal = document.querySelector('.modal-cookie');
     const logoHeader = document.querySelector('.logo');
     const header = document.querySelector('header');
+    const initial = document.querySelector('#initial');
 
 
     let coockiesChecked = sessionStorage.getItem("coockies-checked");
@@ -83,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function() {
         coockieModal.classList.add('active');
         // overlayModal.classList.add('active');
         header.classList.add('first');
-
-    }
-
+        initial.classList.remove('display-none');
+        initial.classList.add('initial');
+    } 
 
     closeModalButton.forEach( button => {
         button.addEventListener("click", () => {
@@ -101,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
         logoHeader.classList.remove('first-time');
         // header.classList.remove('first');
         header.classList.add('first-clicked');
+        initial.classList.add('scale');
         sessionStorage.setItem("coockies-checked", "True");
     }
 
