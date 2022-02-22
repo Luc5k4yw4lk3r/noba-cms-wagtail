@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static  navegation_tags%}
 {% load wagtailcore_tags %}
 
 {% block body_class %}{% if page.orange %}orange{% else %}white{% endif%}{% endblock %}
@@ -10,6 +10,7 @@
 {% block content %}
     <main class="pad-xxxl-top pad-xxl-right pad-xxl-left pad-mega-bottom ">
         <div class="container-projects-help">
+            {% breadcrumbs %}
             <div class="projects-help-title h300 mar-xl-bottom">
                 {{page.title}}
             </div>

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static navegation_tags %}
 {% load wagtailcore_tags %}
 
 {% block body_class %}dark{% endblock %}
@@ -9,6 +9,7 @@
 
 {% block content %}
     <main class="pad-xxxl-top pad-xxl-right pad-xxl-left pad-mega-bottom ">
+        {% breadcrumbs %}
         <div class="container-approach">
             <div class="approach-header">
                 <div class="approach-title h300 mar-xl-bottom">

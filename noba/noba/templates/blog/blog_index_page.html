@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static navegation_tags %}
 {% load wagtailcore_tags %}
 
 {% block body_class %}{% endblock %}
@@ -10,6 +10,7 @@
 {% block content %}
     <main class="blog-index pad-xxl not-pad-right">
         <div class="cointainer-title">
+            {% breadcrumbs %}
             <div class="title b100">
                 <h1 class="h300">
                     {{ page.title|richtext }}

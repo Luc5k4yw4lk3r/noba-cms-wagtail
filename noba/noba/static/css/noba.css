@@ -837,6 +837,7 @@ main .breadcrum{
 
 .breadcrum a{
 	margin: 0px;
+	border: none;
 }
 
 main .post-info{
