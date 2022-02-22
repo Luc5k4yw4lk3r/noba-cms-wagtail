@@ -91,9 +91,9 @@ body {
 	/* height: 100vh; */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	scroll-snap-type: y proximity ;
+	/* scroll-snap-type: y proximity ;
 	overflow-y: scroll;
-	height: 100vh;
+	height: 100vh; */
 }
 
 body.dark{
@@ -837,6 +837,7 @@ main .breadcrum{
 	flex-direction: row;
 	gap: 12px;
 	margin-bottom: 16px;
+	align-items: flex-start;
 }
 
 .breadcrum p{
@@ -1076,7 +1077,7 @@ main.blog-index{
   background: #111;
   transition: 0.5s;
   /* z-index: -1; */
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 .showcase.active{
@@ -1600,7 +1601,7 @@ main.blog-index{
 
 /* Section Companies */
 .companies{
-	scroll-snap-align: start;
+	/* scroll-snap-align: start; */
 }
 
 .companies-cards-container{
@@ -1673,7 +1674,7 @@ main.blog-index{
 .approach{
 	background-color: black;
 	color: white;
-	scroll-snap-align: start;
+	/* scroll-snap-align: start; */
 }
 
 .approach-description{
@@ -1691,7 +1692,7 @@ main.blog-index{
 .resources{
 	background-color: black;
 	color: white;
-	scroll-snap-align: start;
+	/* scroll-snap-align: start; */
 	/* z-index: -1; */
 }
 .resources a{
@@ -1705,7 +1706,7 @@ main.blog-index{
 
 /* About Section */
 .about{
-	scroll-snap-align: start;
+	/* scroll-snap-align: start; */
 }
 
 .about-footer{
