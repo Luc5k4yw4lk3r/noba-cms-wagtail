@@ -115,5 +115,28 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Intersection Observer
+    const faders = document.querySelectorAll('.fade-in');
+    const options = {
+        threshold:1
+    };
+
+    const apearsOnScroll = new IntersectionObserver(
+        function(entries, apearOnScroll){
+            entries.forEach(entry => {
+                if(!entry.isIntersecting){
+                    return
+                } else {
+                    entry.target.classList.add('appear');
+                    apearsOnScroll.unobserve(entry.target);
+                }
+            });
+        },
+        options
+    );
+
+    faders.forEach(fader => {
+        apearsOnScroll.observe(fader);
+    });
 
 });

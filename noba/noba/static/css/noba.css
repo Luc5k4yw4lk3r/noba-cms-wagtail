@@ -355,6 +355,9 @@ footer .signup-newletter input{
 	background: url(../images/arrow-right.svg) no-repeat right center;
 }
 
+footer .signup-newletter input:focus{
+	outline: none;
+}
 
 footer .form-sending {
 	color: var(--font-color-grey);
@@ -1516,13 +1519,13 @@ main.blog-index{
 
 .card-approach-description{
  	overflow: hidden;
-	max-height: 0;
-	transition: max-height 0.2s;
+	 max-height: 0;
+	 transition: max-height 0.2s;
 }
 
 
 .card-approach-contantainer.active .card-approach-description{
-	max-height: 100px;
+	max-height: 150px;
 }
 
 .card-approach-contantainer.active img{
@@ -1599,12 +1602,12 @@ main.blog-index{
 	align-items: center;
 	/* background-color: #00a04a; */
 
-	transition: all 1.5s ease-in-out;
+	transition: height 1.6s ease-in-out, color 1.2s ease-in-out;
 }
 
 .initial.scale{
 	/* transform: scaleY(0, 0.5); */
-	height: 15vh;
+	height: 0vh;
 	color: rgba(1, 1, 1, 0);
 }
 
