@@ -895,8 +895,8 @@ main .post-info{
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	margin: auto 0px
-
+	margin: auto 0px;
+	width: fit-content;
 }
 
 .share-component p{
