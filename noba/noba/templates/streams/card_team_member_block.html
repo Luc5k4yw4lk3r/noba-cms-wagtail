@@ -1,6 +1,5 @@
 {% load wagtailimages_tags static %}
 
-<div class="container-team-members">
     {% for card in self.cards %}
         <div class="card-team-member">
             <a href="{% if card.link_page %}{{card.link_page.url}}{% else %}{% if card.link_external %}{{card.link_external.url}}{% else %} {% endif %}{% endif %}">
@@ -14,4 +13,3 @@
             </a>
         </div>
     {% endfor %}
-</div>

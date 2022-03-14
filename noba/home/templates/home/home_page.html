@@ -8,6 +8,7 @@
 {% endblock extra_css %}
 
 {% block content %}
+    {% if page.video_section %}
     <div class="initial-full">
         <section id="initial" class="display-none">
             <p class="initial-text-1 b200">Afraid of a blank canvas?</p>
@@ -22,6 +23,7 @@
             <div class="pad-xxxl-top"></div>
         </section>
     </div>
+    {% endif %}
     {% if page.video_section %}
         <section id="video" class="showcase cursor-video">
             <video src="{% static 'videos/rain.mp4' %}" muted loop autoplay></video>
@@ -100,7 +102,7 @@
             <div class="mar-xxxl-top"></div>
             <div class="companies-footer">
                 <div></div>
-                <a href="">Company Case Studies</a>
+                <a href="{{page.company_link.url}}">Company Case Studies</a>
                 <a href="">[43]</a>
             </div>
             <div class="pad-xxxl-top"></div>
@@ -141,26 +143,32 @@
             <div class="mar-xxxl-top"></div>
             <div class="companies-footer">
                 <div></div>
-                <a href="">Entrepreneurs Case Studies</a>
+                <a href="{{page.entrepreneurs_link.url}}">Entrepreneurs Case Studies</a>
                 <a href="">[43]</a>
             </div>
             <div class="pad-xxxl-top"></div>
         </section>
     {% endif %}
     {% if page.about_section %}
-        <section id="about" class="about pad-xxl-right pad-xxl-left">
+        <section id="about" class="about  pad-xxl-left">
             <div class="pad-huge-top"></div>
             <div class="about-title h300">
                 {{ page.about_title }}
             </div>
             <div class="mar-xxl-bottom"></div>
-            {% for block in page.card_team_member_block %}
-                {% include_block block %}
-            {% endfor %}
+            <div class="container-team-members-home">
+                <div class="team-members-inner">
+                    <div class="slider-inner">
+                        {% for block in page.card_team_member_block %}
+                            {% include_block block %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
             <div class="mar-xxxl-top"></div>
-            <div class="about-footer">
+            <div class="about-footer pad-xxl-right">
                 <div></div>
-                <a href="">Know our team</a>
+                <a href="{{page.about_link.url}}">Know our team</a>
                 <a href="">[43]</a>
             </div>
             <div class="pad-xxxl-top"></div>

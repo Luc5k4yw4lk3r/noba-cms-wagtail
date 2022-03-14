@@ -12,7 +12,7 @@
         <div class="container-simple-page">
             {% breadcrumbs %}
             <div class="container-simple-page-title h300 mar-xl-bottom">
-                {{page.title}}
+                {{page.title_screen}}
             </div>
             <div class="container-simple-page-text b300" >
                 {{page.body|richtext}}
@@ -21,9 +21,11 @@
             {% for block in page.card_value_block %}
                 {% include_block block %}
             {% endfor %}
-            {% for block in page.card_team_member_block %}
-                {% include_block block %}
-            {% endfor %}
+            <div class="container-team-members">
+                {% for block in page.card_team_member_block %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
             {% if page.footer_title or page.footer_body %}
                 <div class="mar-mega-bottom"></div>
                 <div class="simple-page-footer">

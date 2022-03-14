@@ -27,11 +27,45 @@ from streams.blocks import (
 
 class HomePage(Page):
     body = RichTextField(blank=True)
-    
+   
+    intial_section = models.BooleanField(default=False)
     video_section = models.BooleanField(default=False)
     knowledge_section = models.BooleanField(default=False)
     approach_section = models.BooleanField(default=False)
     entrepreneur_section = models.BooleanField(default=False)
+    company_link = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text='Choose a page to link your company page',
+    )
+    entrepreneurs_link = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text='Choose a page to link your entrepreneurs page',
+    )
+    about_link = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text='Choose a page to link your about page',
+    )
+    blog_link = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text='Choose a page to link your about page',
+    )
+
     about_section = models.BooleanField(default=False)
     resources_section = models.BooleanField(default=False)
 
@@ -113,6 +147,7 @@ class HomePage(Page):
         # StreamFieldPanel('card_approach_block'),
         # StreamFieldPanel('card_entrepreneurs_block'),
         MultiFieldPanel([
+            FieldPanel('intial_section'),
             FieldPanel('body'),
             PageChooserPanel('modal_privacy_policy_link'),
         ], heading='Initial Section'
@@ -134,6 +169,8 @@ class HomePage(Page):
         ),
         MultiFieldPanel([
             FieldPanel('entrepreneur_section'),
+            FieldPanel('company_link'),
+            FieldPanel('entrepreneurs_link'),
             StreamFieldPanel('card_companies_block'),
             StreamFieldPanel('card_entrepreneurs_block'),
         ], heading='Entrepreneur Section'
@@ -142,11 +179,13 @@ class HomePage(Page):
             FieldPanel('about_section'),
             FieldPanel('about_title'),
             FieldPanel('about_body'),
+            FieldPanel('about_link'),
             StreamFieldPanel('card_team_member_block'),
         ], heading='About Section'
         ),
         MultiFieldPanel([
             FieldPanel('resources_section'),
+            FieldPanel('blog_link'),
             FieldPanel('resources_title'),
             FieldPanel('resources_body'),
             StreamFieldPanel('blog_highlight_cards'),

@@ -14,7 +14,7 @@
             <div class="title">
                 {% breadcrumbs %}           
                 <h1 class="h300">
-                    {{page.title}}
+                    {{page.title_screen}}
                 </h1>
                 <div class="post-info b200">
                     <p>Sep 28</p>
@@ -30,21 +30,25 @@
             <div class="share-comp-container">
                 <div class="share-component b200">
                     <p>Share</p>
-                    {% if settings.site_settings.SocialMediaSettings.facebook %}
-                        <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}"><i class="fab fa-facebook"></i></a>
-                    {% endif %}
-                    {% if settings.site_settings.SocialMediaSettings.twitter %}
-                        <a href="{{ settings.site_settings.SocialMediaSettings.twitter }}"><i class="fab fa-twitter"></i></a>
-                    {% endif %}
-                    {% if settings.site_settings.SocialMediaSettings.whatsapp %}
-                        <a href="{{ settings.site_settings.SocialMediaSettings.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
-                    {% endif %}
-                    {% if settings.site_settings.SocialMediaSettings.mail %}
-                        <a href="{{ settings.site_settings.SocialMediaSettings.mail }}"><i class="fab fa-envelope"></i></a>
-                    {% endif %}
-                    {% if settings.site_settings.SocialMediaSettings.instangram %}
-                        <a href="{{ settings.site_settings.SocialMediaSettings.instangram }}"><i class="fab fa-instangram"></i></a>
-                    {% endif %}
+                        <a 
+                        href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fab fa-facebook"></i></a>
+                        <a 
+                        href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fab fa-twitter"></i></a>
+                        <a 
+                        href="whatsapp://send?text={{ request.build_absolute_uri }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fab fa-whatsapp"></i></a>
+                        <a href="{{ settings.site_settings.SocialMediaSettings.mail }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fa fa-envelope"></i></a>
                 </div>
             </div>
             <div class="paragraph">

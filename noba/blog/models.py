@@ -96,6 +96,7 @@ register_snippet(BlogCategory)
 
 class BlogPage(Page):
 
+    title_screen = models.CharField(max_length=250, default='')
     body = RichTextField(blank=True, help_text='Body information')
 
     post_image = models.ForeignKey(
@@ -127,6 +128,7 @@ class BlogPage(Page):
 
 
     content_panels = Page.content_panels + [
+        FieldPanel('title_screen', classname="full"),
         FieldPanel('body', classname="full"),
         ImageChooserPanel('post_image'),
         StreamFieldPanel('content'),
@@ -152,6 +154,7 @@ class BlogPage(Page):
    
 
 class BlogIndexPage(Page):
+    title_screen = models.CharField(max_length=250, default='')
     title_highlight = RichTextField(blank=True, help_text='Page title')
 
     blog_cards = StreamField(
@@ -171,6 +174,7 @@ class BlogIndexPage(Page):
     )
 
     content_panels = Page.content_panels + [
+        FieldPanel('title_screen', classname="full"),
         FieldPanel('title_highlight', classname="full"),
         StreamFieldPanel('blog_highlight_cards'),
         StreamFieldPanel('blog_cards'),
@@ -178,6 +182,7 @@ class BlogIndexPage(Page):
 
 
 class EntrepreneurPage(Page):
+    title_screen = models.CharField(max_length=250, default='')
 
     body = RichTextField(blank=True, help_text='Body information')
 
@@ -192,21 +197,25 @@ class EntrepreneurPage(Page):
     orange = models.BooleanField(default=False)
 
     content_panels = Page.content_panels + [
+        FieldPanel('title_screen', classname="full"),
         FieldPanel('body', classname="full"),
         FieldPanel('orange', classname="full"),
         StreamFieldPanel('card_entrepreneur_block'),
     ]
 
 class SimplePage(Page):
+    title_screen = models.CharField(max_length=250, default='')
 
     body = RichTextField(blank=True, help_text='Body information')
 
     content_panels = Page.content_panels + [
+        FieldPanel('title_screen', classname="full"),
         FieldPanel('body', classname="full"),
     ]
 
 
 class ValuePage(Page):
+    title_screen = models.CharField(max_length=250, default='')
 
     body = RichTextField(blank=True, help_text='Body information')
 
@@ -231,6 +240,7 @@ class ValuePage(Page):
     )
 
     content_panels = Page.content_panels + [
+        FieldPanel('title_screen', classname="full"),
         FieldPanel('body', classname="full"),
         FieldPanel('footer_title', classname="full"),
         FieldPanel('footer_body', classname="full"),
@@ -240,6 +250,7 @@ class ValuePage(Page):
 
 
 class ApproachPage(Page):
+    title_screen = models.CharField(max_length=250, default='')
 
     body = RichTextField(blank=True, help_text='Body information')
 
@@ -252,6 +263,7 @@ class ApproachPage(Page):
     )
 
     content_panels = Page.content_panels + [
+        FieldPanel('title_screen', classname="full"),
         FieldPanel('body', classname="full"),
         StreamFieldPanel('card_approach_block'),
     ]
