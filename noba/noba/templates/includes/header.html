@@ -1,7 +1,6 @@
 {% load wagtailcore_tags menus_tags %}
 {% load static %}
 
-{% get_menu "main" as nvagation %}
 <header>
     <a href="/">
         <div class="logo "></div>
@@ -17,13 +16,6 @@
                         >
                         {{item.link_title}}</a>
                 {% endfor %}
-                <!-- <a class="h100" href="#">Approach</a>
-                <a class="h100" href="#">Companies</a>
-                <a class="h100" href="#">Entrepreneurs</a>
-                <a class="h100" href="#">Team</a>
-                <a class="h100" href="#">Values</a>
-                <a class="h100" href="#">Resources</a>
-                <a class="h100" href="#">Keep in touch</a> -->
             </nav>
         </div>
         <!-- <div class="btn-menu-close">x</div> -->

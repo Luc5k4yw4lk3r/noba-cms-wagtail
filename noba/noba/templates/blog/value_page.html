@@ -1,11 +1,16 @@
 {% extends "base.html" %}
-{% load static navegation_tags %}
+{% load static navegation_tags menus_tags %}
 {% load wagtailcore_tags %}
 
 {% block body_class %}white{% endblock %}
 
 {% block extra_css %}
 {% endblock extra_css %}
+
+{% block header %}
+    {% get_menu "menu_pages" as nvagation %}
+    {% include 'includes/header.html' with nvagation=nvagation %}
+{% endblock %}
 
 {% block content %}
     <main class="mar-huge-top pad-xxl-right pad-xxl-left pad-mega-bottom ">
