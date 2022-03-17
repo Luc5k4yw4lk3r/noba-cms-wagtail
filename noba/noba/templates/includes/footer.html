@@ -7,7 +7,8 @@
             <p class="b300">Get insights, news and updates on Business Prototyping</p>
             <form action="/contact-form/" method="POST" role="form">
                 {% csrf_token %}
-                <input type="email" name="email" placeholder="Email address" id="">
+                <input type="email" name="email" placeholder="Email address" id="" required>
+                <img class="arrow-submit-form" src="{% static 'images/arrow-right.svg' %}" alt="">
             </form>
             <p class="form-sending b100">Sending this form, I agree to the <a  class="form-sending" href="">Terms and Conditions.</a></p>
         </div>

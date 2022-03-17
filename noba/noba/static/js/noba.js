@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    // Global
+    const isHomePage = document.querySelector('#home-page');
+    const isApproachPage =  document.querySelector('.card-approach');
+    const header = document.querySelector('header');
+
     // Menu
     let logoMenu = document.querySelector('.logo-menu');
     let btnMenuClose = document.querySelector('.btn-menu-close');
@@ -73,20 +78,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const overlayModal = document.querySelector('.overlay-modal');
     const coockieModal = document.querySelector('.modal-cookie');
     const logoHeader = document.querySelector('.logo');
-    const header = document.querySelector('header');
     const initial = document.querySelector('#initial');
-
+    const spaceInitial = document.querySelectorAll('.sp-initial');
+    const fadeText = document.querySelectorAll('.fade-text');
 
     let coockiesChecked = sessionStorage.getItem("coockies-checked");
     
-    if(coockiesChecked !== "True"){
-        // document.body.classList.remove('initial-overflow');
-        coockieModal.classList.add('active');
-        // overlayModal.classList.add('active');
-        header.classList.add('first');
-        initial.classList.remove('display-none');
-        initial.classList.add('initial');
-    } 
+    if(isHomePage){
+        if(coockiesChecked !== "True"){
+            // document.body.classList.remove('initial-overflow');
+            coockieModal.classList.add('active');
+            // overlayModal.classList.add('active');
+            header.classList.add('first');
+            initial.classList.remove('display-none');
+            spaceInitial.forEach( item => {
+                item.classList.remove('display-none');
+            })
+
+            fadeText.forEach( item => {
+                item.classList.remove('appear');
+            })
+            initial.classList.add('initial');
+        } 
+    }
+
 
     closeModalButton.forEach( button => {
         button.addEventListener("click", () => {
@@ -107,11 +122,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Screen approach
-    let containerApproch = document.querySelector('.approach-cards-container');
-    containerApproch.addEventListener("click", (e) => {
-        let element = e.target.closest('.card-approach-contantainer');
-        if(element){
-            element.classList.toggle('active');
+    if(isHomePage || isApproachPage ){
+        let containerApproch = document.querySelector('.approach-cards-container');
+        containerApproch.addEventListener("click", (e) => {
+            let element = e.target.closest('.card-approach-contantainer');
+            if(element){
+                element.classList.toggle('active');
+            }
+        });
+    }
+
+    // submit form
+    const arrowForm = document.querySelector('.arrow-submit-form');
+    arrowForm.addEventListener("click", (e) => {
+        let form = e.target.closest('form')
+        if(form.checkValidity()){
+            form.submit();
+        } else {
+            form.reportValidity()
         }
     });
 
@@ -138,5 +166,60 @@ document.addEventListener("DOMContentLoaded", function() {
     faders.forEach(fader => {
         apearsOnScroll.observe(fader);
     });
+
+
+    // Intersection Observer Initial
+    const faderTexts = document.querySelectorAll('.fade-text');
+
+    const optionsInitial = {
+        threshold:0.7,
+        rootMargin: '-25% 0% -25% 0%', 
+    };
+
+    const apearsOnScrollInitial = new IntersectionObserver(
+        function(entries, apearOnScroll){
+            entries.forEach(entry => {
+                if(!entry.isIntersecting){
+                    entry.target.classList.remove('appear');
+                } else {
+                    entry.target.classList.add('appear');
+                    // apearsOnScroll.unobserve(entry.target);
+                }
+            });
+        },
+        optionsInitial
+    );
+
+    if(coockiesChecked !== "True"){
+        faderTexts.forEach(fader => {
+            apearsOnScrollInitial.observe(fader);
+        });
+    }
+
+    // Intersection observer dark sections
+    const darkSections = document.querySelectorAll('.dark-sections');
+
+    const optionsDark = {
+        threshold: 0,
+        rootMargin: '0px 0px -90% 0px', 
+    };
+
+    const apearsOnScrollDark = new IntersectionObserver(
+        function(entries, apearOnScroll){
+            entries.forEach(entry => {
+                if(!entry.isIntersecting){
+                    header.classList.remove('dark');
+                } else {
+                    header.classList.add('dark');
+                }
+            });
+        },
+        optionsDark
+    );
+
+    darkSections.forEach(darkSection => {
+        apearsOnScrollDark.observe(darkSection);
+    });
+
 
 });

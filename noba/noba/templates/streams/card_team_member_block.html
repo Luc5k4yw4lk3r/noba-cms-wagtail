@@ -9,7 +9,7 @@
                     <div><img class="icon-linkedin" src="{% static 'images/icon-linkedin.svg' %}" alt="linkedin-img"><span class="b200">{{card.role}}</span></div>
                 </div>
                 {% image card.image original  as img %}
-                <img src="{{img.url}}" alt="{{img.alt}}">
+                <div class="img-member"><img src="{{img.url}}" alt="{{img.alt}}"></div>
             </a>
         </div>
     {% endfor %}

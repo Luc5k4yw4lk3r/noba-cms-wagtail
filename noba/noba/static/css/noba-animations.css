@@ -6,3 +6,12 @@
 .fade-in.appear{
     opacity: 1;
 }
+
+.fade-text{
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-text.appear{
+    opacity: 1;
+}

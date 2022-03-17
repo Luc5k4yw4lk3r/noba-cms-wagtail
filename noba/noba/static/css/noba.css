@@ -193,9 +193,9 @@ section{
 	flex-direction: column;
 }
 
-.team-members-inner{
+.container-team-members-home .team-members-inner{
     /* width: 100%; */
-	height: 449px;
+	height: 557px;
     background-color: inherit;
     display: flex;
     transition: 3s;
@@ -250,6 +250,32 @@ section{
 	-o-user-drag: none;
 	user-drag: none;
 	cursor: url('../images/cursor-drag.svg'), auto;
+
+}
+
+.team-members-inner .slider-inner .card-team-member .img-member{
+	overflow: hidden;
+	transition: all .7s linear;
+	width: 100%;
+	height: 424px;
+	border-radius: 32px;
+}
+
+.team-members-inner .slider-inner .card-team-member img{
+	transition: all 1s linear;
+
+}
+
+.team-members-inner .slider-inner .card-team-member .img-member img:hover{
+	width: 100%;
+	height: 100%;
+	border-radius: 32px;
+	object-fit: cover;
+	-ms-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .container-blog-items{
@@ -330,6 +356,14 @@ body.dark header .logo{
 }
 
 body.dark header .logo-menu{
+	background-image: url(../images/menu-logo-white.svg);
+}
+
+header.dark .logo{
+	background-image: url(../images/brand-logo-small-white.svg);
+}
+
+header.dark .logo-menu{
 	background-image: url(../images/menu-logo-white.svg);
 }
 
@@ -423,7 +457,29 @@ footer .signup-newletter input{
 	line-height: 48px;
 	color: var(--font-color-grey);
 	max-width: 366px;
-	background: url(../images/arrow-right.svg) no-repeat right center;
+	/* background: url(../images/arrow-right.svg) no-repeat right center; */
+}
+
+footer .signup-newletter form{
+	max-width: 366px;
+}
+
+footer .signup-newsletter-form img{
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.arrow-submit-form{
+	cursor: pointer;
+}
+
+footer .signup-newsletter-form form{
+	position: relative;
 }
 
 footer .signup-newletter input:focus{
@@ -488,6 +544,10 @@ footer .form-arrow-right{
 		line-height: 64px;
 	}
 
+	footer .signup-newletter form{
+		max-width: 639px;
+	}
+
 	footer .address{
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -501,6 +561,14 @@ footer .form-arrow-right{
 		gap: 15px;
 		align-items: flex-end;
 	}
+}
+
+footer input:-webkit-autofill,
+footer input:-webkit-autofill:hover, 
+footer input:-webkit-autofill:focus, 
+footer input:-webkit-autofill:active{
+	-webkit-box-shadow: 0 0 0 40px #ECE9E6 inset !important;
+	color: var(--font-color-grey)  !important;
 }
 
 /* modal cookie */
