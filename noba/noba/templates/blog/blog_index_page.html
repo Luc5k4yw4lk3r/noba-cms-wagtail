@@ -2,7 +2,7 @@
 {% load static navegation_tags menus_tags %}
 {% load wagtailcore_tags %}
 
-{% block body_class %}{% endblock %}
+{% block body_class %}dark{% endblock %}
 
 {% block extra_css %}
 {% endblock extra_css %}
@@ -13,9 +13,9 @@
 {% endblock %}
 
 {% block content %}
-    <main class="blog-index pad-xxl not-pad-right">
+    <main class="mar-huge-top pad-xxl-left pad-mega-bottom">
+        {% breadcrumbs %}
         <div class="cointainer-title">
-            {% breadcrumbs %}
             <div class="title b100">
                 <h1 class="h300">
                     {{ page.title_screen|richtext }}
@@ -29,6 +29,13 @@
         {% for block in page.blog_cards %}
             {% include_block block %}
         {% endfor %}
+        <div class="container-blog-index-footer mar-xxxl-top mar-xxl-rigth">
+            <div class="arrows">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-right"></i>
+                <!-- <p><a href="" style="color: white;">View all blog articles</a></p> -->
+            </div>
+        </div>
         <div class="mar-xxl-bottom"></div>
     </main>
 

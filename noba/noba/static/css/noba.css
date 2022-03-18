@@ -688,7 +688,7 @@ footer input:-webkit-autofill:active{
     justify-content: space-between;
     align-items: center;
     border: none;
-	color: black;
+	color: black !important;
 	/* z-index: -1; */
 	text-decoration: none;
 	/* cursor: pointer; */
