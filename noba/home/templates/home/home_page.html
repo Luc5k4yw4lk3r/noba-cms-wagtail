@@ -40,7 +40,7 @@
     {% endif %}
     {% if page.video_section %}
         <section id="video" class="showcase cursor-video">
-            {% comment %}<video src="{% static 'videos/noba-video-home.mp4' %}" muted loop autoplay></video>{% endcomment %}
+            <video src="{% static 'videos/noba-video-home.mp4' %}" muted loop autoplay></video>
         </section>
     {% endif %}
     {% if page.knowledge_section %}
@@ -198,16 +198,12 @@
                     </h1>
                 </div>
             </div>
-            {% for block in page.blog_highlight_cards %}
-                {% include_block block %}
-            {% endfor %}
+            {% include 'blog/card_index_highlight.html' %}
             <div class="mar-xxxl only-mar-botom"></div>
-            {% for block in page.blog_cards %}
-                {% include_block block %}
-            {% endfor %}
+            {% include 'blog/cards_post.html' %}
             <div class="container-blog-index-footer mar-xxxl-top mar-xxl-rigth">
                 <div class="arrows">
-                    <p><a href="" style="color: white;">View all blog articles</a></p>
+                    <p><a href="{{page.blog_link.url}}" style="color: white;">View all blog articles</a></p>
                 </div>
             </div>
             <div class="pad-xxxl-top"></div>

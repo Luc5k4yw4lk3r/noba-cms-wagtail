@@ -1,29 +1,15 @@
 from django.db import models
-
-from wagtail.core.models import Page
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from streams.blocks import (CardApproachBlock, CardBlock, CardCompaniesBlock,
+                            CardEntrepreneurBlock, CardIndexBlock,
+                            CardIndexHighlightBlock, CardTeamMemberBlock,
+                            CardValueBlock, RichTextBlock, TitleAndTextBlock)
+from wagtail.admin.edit_handlers import (FieldPanel, InlinePanel,
+                                         MultiFieldPanel, PageChooserPanel,
+                                         StreamFieldPanel)
 from wagtail.core.fields import RichTextField, StreamField
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
-from wagtail.admin.edit_handlers import (
-    FieldPanel, 
-    InlinePanel ,
-    PageChooserPanel, 
-    StreamFieldPanel, 
-    MultiFieldPanel,
-    PageChooserPanel
-)
-
-from streams.blocks import (
-    TitleAndTextBlock, 
-    RichTextBlock, 
-    CardBlock, 
-    CardIndexBlock, 
-    CardIndexHighlightBlock,
-    CardEntrepreneurBlock,
-    CardValueBlock,
-    CardTeamMemberBlock,
-    CardApproachBlock,
-    CardCompaniesBlock
-)
+from wagtail.core.models import Page
+from blog.models import BlogPage
 
 class HomePage(Page):
     body = RichTextField(blank=True)
@@ -33,6 +19,7 @@ class HomePage(Page):
     knowledge_section = models.BooleanField(default=False)
     approach_section = models.BooleanField(default=False)
     entrepreneur_section = models.BooleanField(default=False)
+
     company_link = models.ForeignKey(
         'wagtailcore.Page',
         null=True,
@@ -77,6 +64,10 @@ class HomePage(Page):
 
     resources_title = models.CharField(null=True, blank=True, max_length=250, help_text='About Title')
     resources_body = RichTextField(blank=True)
+    title_highlight = models.CharField(max_length=250, blank=True, help_text='Page title')
+    title_card = models.CharField(max_length=250, default='', help_text='Title for the card')
+    blog_items_quantity = models.IntegerField(default=1, help_text='Post items quantity')
+    blog_highlight_items_quantity = models.IntegerField(default=1, help_text='Post highlight items quantity')
 
     modal_privacy_policy_link = models.ForeignKey(
         'wagtailcore.Page',
@@ -135,17 +126,24 @@ class HomePage(Page):
         blank=True,
     )
 
+    def get_context(self, request, *args, **kwargs):
+        """Adding custom stuff to our context."""
+        context = super().get_context(request, *args, **kwargs)
+        all_academy_posts = BlogPage.objects.live().public().filter(category__name="Academy").order_by('-first_published_at')[:self.blog_highlight_items_quantity]
+        all_regular_posts = BlogPage.objects.live().public().filter(category__name="Blog regular").order_by('-first_published_at')
+        paginator = Paginator(all_regular_posts, self.blog_items_quantity)
+        page = request.GET.get('page')
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        context['posts_academy'] = all_academy_posts
+        context['posts_regular'] = posts
+        return context
+
     content_panels = Page.content_panels + [
-        # FieldPanel('body', classname="full"),
-        # FieldPanel('video_section', classname="full"),
-        # FieldPanel('knowledge_section', classname="full"),
-        # FieldPanel('entrepreneur_section', classname="full"),
-        # FieldPanel('about_section', classname="full"),
-        # FieldPanel('resources_section', classname="full"),
-        # FieldPanel('approach_section', classname="full"),
-        # StreamFieldPanel('card_companies_block'),
-        # StreamFieldPanel('card_approach_block'),
-        # StreamFieldPanel('card_entrepreneurs_block'),
         MultiFieldPanel([
             FieldPanel('intial_section'),
             FieldPanel('body'),
@@ -188,8 +186,10 @@ class HomePage(Page):
             FieldPanel('blog_link'),
             FieldPanel('resources_title'),
             FieldPanel('resources_body'),
-            StreamFieldPanel('blog_highlight_cards'),
-            StreamFieldPanel('blog_cards'),
+            FieldPanel('title_highlight'),
+            FieldPanel('blog_highlight_items_quantity'),
+            FieldPanel('title_card'),
+            FieldPanel('blog_items_quantity'),
         ], heading='Resources Section'
         ),
     ]
