@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
     //     progressBar.style.width  = `${getScrollPercentage()}%`
     // })
     let sliderGrabbed = false;
-    
+    let pressed = true;
+    let startx = 0;
+
     sliders.forEach((slider) => {
 
         slider.addEventListener('mousedown', (e) => {
@@ -65,6 +67,18 @@ document.addEventListener("DOMContentLoaded", function() {
         //     console.log(slider.parentElement.scrollLeft);
         //     slider.parentElement.scrollLeft += e.deltaY;
         // })
+
+        slider.addEventListener('touchstart', (e) => {
+            pressed = true;
+            startx = e.targetTouches[0].clientX - slider.offsetLeft;
+        }, {passive: true});
+        
+        slider.addEventListener('touchmove', (e) => {
+            if(!pressed) return;
+            x = e.targetTouches[0].clientX;
+            slider.style.left = `${x - startx}px`;  
+            // checkboundary();
+        }, {passive: true});
 
     })
 
