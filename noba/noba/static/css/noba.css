@@ -1192,6 +1192,7 @@ main.blog-index{
 .arrows i{
 	font-size: 32px;
 	font-weight: normal;
+	cursor: pointer;
 }
 
 

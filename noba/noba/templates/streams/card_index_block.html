@@ -10,7 +10,7 @@
                 <a href="{% if card.link_page %}{{card.link_page.url}}{% else %}{% if card.link_external %}{{card.link_external.url}}{% else %} {% endif %}{% endif %}">
                     <div class="card-blog-info">
                         <hr>
-                        <p class="info b200">Sep 28 2min Article</p>
+                        <p class="info b200">{% if card.link_page %}{{ card.link_page.last_published_at|date:'M d' }} {{ card.link_page.reading_time }} {% endif %}Article</p>
                         <p class="description b300">{{card.text}}</p>
                     </div>
                     {% image card.image original  as img %}

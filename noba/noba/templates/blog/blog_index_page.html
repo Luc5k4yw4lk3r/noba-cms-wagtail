@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static navegation_tags menus_tags %}
+{% load wagtailimages_tags %}
 {% load wagtailcore_tags %}
 
 {% block body_class %}dark{% endblock %}
@@ -22,17 +23,17 @@
                 </h1>
             </div>
         </div>
-        {% for block in page.blog_highlight_cards %}
-            {% include_block block %}
-        {% endfor %}
+        {% include 'blog/card_index_highlight.html' %}
         <div class="mar-xxxl only-mar-botom"></div>
-        {% for block in page.blog_cards %}
-            {% include_block block %}
-        {% endfor %}
+        {% include 'blog/cards_post.html' %}
         <div class="container-blog-index-footer mar-xxxl-top mar-xxl-rigth">
             <div class="arrows">
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-right"></i>
+                {% if posts_regular.has_previous %}
+                    <a href="?page={{ posts.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+                {% endif %}
+                {% if posts_regular.has_next %}
+                    <a href="?page={{ posts.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+                {% endif %}
                 <!-- <p><a href="" style="color: white;">View all blog articles</a></p> -->
             </div>
         </div>

@@ -21,8 +21,14 @@
                     {{page.title_screen}}
                 </h1>
                 <div class="post-info b200">
-                    <p>Sep 28</p>
-                    <p>2 min</p>
+                    <p>{{ page.last_published_at|date:'M d' }}</p>
+                    <p>{{ page.reading_time }}</p>
+                    {% for author in page.blog_authors.all %}
+                        <p>{{ author.author.name }}</p>
+                    {% endfor %}
+                    {% for categ in page.category.all %}
+                        <p>{{ categ.name }}</p>
+                    {% endfor %}
                 </div>
             </div>
             <div class="main-info">

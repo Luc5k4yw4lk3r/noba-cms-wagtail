@@ -1,0 +1,20 @@
+<div class="container-carousel-highlight mar-xxl only-mar-top ">
+    <div class="carousel-highlight-title b300">
+        <i class="fas fa-arrow-right"></i><p>{{ self.title_highlight }}</p>
+    </div>
+    <div class="carousel-highlight-inner mar-xl only-mar-top ">
+        <div class="slider-inner cursor-drag-black">
+            {% for card in posts_academy %}
+                <div class="card-highlight">
+                    <a class="cursor-drag-black" href="{{ card.url }}">
+                        <h1 class="h100">{{card.title_card}}</h1>
+                        <div class="card-footer">
+                            <hr>
+                            <p class="b300">{{card.description_card}}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="container-blog-index">
+    <div class="container-blog-title mar-xl only-mar-botom b300">
+        <i class="fas fa-arrow-right"></i>{{ self.title_card|richtext  }}
+    </div>
+    <div class="container-blog-index-items mar-xxl only-mar-right">
+        {% for card in posts_regular %}
+            <div class="card-blog-index">
+                <a href="{{ card.url }}">
+                    <div class="card-blog-info">
+                        <hr>
+                        <p class="info b200">{{ card.last_published_at|date:'M d' }} {{ card.reading_time }} Article</p>
+                        <p class="description b300">{{card.title_card}}</p>
+                    </div>
+                    {% image card.post_image_thumb original  as img %}
+                    <img src="{{img.url}}" alt="{{img.alt}}">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
