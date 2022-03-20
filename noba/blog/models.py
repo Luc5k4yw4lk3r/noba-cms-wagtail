@@ -127,12 +127,22 @@ class BlogPage(Page):
         blank=True,
     )
 
+    blog_link = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text='Choose a page to link to your blog page',
+    )
+
     content_panels = Page.content_panels + [
         FieldPanel('title_screen', classname="full"),
         FieldPanel('title_card'),
         FieldPanel('description_card'),
         FieldPanel('body', classname="full"),
         FieldPanel('reading_time'),
+        PageChooserPanel('blog_link'),
         ImageChooserPanel('post_image'),
         ImageChooserPanel('post_image_thumb'),
         StreamFieldPanel('content'),

@@ -23,12 +23,14 @@
                 <div class="post-info b200">
                     <p>{{ page.last_published_at|date:'M d' }}</p>
                     <p>{{ page.reading_time }}</p>
-                    {% for author in page.blog_authors.all %}
-                        <p>{{ author.author.name }}</p>
-                    {% endfor %}
-                    {% for categ in page.category.all %}
-                        <p>{{ categ.name }}</p>
-                    {% endfor %}
+                    {% comment %}
+                        {% for author in page.blog_authors.all %}
+                            <p>{{ author.author.name }}</p>
+                        {% endfor %}
+                        {% for categ in page.category.all %}
+                            <p>{{ categ.name }}</p>
+                        {% endfor %}
+                    {% endcomment %}
                 </div>
             </div>
             <div class="main-info">
@@ -70,5 +72,10 @@
         {% for block in page.blog_cards %}
             {% include_block block %}
         {% endfor %}
+        <div class="container-blog-footer mar-xxl-top b300">
+            <p></p>
+            <a href="{{page.blog_link}}">View all blog articles</a>
+            <a href="#">[151]</a>
+        </div>
     </main>
 {% endblock content %}

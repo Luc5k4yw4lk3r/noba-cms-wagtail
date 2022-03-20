@@ -167,8 +167,8 @@ class HomePage(Page):
         ),
         MultiFieldPanel([
             FieldPanel('entrepreneur_section'),
-            FieldPanel('company_link'),
-            FieldPanel('entrepreneurs_link'),
+            PageChooserPanel('company_link'),
+            PageChooserPanel('entrepreneurs_link'),
             StreamFieldPanel('card_companies_block'),
             StreamFieldPanel('card_entrepreneurs_block'),
         ], heading='Entrepreneur Section'
@@ -177,13 +177,13 @@ class HomePage(Page):
             FieldPanel('about_section'),
             FieldPanel('about_title'),
             FieldPanel('about_body'),
-            FieldPanel('about_link'),
+            PageChooserPanel('about_link'),
             StreamFieldPanel('card_team_member_block'),
         ], heading='About Section'
         ),
         MultiFieldPanel([
             FieldPanel('resources_section'),
-            FieldPanel('blog_link'),
+            PageChooserPanel('blog_link'),
             FieldPanel('resources_title'),
             FieldPanel('resources_body'),
             FieldPanel('title_highlight'),
