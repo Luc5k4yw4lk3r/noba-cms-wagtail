@@ -2,10 +2,11 @@
 {% load static %}
 {% load wagtailcore_tags menus_tags %}
 
+{% block html_extra_css %}scroll-behavior-page{% endblock %}
+
 {% block body_class %}white {% endblock %}
 
-{% block extra_css %}
-{% endblock extra_css %}
+{% block extra_css %}{% endblock extra_css %}
 
 {% block header %}
     {% get_menu "main" as nvagation %}

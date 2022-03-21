@@ -1,3 +1,4 @@
+from unicodedata import name
 from django import forms
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
@@ -62,6 +63,7 @@ class BlogAuthor(models.Model):
         verbose_name = 'Blog Author'
         verbose_name_plural = 'Blog Authors'
 
+
 register_snippet(BlogAuthor)
 
 
@@ -79,7 +81,28 @@ class BlogCategory(models.Model):
         verbose_name = 'Blog Category'
         verbose_name_plural = 'Blog Categories'
 
+
 register_snippet(BlogCategory)
+
+
+class BlogColor(models.Model):
+    name = models.CharField(max_length=100, help_text='Name')
+    style = models.CharField(max_length=100, help_text='Css style to apply in code')
+
+    panels = [
+        FieldPanel('name'),
+        FieldPanel('style')
+    ]
+
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Blog Color'
+        verbose_name_plural = 'Blog Colors'
+
+
+register_snippet(BlogColor)
 
 
 class BlogPage(Page):
@@ -118,6 +141,9 @@ class BlogPage(Page):
     )
 
     category = ParentalManyToManyField('blog.BlogCategory', blank=True)
+    
+    color = ParentalManyToManyField('blog.BlogColor', blank=True)
+
 
     blog_cards = StreamField(
         [
@@ -154,6 +180,10 @@ class BlogPage(Page):
         MultiFieldPanel([
             FieldPanel('category', widget=forms.CheckboxSelectMultiple)
         ], heading='Categories'
+        ),
+        MultiFieldPanel([
+            FieldPanel('color', widget=forms.CheckboxSelectMultiple)
+        ], heading='Colors'
         ),
     ]
 

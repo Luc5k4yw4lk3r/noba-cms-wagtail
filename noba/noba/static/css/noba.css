@@ -28,6 +28,8 @@
 	--background-color-dark: black;
 	--background-color-orange: #ED732E;
 	--background-color-purple: #cfcfe3;
+	--background-color-yellow: #f0fd53;
+	--background-color-pink: #fcefd6;
 	--fondo: #f2f2f2;
 	--ancho-contenedor: 1200px;
 	/* Spacing XL - Desktop */
@@ -78,9 +80,6 @@
 /* ====================
 	* GENERAL STYLES *
 ==================== */
-html {
-	scroll-behavior: smooth;
-}
 
 body {
 	background: var(--background-color-purple);
@@ -106,6 +105,22 @@ body.orange{
 
 body.white{
 	background: white;
+}
+
+body.purple{
+	background: var(--background-color-purple);
+}
+
+body.orange{
+	background: var(--background-color-orange);
+}
+
+body.yellow{
+	background: var(--background-color-yellow);
+}
+
+body.pink{
+	background: var(--background-color-pink);
 }
 
 body.dark main{
@@ -145,6 +160,10 @@ section{
 
 .fa, .fas{
 	font-weight: normal;
+}
+
+.scroll-behavior-page{
+	scroll-behavior: smooth;
 }
 
 /* ====================
@@ -855,6 +874,7 @@ footer input:-webkit-autofill:active{
 	background-color: inherit;
 	justify-content:space-between;
 	height: 100%;
+	border: none;
 }
 
 .card-blog hr{
@@ -909,14 +929,40 @@ footer input:-webkit-autofill:active{
 	/* margin-top: 64px; */
 }
 
-.container-blog-footer a{
+body.dark .container-blog-footer a{
 	color: white;
 	border-bottom: 1px solid white;
 	transition: border-bottom 1s ease;
 }
 
-.container-blog-footer a:hover{
+.container-blog-footer a{
+	color: black;
 	border-bottom: 1px solid black;
+	transition: border-bottom 1s ease;
+}
+
+body.dark .container-blog-footer a:hover{
+	border-bottom: 1px solid black;
+}
+
+body.white .container-blog-footer a:hover{
+	border-bottom: 1px solid white;
+}
+
+body.purple .container-blog-footer a:hover{
+	border-bottom: 1px solid var(--background-color-purple);
+}
+
+body.orange .container-blog-footer a:hover{
+	border-bottom: 1px solid var(--background-color-orange);
+}
+
+body.yellow .container-blog-footer a:hover{
+	border-bottom: 1px solid var(--background-color-yellow);
+}
+
+body.pink .container-blog-footer a:hover{
+	border-bottom: 1px solid var(--background-color-pink);
 }
 
 @media (max-width:960px) {
@@ -1042,6 +1088,10 @@ main .post-info{
 .share-component p{
 	margin-top: 0px;
 	margin-bottom: 5px;
+}
+
+.share-component a{
+	border: none;
 }
 
 .share-component i{
