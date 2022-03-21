@@ -1954,6 +1954,23 @@ main.blog-index{
 	justify-content: space-between;
 }
 
+/* Error page */
+.screen-error{
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
+}
+
+/* Suscriber page */
+.suscriber-successful-screen{
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+
 /* ====================
 	* FONTS *
 ==================== */

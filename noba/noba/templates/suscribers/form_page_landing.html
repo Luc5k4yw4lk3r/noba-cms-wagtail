@@ -2,16 +2,16 @@
 {% load wagtailcore_tags wagtailimages_tags menus_tags %}
 
 {% block header %}
-    {% get_menu "main" as nvagation %}
+    {% get_menu "menu_pages" as nvagation %}
     {% include 'includes/header.html' with nvagation=nvagation %}
 {% endblock %}
 
+{% block body_class %}    
+    white
+{% endblock %}
+
 {% block content %}
-<div class="container form-page-thanks">
-    <div class="row">
-        <div class="col-md-7">
-            {{ page.thank_you_text|richtext }}
-        </div>
-    </div>
-</div>
+<main class="suscriber-successful-screen">
+    <div>{{ page.thank_you_text|richtext }}</div>
+</main>
 {% endblock content %}

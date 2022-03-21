@@ -4,8 +4,18 @@
 
 {% block body_class %}template-404{% endblock %}
 
-{% block content %}
-    <h1>Page not found</h1>
+{% block header %}
+    {% get_menu "menu_pages" as nvagation %}
+    {% include 'includes/header.html' with nvagation=nvagation %}
+{% endblock %}
 
-    <h2>Sorry, this page could not be found.</h2>
+{% block body_class %}    
+    white
+{% endblock %}
+
+{% block content %}
+    <main class="screen-error">
+        <h1 class="h300">Page not found</h1>
+        <h2 class="h100">Sorry, this page could not be found.</h2>
+    </main>
 {% endblock %}

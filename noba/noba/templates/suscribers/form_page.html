@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags %}
 
+{% block header %}
+    {% get_menu "menu_pages" as nvagation %}
+    {% include 'includes/header.html' with nvagation=nvagation %}
+{% endblock %}
+
+{% block body_class %}    
+    white
+{% endblock %}
+
 {% block content %}
 
 <div class="container">
