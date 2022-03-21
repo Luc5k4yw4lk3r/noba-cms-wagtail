@@ -728,6 +728,30 @@ footer input:-webkit-autofill:active{
     margin-left: 0px;
 }
 
+.dark.card-highlight{
+	background-color: black;
+}
+
+.white.card-highlight{
+	background-color: white;
+}
+
+.purple.card-highlight{
+	background-color: var(--background-color-purple);
+}
+
+.orange.card-highlight{
+	background-color: var(--background-color-orange);
+}
+
+.yellow.card-highlight{
+	background-color: var(--background-color-yellow);
+}
+
+.pink.card-highlight{
+	background-color: var(--background-color-pink);
+}
+
 .card-highlight h1{
     margin: 48px;
 }
@@ -747,15 +771,6 @@ footer input:-webkit-autofill:active{
 .card-highlight p{
     margin-top: 0px;
     margin-bottom: 0px;
-}
-
-
-.card-highlight:nth-child(2){
-    background-color: rgb(140, 233, 240);
-}
-
-.card-highlight:nth-child(3){
-    background-color: rgb(195, 140, 240);
 }
 
 .nav {
