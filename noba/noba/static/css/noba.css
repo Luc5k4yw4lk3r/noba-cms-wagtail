@@ -214,7 +214,7 @@ section{
 
 .container-team-members-home .team-members-inner{
     /* width: 100%; */
-	height: 557px;
+	height:684px;
     background-color: inherit;
     display: flex;
     transition: 3s;
@@ -223,6 +223,10 @@ section{
 	top: 0;
 	left: 0;
 	overflow: hidden;
+}
+
+.container-team-members-home .card-team-member{
+	height:100%;
 }
 
 .team-members-inner .slider-inner {
@@ -272,12 +276,21 @@ section{
 
 }
 
+
 .team-members-inner .slider-inner .card-team-member .img-member{
 	overflow: hidden;
 	transition: all .7s linear;
 	width: 100%;
-	height: 424px;
+	height: 100%;
 	border-radius: 32px;
+}
+
+.container-team-members-home .img-member{
+	height: 100%;
+}
+
+.container-team-members-home .img-member img{
+	height: 100%;
 }
 
 .team-members-inner .slider-inner .card-team-member img{
@@ -718,6 +731,11 @@ footer input:-webkit-autofill:active{
 	-o-user-drag: none;
 	user-drag: none;
 }
+
+.card-highlight:hover{
+	opacity: .85;
+}
+
 
 .card-highlight a:hover{
 	border: none !important;
@@ -1250,8 +1268,13 @@ main.blog-index{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	/* margin-top: 64px; */
-	/* margin-right: 64px; */
+}
+
+.container-blog-index-footer-home{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-content: space-between;
 }
 
 .arrows i{
@@ -1823,7 +1846,7 @@ main.blog-index{
 
 .initial.scale{
 	/* transform: scaleY(0, 0.5); */
-	height: 0vh;
+	height: 7vh;
 	color: rgba(1, 1, 1, 0);
 }
 
@@ -1904,6 +1927,7 @@ main.blog-index{
 .companies-footer{
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .section-entrepreneurs{
@@ -1952,6 +1976,7 @@ main.blog-index{
 .about-footer{
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 /* Error page */

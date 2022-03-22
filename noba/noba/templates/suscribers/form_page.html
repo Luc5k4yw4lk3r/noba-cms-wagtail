@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags menus_tags %}
 
+{% block html_extra_css %}scroll-behavior-page{% endblock %}
+
 {% block header %}
     {% get_menu "menu_pages" as nvagation %}
     {% include 'includes/header.html' with nvagation=nvagation %}

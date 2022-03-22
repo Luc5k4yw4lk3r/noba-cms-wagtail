@@ -114,13 +114,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const initial = document.querySelector('#initial');
     const spaceInitial = document.querySelectorAll('.sp-initial');
     const fadeText = document.querySelectorAll('.fade-text');
+    let firstScroll = false;
 
     let coockiesChecked = sessionStorage.getItem("coockies-checked");
+    let loggedChecked = sessionStorage.getItem("logged-checked");
     
     if(isHomePage){
-        if(coockiesChecked !== "True"){
+        if(loggedChecked !== "True"){
             // document.body.classList.remove('initial-overflow');
-            coockieModal.classList.add('active');
+            // coockieModal.classList.add('active');
             // overlayModal.classList.add('active');
             header.classList.add('first');
             initial.classList.remove('display-none');
@@ -133,6 +135,17 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             initial.classList.add('initial');
         } 
+
+        if(coockiesChecked !== "True"){
+            coockieModal.classList.add('active');
+        }
+
+        document.addEventListener('wheel', (e) => {
+            if (!firstScroll) {
+                closeInitialAnimation();
+                firstScroll = true;
+            }
+        });
     }
 
 
@@ -152,6 +165,18 @@ document.addEventListener("DOMContentLoaded", function() {
         header.classList.add('first-clicked');
         initial.classList.add('scale');
         sessionStorage.setItem("coockies-checked", "True");
+        sessionStorage.setItem("logged-checked", "True");
+    }
+
+    function closeInitialAnimation(){
+        // if (modal ==  null) return
+        // modal.classList.remove('active');
+        // overlayModal.classList.remove('active');
+        logoHeader.classList.remove('first-time');
+        // header.classList.remove('first');
+        header.classList.add('first-clicked');
+        initial.classList.add('scale');
+        sessionStorage.setItem("logged-checked", "True");
     }
 
     // Screen approach
@@ -223,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
         optionsInitial
     );
 
-    if(coockiesChecked !== "True"){
+    if(loggedChecked !== "True"){
         faderTexts.forEach(fader => {
             apearsOnScrollInitial.observe(fader);
         });

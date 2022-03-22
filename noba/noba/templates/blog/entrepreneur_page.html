@@ -2,6 +2,8 @@
 {% load static  navegation_tags menus_tags %}
 {% load wagtailcore_tags %}
 
+{% block html_extra_css %}scroll-behavior-page{% endblock %}
+
 {% block body_class %}{% if page.orange %}orange{% else %}white{% endif%}{% endblock %}
 
 {% block extra_css %}

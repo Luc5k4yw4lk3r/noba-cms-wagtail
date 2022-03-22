@@ -131,6 +131,10 @@ class HomePage(Page):
         context = super().get_context(request, *args, **kwargs)
         all_academy_posts = BlogPage.objects.live().public().filter(category__name="Academy").order_by('-first_published_at')[:self.blog_highlight_items_quantity]
         all_regular_posts = BlogPage.objects.live().public().filter(category__name="Blog regular").order_by('-first_published_at')
+        regular_posts_qt = all_regular_posts.count()
+        entrepreneurs_qt = len(context['page'].entrepreneurs_link.entrepreneurpage.card_entrepreneur_block.raw_data[0]['value']['cards'])
+        companies_qt = len(context['page'].company_link.entrepreneurpage.card_entrepreneur_block.raw_data[0]['value']['cards'])
+        team_qt = len(context['page'].about_link.valuepage.card_team_member_block.raw_data[0]['value']['cards'])
         paginator = Paginator(all_regular_posts, self.blog_items_quantity)
         page = request.GET.get('page')
         try:
@@ -140,6 +144,10 @@ class HomePage(Page):
         except EmptyPage:
             posts = paginator.page(paginator.num_pages)
         context['posts_academy'] = all_academy_posts
+        context['regular_posts_qt'] = regular_posts_qt
+        context['entrepreneurs_qt'] = entrepreneurs_qt
+        context['companies_qt'] = companies_qt
+        context['team_qt'] = team_qt
         context['posts_regular'] = posts
         return context
 
