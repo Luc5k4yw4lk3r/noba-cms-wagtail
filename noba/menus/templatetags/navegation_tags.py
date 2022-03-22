@@ -9,10 +9,10 @@ register = template.Library()
 @register.inclusion_tag('menus/breadcrumbs.html', takes_context=True)
 def breadcrumbs(context):
     self = context.get('self')
-    link = True
     if self is None or self.depth <= 2:
         # When on the home page, displaying breadcrumbs is irrelevant.
         ancestors = ()
+        ancestors_not_link = []
     else:
         ancestors = Page.objects.ancestor_of(
             self, inclusive=True).filter(depth__gt=1)

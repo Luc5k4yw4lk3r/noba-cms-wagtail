@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //     progressBar.style.width  = `${getScrollPercentage()}%`
     // })
     let sliderGrabbed = false;
+    let moved = false;
     let pressed = true;
     let startx = 0;
 
@@ -40,20 +41,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
         slider.addEventListener('mousedown', (e) => {
             sliderGrabbed = true;
+            sliderClicked = false;
+            console.log('mousedown');
+
             // slider.style.cursor = 'grabbing';
         })
     
         slider.addEventListener('mouseup', (e) => {
+            // console.log('mouseup');
+            // console.log('mouseup sliderGrabbed');
+            // console.log(sliderGrabbed);
+            // console.log('mouseup moved');
+            // console.log(moved);
             sliderGrabbed = false;
+            if(!moved){
+                // console.log('mouseup clicked');
+                let card = e.target.closest('.card-highlight');
+                // console.log(card);
+                // console.log(card.dataset.href);
+                window.location.href = card.dataset.href;
+            }
+            moved = false;
             // slider.style.cursor = 'grab';
         })
     
         slider.addEventListener('mouseleave', (e) => {
             sliderGrabbed = false;
+            // console.log('mouseleave');
         })
     
         slider.addEventListener('mousemove', (e) => {
             if(sliderGrabbed){
+                moved = true;
                 slider.parentElement.scrollLeft -= e.movementX;
             }
         })

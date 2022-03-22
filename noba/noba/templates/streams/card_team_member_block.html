@@ -1,15 +1,13 @@
 {% load wagtailimages_tags static %}
 
     {% for card in self.cards %}
-        <div class="card-team-member">
-            <a href="{% if card.link_page %}{{card.link_page.url}}{% else %}{% if card.link_external %}{{card.link_external.url}}{% else %} {% endif %}{% endif %}">
-                <hr>
-                <div class="card-team-member-info">
-                    <p class="b300" >{{card.name}}</p>
-                    <div><img class="icon-linkedin" src="{% static 'images/icon-linkedin.svg' %}" alt="linkedin-img"><span class="b200">{{card.role}}</span></div>
-                </div>
-                {% image card.image original  as img %}
-                <div class="img-member"><img src="{{img.url}}" alt="{{img.alt}}"></div>
-            </a>
+        <div class="card-team-member" data-href="{% if card.link_page %}{{card.link_page.url}}{% else %}{% if card.link_external %}{{card.link_external.url}}{% else %} {% endif %}{% endif %}" >
+            <hr>
+            <div class="card-team-member-info">
+                <p class="b300" >{{card.name}}</p>
+                <div><img class="icon-linkedin" src="{% static 'images/icon-linkedin.svg' %}" alt="linkedin-img"><span class="b200">{{card.role}}</span></div>
+            </div>
+            {% image card.image original  as img %}
+            <div class="img-member"><img src="{{img.url}}" alt="{{img.alt}}"></div>
         </div>
     {% endfor %}

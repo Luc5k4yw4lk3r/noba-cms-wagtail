@@ -5,14 +5,12 @@
     <div class="carousel-highlight-inner mar-xl only-mar-top ">
         <div class="slider-inner cursor-drag-black">
             {% for card in posts_academy %}
-                <div class="card-highlight {% for item_color in card.color.all %}{{ item_color.style }}{% endfor %}">
-                    <a class="cursor-drag-black" href="{{ card.url }}">
-                        <h1 class="h100">{{card.title_card}}</h1>
-                        <div class="card-footer">
-                            <hr>
-                            <p class="b300">{{card.description_card}}</p>
-                        </div>
-                    </a>
+                <div class="card-highlight {% for item_color in card.color.all %}{{ item_color.style }}{% endfor %}" data-href="{{ card.url }}">
+                    <h1 class="h100">{{card.title_card}}</h1>
+                    <div class="card-footer">
+                        <hr>
+                        <p class="b300">{{card.description_card}}</p>
+                    </div>
                 </div>
             {% endfor %}
         </div>
