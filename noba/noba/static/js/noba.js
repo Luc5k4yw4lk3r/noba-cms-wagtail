@@ -146,6 +146,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 firstScroll = true;
             }
         });
+
+        document.addEventListener('touchstart', (e) => {
+            if (!firstScroll) {
+                closeInitialAnimation();
+                firstScroll = true;
+            }        
+        });
     }
 
 
