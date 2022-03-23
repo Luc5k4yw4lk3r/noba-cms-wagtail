@@ -57,9 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
             if(!moved){
                 // console.log('mouseup clicked');
                 let card = e.target.closest('.card-highlight');
-                // console.log(card);
-                // console.log(card.dataset.href);
-                window.location.href = card.dataset.href;
+                if(!card){
+                    card = e.target.closest('.card-team-member');
+                }
+                if(card.dataset.href !== ' '){
+                    window.location.href = card.dataset.href;
+                }
             }
             moved = false;
             // slider.style.cursor = 'grab';
