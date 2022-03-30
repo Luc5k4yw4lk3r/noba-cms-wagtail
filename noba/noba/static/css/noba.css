@@ -166,6 +166,16 @@ section{
 	scroll-behavior: smooth;
 }
 
+input[type='checkbox']{
+	appearance: none;
+	-webkit-appearance: none;
+	height: 16px;
+	width: 16px;
+	background-color: inherit;
+	border-color: var(--font-color-grey);
+	cursor: pointer;
+}
+
 /* ====================
 	* CONTAINERS *
 ==================== */
@@ -492,6 +502,46 @@ footer .signup-newletter input{
 	/* background: url(../images/arrow-right.svg) no-repeat right center; */
 }
 
+footer .agreement{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+}
+
+footer .signup-newletter input[type='checkbox']{
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
+	appearance: none;
+	-webkit-appearance: none;
+	height: 16px;
+	width: 16px;
+	background-color: inherit;
+	border: 1px solid black;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer .signup-newletter input[type='checkbox']:after{
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
+	font-size: 16px;
+	content: "\f00c";
+	color: var(--font-color-grey);
+	display: none;
+}
+
+footer .signup-newletter input[type='checkbox']:checked:after{
+	display: block;
+}
+
+footer .signup-newletter input[type='checkbox']:checked{
+	content: "\f00c";
+	color: var(--font-color-grey);
+}
+
 footer .signup-newletter form{
 	max-width: 366px;
 }
@@ -518,9 +568,25 @@ footer .signup-newletter input:focus{
 	outline: none;
 }
 
+footer .signup-newletter input:not(:placeholder-shown):not(:focus):invalid{
+	border-color: var(--background-color-orange);
+}
+
+footer .form-error-message{
+	color: var(--background-color-orange);
+}
+
+footer .form-error-message p{
+	margin-bottom: 0px;
+}
+
+footer .email-input-arrow{
+	position: relative;
+}
+
 footer .form-sending {
 	color: var(--font-color-grey);
-	margin-top: 20px;
+	margin-top: 18px;
 }
 
 footer .form-sending a{
@@ -536,6 +602,7 @@ footer .address{
 	line-height: 24px;
 }
 
+
 footer .policy{
 	color: var(--font-color-grey);
 	font-size: 14px;
@@ -543,6 +610,10 @@ footer .policy{
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
+}
+
+footer .policy a{
+	border: none;
 }
 
 footer .form-arrow-right{
@@ -600,7 +671,12 @@ footer input:-webkit-autofill:hover,
 footer input:-webkit-autofill:focus, 
 footer input:-webkit-autofill:active{
 	-webkit-box-shadow: 0 0 0 40px #ECE9E6 inset !important;
-	color: var(--font-color-grey)  !important;
+	color: black !important;
+}
+
+footer input:focus,
+footer input:active{
+	color: black !important;
 }
 
 /* modal cookie */
@@ -877,10 +953,40 @@ footer input:-webkit-autofill:active{
 }
 
 .icon-linkedin{
-	width: 21px !important;
-	height: 21px !important;
+	width: 24px !important;
+	height: 24px !important;
+	border-radius: 0px!important;
 }
 
+.card-team-member .card-team-member--last-card{
+	height: 528px;
+	background-color: black !important;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 32px;
+	width: 100%;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+}
+
+.card-team-member .card-team-member--last-card h1{
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+}
+
+.card-team-member.last{
+	display: flex;
+	align-items:flex-end;
+	height: 664px;
+}
 
 @media screen and (max-width: 480px) {
 	.container-team-members-home .team-members-inner{
@@ -909,6 +1015,14 @@ footer input:-webkit-autofill:active{
 
 	.card-team-member-info p{
 		margin-bottom: 8px;
+	}
+
+	.card-team-member .card-team-member--last-card{
+		height: 278px;
+	}
+	
+	.card-team-member.last{
+		height: 387px;
 	}
 }
 
@@ -1134,7 +1248,7 @@ main .post-info{
 .share-component{
 	grid-column: 1/2;
 	position: sticky;
-	top: 73px;
+	top: 100px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -1641,17 +1755,48 @@ main.blog-index{
 	gap: var(--sp-xxxl);
 	top: 0;
 	left: 0;
+	align-items:center;
 }
 
 .company-logo{
-	width: 199px;
-	height: 45px;
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;
 	-moz-user-drag: none;
 	-o-user-drag: none;
 	user-drag: none;
 }
+
+.sadabel-logo{
+	width: 170.2px;
+	height: 45.2px;
+}
+
+.caixa-logo{
+	width: 199.5px;
+	height: 44.5px;
+}
+
+.zurich-logo{
+	width: 186.1px;
+	height: 46.7px;
+}
+
+.accenture-logo{
+	width: 160.69px;
+	height: 46.1px;
+}
+
+.nestle-logo{
+	width: 119.69px;
+	height: 30.23px;
+}
+
+.lavazza-logo{
+	width: 149.19px;
+	height: 37.68px;
+	padding-right: 10px;
+}
+
 
 /* Teams */
 
@@ -1902,7 +2047,7 @@ main.blog-index{
 .companies-cards-container{
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
-	grid-column-gap: var(--sp-lg);
+	grid-column-gap: var(--sp-xl);
 	grid-row-gap: var(--sp-xl);
 }
 

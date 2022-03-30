@@ -1,25 +1,35 @@
 {% load static wagtailuserbar %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags footer_tags %}
+
+{% get_footer "main" as footer_info %}
+
 
 <footer id="footer" class="">
     <div class="signup-newletter">
         <div class="signup-newsletter-form">
-            <p class="b300">Get insights, news and updates on Business Prototyping</p>
+            <p class="b300">{{ footer_info.form_description }}</p>
             <form action="/contact-form/" method="POST" role="form">
                 {% csrf_token %}
-                <input type="email" name="email" placeholder="Email address" id="" required>
-                <img class="arrow-submit-form" src="{% static 'images/arrow-right.svg' %}" alt="">
+                <div class="email-input-arrow">
+                    <input type="email" name="email" placeholder="Email address" id="" />
+                    <img class="arrow-submit-form" src="{% static 'images/arrow-right.svg' %}" alt="">
+                </div>
+                <div class="form-error-message ">
+                    <p id="label-error-message"  class="display-none">Error</p>
+                </div>
+                <label class="agreement" for="id-agreement">
+                    <input id="id-agreement" type="checkbox" name="id-agreement" id="" />
+                    <span class="form-sending b100">{{ footer_info.term_and_conditions|richtext }}</span>
+                </label>
             </form>
-            <p class="form-sending b100">Sending this form, I agree to the <a  class="form-sending" href="">Terms and Conditions.</a></p>
         </div>
+
     </div>
     <div class="address">
         <div></div>
-        <p class="b200" >Carrer Zamora, 46<br>Barcelona, 08005<br><br>+34 930 253 936<br><a href="mailto">accelerate@nobaventures.com</a><br><a href="#">Linkedin</a></p>
+        <div class="b200" >{{ footer_info.location|richtext }}</div>
     </div>
     <div class="policy b100">
-        <p>© 2021 by NOBA Ventures</p>
-        <p>Privacy Policy</p>
-        <p>Cookie Policy</p>
+        {{ footer_info.low_description|richtext }}
     </div>
 </footer>

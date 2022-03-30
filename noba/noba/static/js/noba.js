@@ -201,13 +201,53 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // submit form
+
+    const validateEmail = (email) => {
+        return String(email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+      };
+
     const arrowForm = document.querySelector('.arrow-submit-form');
+    let errorMessage = document.querySelector('#label-error-message');
+
     arrowForm.addEventListener("click", (e) => {
         let form = e.target.closest('form')
-        if(form.checkValidity()){
+        let checkbox = form.querySelector('[type="checkbox"]');
+        let email = form.querySelector('[type="email"]');
+        // debugger;
+        if(!checkbox.checked){
+            checkbox.setCustomValidity("Invalid field.");
+            errorMessage.innerHTML = 'Terms and conditions is not checked';
+            errorMessage.classList.remove('display-none');
+        } else{
+            checkbox.setCustomValidity("");
+            // errorMessage.classList.add('display-none');
+        }
+
+        if(!validateEmail(email.value)){
+            email.setCustomValidity("Invalid field.");
+            errorMessage.innerHTML = 'Email field is wrong';
+            errorMessage.classList.remove('display-none');
+        } else{
+            email.setCustomValidity("");
+            // errorMessage.classList.add('display-none');
+        }
+        
+        if(form.checkValidity() && checkbox.checked && validateEmail(email.value)){
             form.submit();
-        } else {
-            form.reportValidity()
+        } 
+    });
+
+    let checkbox = document.querySelector('#id-agreement');
+    checkbox.addEventListener("click", (e) => {
+        if(!checkbox.checked){
+            checkbox.setCustomValidity("Invalid field.");
+        }else{
+            checkbox.setCustomValidity("");
+            errorMessage.classList.add('display-none');
         }
     });
 

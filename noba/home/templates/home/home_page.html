@@ -129,12 +129,12 @@
                 </div>
                 <div class="companies-we-work-with-inner cursor-drag">
                     <div class="slider-inner">
-                        <img src="{% static 'images/danone 2.svg' %}" class="company-logo" alt="">
-                        <img src="{% static 'images/danone 3.svg' %}" class="company-logo" alt="">
-                        <img src="{% static 'images/danone 4.svg' %}" class="company-logo" alt="">
-                        <img src="{% static 'images/danone 5.svg' %}" class="company-logo" alt="">
-                        <img src="{% static 'images/danone 6.svg' %}" class="company-logo" alt="">
-                        <img src="{% static 'images/danone 7.svg' %}" class="company-logo" alt="">
+                        <img src="{% static 'images/danone 2.svg' %}" class="company-logo sadabel-logo" alt="">
+                        <img src="{% static 'images/danone 3.svg' %}" class="company-logo caixa-logo" alt="">
+                        <img src="{% static 'images/danone 4.svg' %}" class="company-logo zurich-logo" alt="">
+                        <img src="{% static 'images/danone 5.svg' %}" class="company-logo accenture-logo" alt="">
+                        <img src="{% static 'images/danone 6.svg' %}" class="company-logo nestle-logo" alt="">
+                        <img src="{% static 'images/danone 7.svg' %}" class="company-logo lavazza-logo" alt="">
                     </div>
                 </div>
             </div>
@@ -177,6 +177,12 @@
                         {% for block in page.card_team_member_block %}
                             {% include_block block %}
                         {% endfor %}
+                        <div class="card-team-member last" data-href="{{page.about_link.url}}" >
+                            <div class="card-team-member--last-card">
+                                <h1 class="h100" >+{{team_qt}}</h1>
+                            </div>
+                            <!-- <div class="img-member"><img src="{{img.url}}" alt="{{img.alt}}"></div> -->
+                        </div>
                     </div>
                 </div>
             </div>

@@ -147,7 +147,7 @@ class CardApproachBlock(blocks.StructBlock):
         blocks.StructBlock(
             [
                 ('title', blocks.CharBlock(required=True, max_length=60, help_text='Add your card title')),
-                ('text', blocks.TextBlock(required=True, help_text='Add your card text')),
+                ('text', blocks.RichTextBlock(required=True, help_text='Add your card text')),
                 ('description', blocks.TextBlock(required=True, help_text='Add your card description')),
             ]
         )

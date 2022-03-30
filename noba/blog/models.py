@@ -96,13 +96,41 @@ class BlogColor(models.Model):
 
     def __str__(self) -> str:
         return self.name
-    
+
     class Meta:
         verbose_name = 'Blog Color'
         verbose_name_plural = 'Blog Colors'
 
 
 register_snippet(BlogColor)
+
+
+class Footer(models.Model):
+    title = models.CharField(max_length=100, default='')
+    slug = models.SlugField(max_length=100, default='')
+    form_description = models.CharField(max_length=350, help_text='Formt descripcion')
+    term_and_conditions = RichTextField(max_length=350, help_text='Term and conditions')
+    location = RichTextField(max_length=350, help_text='Location info')
+    low_description = RichTextField(max_length=350, help_text='Location info')
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('slug'),
+        FieldPanel('form_description'),
+        FieldPanel('term_and_conditions'),
+        FieldPanel('location'),
+        FieldPanel('low_description')
+    ]
+
+    def __str__(self) -> str:
+        return self.title
+
+    class Meta:
+        verbose_name = 'Footer'
+        verbose_name_plural = 'Footers'
+
+
+register_snippet(Footer)
 
 
 class BlogPage(Page):
