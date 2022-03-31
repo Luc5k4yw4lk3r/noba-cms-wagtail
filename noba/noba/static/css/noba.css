@@ -979,7 +979,7 @@ footer input:active{
 }
 
 .card-team-member .card-team-member--last-card{
-	height: 528px;
+	height: 474px;
 	background-color: black !important;
 	color: white;
 	display: flex;
@@ -1005,7 +1005,7 @@ footer input:active{
 .card-team-member.last{
 	display: flex;
 	align-items:flex-end;
-	height: 664px;
+	height: 610px;
 }
 
 @media screen and (max-width: 480px) {
@@ -1731,7 +1731,7 @@ main.blog-index{
 	/* grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));   */
 	/* 416px */
 	/* 268px */
-	gap: 48px 32px;
+	gap: var(--sp-xl) var(--sp-xl);
 	/* grid-auto-rows: 288px; */
 }
 
@@ -1776,7 +1776,6 @@ main.blog-index{
 		/* grid-template-columns: repeat(auto-fit, minmax(268, 1fr));   */
 		/* 416px */
 		/* 268px */
-		gap: 48px 32px;
 	}
 
 }

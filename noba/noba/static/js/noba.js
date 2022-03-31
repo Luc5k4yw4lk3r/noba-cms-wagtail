@@ -114,6 +114,18 @@ document.addEventListener("DOMContentLoaded", function() {
     //     return ((slider.parentElement.scrollLeft / (slider.parentElement.scrollWidth - slider.parentElement.clientWidth) ) * 100);
     // }
 
+    //about page
+    let containerTeamMember = document.querySelector('.container-team-members');
+    if(containerTeamMember){
+        containerTeamMember.addEventListener('click',(e) => {
+            let card = e.target.closest('.card-team-member');
+            if(e.target && card){
+                window.location.href = card.dataset.href;
+            }
+        } );
+    }
+
+
     // Modal cookie
     const openModalButton = document.querySelectorAll('[data-modal-target]');
     const closeModalButton =  document.querySelectorAll('[data-modal-close]');
