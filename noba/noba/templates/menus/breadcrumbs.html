@@ -4,9 +4,9 @@
 <nav class="breadcrumb-container" >
     {% if ancestors %}
       <div class="breadcrum">
-        <p class="b100" ><</p>
+        <div class="breadcrum-angle"></div>
         <a href="/"><p class="b100">Home</p></a>
-        <p class="" >/</p>
+        <div class="breadcrum-spacer"></div>
           {% for ancestor in ancestors|slice:"1:" %}
             {% if forloop.last %}
               <p class="active b100" >
@@ -17,10 +17,10 @@
                 <p class="b100" >
                   {{ ancestor }}
                 </p>
-                <p class="b100" >/</p>
+                <div class="breadcrum-spacer"></div>
               {% else %}
                 <a href="{% pageurl ancestor %}" >{{ ancestor }}</a>
-                <p class="b100" >/</p>
+                <div class="breadcrum-spacer"></div>
               {% endif %}
             {% endif %}
           {% endfor %}

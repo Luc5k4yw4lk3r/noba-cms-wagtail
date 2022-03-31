@@ -93,6 +93,8 @@ body {
 	/* scroll-snap-type: y proximity ;
 	overflow-y: scroll;
 	height: 100vh; */
+	transition: opacity 2s ease;
+	opacity: 0;
 }
 
 body.dark{
@@ -133,6 +135,7 @@ body.dark main a{
 body.dark main hr{
 	background-color: white;
 }
+
 
 p {
 	line-height: 27px;
@@ -175,6 +178,18 @@ input[type='checkbox']{
 	border-color: var(--font-color-grey);
 	cursor: pointer;
 }
+
+.preload * {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+  }
+
+.postload{
+	opacity: 1;
+}
+
 
 /* ====================
 	* CONTAINERS *
@@ -505,7 +520,7 @@ footer .signup-newletter input{
 footer .agreement{
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	gap: 12px;
 }
 
@@ -582,6 +597,11 @@ footer .form-error-message p{
 
 footer .email-input-arrow{
 	position: relative;
+}
+
+footer #id-agreement {
+	/* color: var(--font-color-grey); */
+	margin-top: 22px;
 }
 
 footer .form-sending {
@@ -1080,6 +1100,12 @@ footer input:active{
 	flex-direction: row;
 	align-items: center;
 	/* margin-bottom: 64px; */
+	display: flex;
+	position: relative;
+}
+
+.container-blog-title p{
+	line-height: 10px;
 }
 
 .container-blog p {
@@ -1089,8 +1115,10 @@ footer input:active{
 
 .container-blog-title i{
 	margin-right: 15px;
-	width: 20px;
+	width: 22px;
 	height: 24px;
+	position: relative;
+	top: -3px;
 }
 
 .container-blog-footer{
@@ -1209,7 +1237,7 @@ main .breadcrum{
 	flex-direction: row;
 	gap: 12px;
 	margin-bottom: 16px;
-	align-items: flex-start;
+	align-items: center;
 }
 
 .breadcrum p{
@@ -1219,6 +1247,28 @@ main .breadcrum{
 .breadcrum a{
 	margin: 0px;
 	border: none;
+}
+
+.breadcrum-angle{
+	background-image: url(../images/angle-component.svg);
+	width: 16px;
+	height: 16px;
+}
+
+.breadcrum-spacer{
+	background-image: url(../images/spacer-component.svg);
+	width: 5px;
+	height: 13px;
+}
+
+body.dark .breadcrum-angle{
+	background-image: url(../images/angle-component-white2.svg);
+	width: 7px;
+	height: 12px;
+}
+
+body.dark .breadcrum-spacer{
+	background-image: url(../images/spacer-component-white.svg);
 }
 
 main .post-info{
@@ -1871,7 +1921,7 @@ main.blog-index{
 }
 
 .container-simple-page-text{
-	max-width: 976px;
+	/* max-width: 976px; */
 }
 
 .container-values-page .row{

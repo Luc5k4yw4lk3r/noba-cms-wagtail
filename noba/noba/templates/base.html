@@ -20,6 +20,7 @@
         <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
         <script src="https://kit.fontawesome.com/bebc13aa93.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" type="text/css" href="{% static 'css/noba.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/noba-animations.css' %}">
 
@@ -28,7 +29,7 @@
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="preload {% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
         {% block header %}
