@@ -540,11 +540,11 @@ footer .signup-newletter input[type='checkbox']{
 }
 
 footer .signup-newletter input[type='checkbox']:after{
-	font-family: 'Font Awesome 6 Free';
+	/* font-family: 'Font Awesome 6 Free'; */
 	font-weight: 900;
-	font-size: 16px;
-	content: "\f00c";
-	color: var(--font-color-grey);
+	font-size: 25px;
+	content: "\2022";
+	color: black;
 	display: none;
 }
 
@@ -554,7 +554,6 @@ footer .signup-newletter input[type='checkbox']:checked:after{
 
 footer .signup-newletter input[type='checkbox']:checked{
 	content: "\f00c";
-	color: var(--font-color-grey);
 }
 
 footer .signup-newletter form{
@@ -600,8 +599,8 @@ footer .email-input-arrow{
 }
 
 footer #id-agreement {
-	/* color: var(--font-color-grey); */
 	margin-top: 22px;
+	color: black !important;
 }
 
 footer .form-sending {
