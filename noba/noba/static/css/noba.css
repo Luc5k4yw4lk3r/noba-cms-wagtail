@@ -934,6 +934,7 @@ footer input:active{
 	background-color: inherit;
 	/* margin-left: 32px; */
 	/* margin-bottom: 130px; */
+	cursor: pointer;
 }
 
 .card-team-member hr{
