@@ -3,7 +3,7 @@ from .base import *
 
 DEBUG = False
 SECRET_KEY = 'q@v$$%!_4$@gn42(ifo17kdgxvusgz0s42i3!c)^j!0(+4_=52'
-ALLOWED_HOSTS = ['localhost', 'www.nobaventures.com', '134.122.78.176']
+ALLOWED_HOSTS = ['localhost', 'www.nobaventures.com', '134.122.78.176', 'nobaventures.com']
 cwd = os.getcwd()
 CACHES = {
     "default": {
