@@ -140,7 +140,13 @@ class BlogPage(Page):
     title_card = models.CharField(max_length=250, default='', help_text='Title for the card')
     description_card = models.CharField(max_length=250, default='', help_text='Title for the card')
     reading_time = models.CharField(max_length=50, default='', help_text='Time reading.')
-
+    publication_date = models.DateTimeField(
+        verbose_name=('publication date'),
+        null=True,
+        blank=True,
+        help_text='The date is displayed on the screen. If it is empty, '
+        'the last date of publication will be displayed.'
+    )
     post_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -190,12 +196,18 @@ class BlogPage(Page):
         help_text='Choose a page to link to your blog page',
     )
 
+    def publication_date_value(self):
+        if self.publication_date:
+            return self.publication_date
+        return self.last_published_at
+
     content_panels = Page.content_panels + [
         FieldPanel('title_screen', classname="full"),
         FieldPanel('title_card'),
         FieldPanel('description_card'),
         FieldPanel('body', classname="full"),
         FieldPanel('reading_time'),
+        FieldPanel('publication_date'),
         PageChooserPanel('blog_link'),
         ImageChooserPanel('post_image'),
         ImageChooserPanel('post_image_thumb'),

@@ -128,8 +128,14 @@ body.pink{
 body.dark main{
 	color: white;
 }
+
 body.dark main a{
 	color: white;
+	border-color: white;
+}
+
+body.dark main a:hover{
+	border-color: black;
 }
 
 body.dark main hr{

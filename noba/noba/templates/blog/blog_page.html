@@ -27,7 +27,7 @@
                     {{page.title_screen}}
                 </h1>
                 <div class="post-info b200">
-                    <p>{{ page.last_published_at|date:'M d' }}</p>
+                    <p>{{ page.publication_date_value|date:'M d' }}</p>
                     <p>{{ page.reading_time }}</p>
                     {% comment %}
                         {% for author in page.blog_authors.all %}
