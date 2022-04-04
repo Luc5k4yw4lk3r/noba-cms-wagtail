@@ -1,5 +1,6 @@
-from unicodedata import name
+from random import randint
 from django import forms
+from django.db.models.aggregates import Count
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
@@ -175,9 +176,14 @@ class BlogPage(Page):
     )
 
     category = ParentalManyToManyField('blog.BlogCategory', blank=True)
-    
+
     color = ParentalManyToManyField('blog.BlogColor', blank=True)
 
+    blog_cards_automatics = models.BooleanField(
+        default=True,
+        help_text='If this is true, a set of items will be randomly selected.')
+
+    blog_items_quantity = models.IntegerField(default=3, help_text='Post items quantity')
 
     blog_cards = StreamField(
         [
@@ -201,6 +207,26 @@ class BlogPage(Page):
             return self.publication_date
         return self.last_published_at
 
+    def get_context(self, request, *args, **kwargs):
+        """Adding custom stuff to our context."""
+        context = super().get_context(request, *args, **kwargs)
+        # all_academy_posts = BlogPage.objects.live().public().filter(category__name="Academy").order_by('-first_published_at')[:self.blog_highlight_items_quantity]
+        all_regular_posts = BlogPage.objects.live().public().filter(
+            category__name="Blog regular")
+        paginator = Paginator(all_regular_posts, self.blog_items_quantity)
+        random_index = randint(1, paginator.num_pages)
+        # page = request.GET.get('page')
+        page = random_index
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        # context['posts_academy'] = all_academy_posts
+        context['posts_regular'] = posts
+        return context
+
     content_panels = Page.content_panels + [
         FieldPanel('title_screen', classname="full"),
         FieldPanel('title_card'),
@@ -212,7 +238,12 @@ class BlogPage(Page):
         ImageChooserPanel('post_image'),
         ImageChooserPanel('post_image_thumb'),
         StreamFieldPanel('content'),
-        StreamFieldPanel('blog_cards'),
+        MultiFieldPanel([
+            FieldPanel('blog_cards_automatics'),
+            FieldPanel('blog_items_quantity'),
+            StreamFieldPanel('blog_cards')
+        ], heading='Blog card(s)'
+        ),
         MultiFieldPanel([
             InlinePanel('blog_authors', label='Author', min_num=0, max_num=4)
         ], heading='Author(s)'

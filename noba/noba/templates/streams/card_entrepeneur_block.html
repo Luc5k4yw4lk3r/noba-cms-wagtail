@@ -4,36 +4,40 @@
     <div class="slider-inner">
         {% for card in self.cards %}
             <div class="card-projects-help {% if card.gold %} gold {% endif %}">
-                <p class="project-title">{{card.title}}</p>
-                <p class="project-description b200" >{{card.text}}</p>
-                <hr>
-                <table>
-                    <tr>
-                        <td class="b200">
-                            Year
-                        </td>
-                        <td class="b200">
-                            {{card.year}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="b200">
-                            Loacation
-                        </td>
-                        <td class="b200">
-                            {{card.location}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="b200">
-                            Description
-                        </td>
-                        <td class="b200">
-                            {{card.description}}
-                        </td>
-                    </tr>
-                </table>
-                <hr>
+                <div class="card-projects-help-elements" >
+                    <p class="project-title">{{card.title}}</p>
+                    <p class="project-description b200" >{{card.text}}</p>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td class="b200">
+                                Year
+                            </td>
+                            <td class="b200">
+                                {{card.year}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="b200">
+                                Loacation
+                            </td>
+                            <td class="b200">
+                                {{card.location}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="b200">
+                                Description
+                            </td>
+                            <td class="b200">
+                                {{card.description}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <hr>
+                </div>
             </div>
         {% endfor %}
     </div>

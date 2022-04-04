@@ -75,9 +75,13 @@
                 {% endfor %}
             </div>
         </div>
-        {% for block in page.blog_cards %}
-            {% include_block block %}
-        {% endfor %}
+        {% if self.blog_cards_automatics %}
+            {% include 'blog/cards_post.html' %}
+        {% else %}
+            {% for block in page.blog_cards %}
+                {% include_block block %}
+            {% endfor %}
+        {% endif %}
         <div class="container-blog-footer mar-xxl-top b300">
             <p></p>
             <a href="{{page.blog_link.url}}">View all blog articles</a>

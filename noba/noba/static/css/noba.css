@@ -266,6 +266,7 @@ input[type='checkbox']{
 	top: 0;
 	left: 0;
 	gap: 32px;
+	padding-right: 40px;
   }
 
 
@@ -547,11 +548,13 @@ footer .signup-newletter input[type='checkbox']{
 
 footer .signup-newletter input[type='checkbox']:after{
 	/* font-family: 'Font Awesome 6 Free'; */
-	font-weight: 900;
-	font-size: 25px;
+	/* font-weight: 900; */
+	font-size: 24px;
 	content: "\2022";
 	color: black;
 	display: none;
+	position: relative;
+	top: -1px;
 }
 
 footer .signup-newletter input[type='checkbox']:checked:after{
@@ -1213,7 +1216,7 @@ main .cointainer-title{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	/* margin-top: 65px; */
-	gap: 10px;
+	gap: 40px;
 }
 main .container-body{
 	display: grid;
@@ -1340,6 +1343,7 @@ main .post-info{
 
 	main .cointainer-title{
 		grid-template-columns: 1fr;
+		gap: 10px;
 	}
 
 	main .container-body{
@@ -1450,7 +1454,7 @@ main.blog-index{
 
 .card-blog-index a{
 	text-decoration: none;
-	color: white;
+	color: black;
 	display: flex;
 	flex-direction: column;
 	background-color: inherit;
@@ -1458,6 +1462,11 @@ main.blog-index{
 	justify-content:space-between;
 	border: none !important;
 }
+
+body.dark .card-blog-index a{
+	color: white;
+}
+
 
 .container-blog-index-footer{
 	display: flex;
@@ -1478,6 +1487,9 @@ main.blog-index{
 	cursor: pointer;
 }
 
+.arrows a{
+	border: none;
+}
 
 .arrows .fa-arrow-left{
 	margin-right: 40px;
@@ -1485,11 +1497,15 @@ main.blog-index{
 
 .card-blog-index hr{
 	border: none;
-    background-color: white;
+    background-color: black;
     height: 2px;
 	margin-bottom: 16px;
 	margin-top: 0px;
 	width: 100%;
+}
+
+body.dark .card-blog-index hr{
+    background-color: white;
 }
 
 .card-blog-index img{
@@ -1572,6 +1588,7 @@ main.blog-index{
 	position: relative;
 	/* z-index: -1; */
 	overflow: hidden;
+	gap: 40px;
 }
 
 .noba-knowledge-title{
@@ -1633,6 +1650,7 @@ main.blog-index{
 		height: auto;
 		width: auto;
 		overflow: hidden;
+		gap: 0px;
 	}
 
 	.container-noba-knowledge-inner{
@@ -1711,6 +1729,9 @@ main.blog-index{
 
 .card-projects-help{
 	/* width: 416px; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .card-projects-help .project-title{
