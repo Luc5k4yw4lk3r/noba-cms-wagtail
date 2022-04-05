@@ -1467,7 +1467,13 @@ body.dark .card-blog-index a{
 	color: white;
 }
 
+#resources .card-blog-index a{
+	color: white;
+}
 
+#resources .card-blog-index hr{
+    background-color: white;
+}
 .container-blog-index-footer{
 	display: flex;
 	flex-direction: row;
