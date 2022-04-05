@@ -831,6 +831,10 @@ footer input:active{
 	opacity: .85;
 }
 
+.card-highlight:last-child {
+	padding-right: 40px;
+}
+
 
 .card-highlight a:hover{
 	border: none !important;
@@ -1824,7 +1828,7 @@ body.dark .card-blog-index hr{
 
 .companies-we-work-with-inner{
 	position: relative;
-	height: 50px;
+	height: 72px;
 	background-color: inherit;
 	top: 0;
 	left: 0;
@@ -1846,6 +1850,10 @@ body.dark .card-blog-index hr{
 	-moz-user-drag: none;
 	-o-user-drag: none;
 	user-drag: none;
+}
+
+.company-logo:last-child{
+	padding-right: 10px;
 }
 
 .sadabel-logo{
@@ -1876,9 +1884,32 @@ body.dark .card-blog-index hr{
 .lavazza-logo{
 	width: 149.19px;
 	height: 37.68px;
-	padding-right: 10px;
 }
 
+.munchener-logo{
+	width: 207.19px;
+	height: 50px;
+}
+
+.boehringer-logo{
+	width: 188px;
+	height: 58px;
+}
+
+.generali-logo{
+	width: 85.3px;
+	height: 69px;
+}
+
+.henkel-logo{
+	width: 122.2px;
+	height: 69px;
+}
+
+.suez-logo{
+	width: 181px;
+	height: 45px;
+}
 
 /* Teams */
 
