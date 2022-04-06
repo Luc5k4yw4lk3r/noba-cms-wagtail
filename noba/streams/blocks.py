@@ -175,3 +175,22 @@ class CardCompaniesBlock(blocks.StructBlock):
         template = 'streams/card_companies_block.html'
         icon = 'placeholder'
         label = 'Values Cards'
+
+
+class CardLogoBlocks(blocks.StructBlock):
+
+    cards = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ('image', ImageChooserBlock()),
+                ('width', blocks.CharBlock(required=True, max_length=60, help_text='Image width value')),
+                ('height', blocks.TextBlock(required=True, help_text='Image height value')),
+                ('alt', blocks.TextBlock(required=False, help_text='Image description')),
+            ]
+        )
+    )
+
+    class Meta:
+        template = 'streams/card_logo_block.html'
+        icon = 'placeholder'
+        label = 'Logo Cards'
