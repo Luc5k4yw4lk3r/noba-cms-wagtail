@@ -460,7 +460,9 @@ header.dark .logo-menu{
 	background-color: black;
 	height: 100%;
 	transition: all 700ms ease;
-	transform: translateX(100%)
+	transform: translateX(100%);
+	overflow-y: scroll;
+	
 }
 
 .container-menu[data-visualization="true"]{
