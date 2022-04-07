@@ -403,7 +403,7 @@ header.first .logo{
 header.first-clicked .logo{
 	/* transform: translate(0, 0); */
 	position: absolute;
-	left: calc(-100% + calc(var(--sp-xxl)*2) + 170px);
+	left: calc(-100% + calc(24px*2) + 170px);
 	right: 0;
 	margin: auto;
 }
@@ -431,12 +431,16 @@ header.dark .logo-menu{
 	background-image: url(../images/menu-logo-white.svg);
 }
 
-@media (min-width:870px) {
+@media (min-width:480px) {
 	header{
 		padding: 40px 64px 10px 64px;
 	}
 
+	header.first-clicked .logo{
+		left: calc(-100% + calc(var(--sp-xxl)*2) + 170px);
+	}
 }
+
 
 /* navbar mobile first */
 .container-menu a{
