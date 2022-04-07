@@ -468,8 +468,8 @@ header.dark .logo-menu{
 .container-menu nav{
 	display: flex;
 	flex-direction: column;
-	gap: 32px;
-	padding: 40px 64px;
+	gap: 24px;
+	padding: 67px 24px;
 	transition: all 700ms ease;
 }
 
@@ -489,6 +489,13 @@ header.dark .logo-menu{
 	.container-menu{
 		width: auto;
 		left: 43.3333%;
+	}
+}
+
+@media screen and (min-width: 480px) {
+	.container-menu nav{
+		gap: 32px;
+		padding: 40px 64px;
 	}
 }
 
