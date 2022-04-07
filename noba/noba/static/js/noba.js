@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // waiting for the modal creation dinamically by iubenda-script
+    // https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists
     function waitForElm(selector) {
         return new Promise(resolve => {
             if (document.querySelector(selector)) {

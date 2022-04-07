@@ -10,7 +10,11 @@
                 <a href="{{ card.url }}">
                     <div class="card-blog-info">
                         <hr>
-                        <p class="info b200">{{ card.publication_date_value|date:'M d' }}  {{ card.reading_time }}  Article</p>
+                        <div class="info b200">
+                                <p>{{ card.publication_date_value|date:'M d'}}</p>
+                                <p>{{ card.reading_time }}</p>
+                                <p>Article</p>
+                        </div>
                         <p class="description b300">{{card.title_card}}</p>
                     </div>
                     {% image card.post_image_thumb original  as img %}
