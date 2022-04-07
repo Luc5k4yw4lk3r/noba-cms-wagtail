@@ -4,7 +4,7 @@
     <div class="container-blog-title mar-xl only-mar-botom b300">
         <i class="fas fa-arrow-right"></i>{{ self.title_card|richtext  }}
     </div>
-    <div class="container-blog-index-items mar-main-xxl-right">
+    <div class="container-blog-index-items">
         {% for card in posts_regular %}
             <div class="card-blog-index">
                 <a href="{{ card.url }}">

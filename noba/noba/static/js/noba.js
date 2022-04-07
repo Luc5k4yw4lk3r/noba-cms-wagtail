@@ -261,8 +261,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // submit form
+    // Video
+    // It is a helper to allow run the video in safari
+    let video = document.getElementById('video-play');
+    if(video){
+        video.play();
+    }
 
+    // submit form
     const validateEmail = (email) => {
         return String(email)
           .toLowerCase()
