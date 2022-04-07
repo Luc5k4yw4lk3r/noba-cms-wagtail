@@ -478,8 +478,8 @@ header.dark .logo-menu{
 .btn-menu-close{
 	position: absolute;
 	background-image: url(../images/btn-menu-close.svg);
-	top: 40px;
-	right: 64px;
+	top: 67px;
+	right: 27px;
 	cursor: pointer;
 	color: white;
 	width: 24.38px;
@@ -498,6 +498,11 @@ header.dark .logo-menu{
 	.container-menu nav{
 		gap: 32px;
 		padding: 40px 64px;
+	}
+
+	.btn-menu-close{
+		top: 40px;
+		right: 64px;
 	}
 }
 
