@@ -642,6 +642,11 @@ footer .policy{
 
 footer .policy a{
 	border: none;
+	color: var(--font-color-grey);
+}
+
+footer .policy p a{
+	color: var(--font-color-grey);
 }
 
 footer .form-arrow-right{
