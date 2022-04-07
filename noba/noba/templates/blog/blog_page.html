@@ -19,8 +19,8 @@
 {% endblock %}
 
 {% block content %}
-    <main class="post mar-huge-top pad-main-xxl-right pad-mega-bottom pad-main-xxl-left">
-        <div class="cointainer-title">
+    <main class="post mar-huge-top  pad-mega-bottom pad-main-xxl-left">
+        <div class="cointainer-title pad-main-xxl-right">
             <div class="title">
                 {% breadcrumbs %}           
                 <h1 class="h300">
@@ -44,7 +44,7 @@
                 <img src="{{img.url}}" alt="">
             </div>
         </div>
-        <div class="container-body mar-huge-top mar-mega-bottom">
+        <div class="container-body mar-huge-top mar-mega-bottom pad-main-xxl-right">
             <div class="share-comp-container">
                 <div class="share-component b200">
                     <p>Share</p>
@@ -82,7 +82,7 @@
                 {% include_block block %}
             {% endfor %}
         {% endif %}
-        <div class="container-blog-footer mar-xxl-top b300">
+        <div class="container-blog-footer mar-xxl-top b300 pad-main-xxl-right">
             <p></p>
             <a href="{{page.blog_link.url}}">View all blog articles</a>
             <!-- <a href="#">[151]</a> -->
