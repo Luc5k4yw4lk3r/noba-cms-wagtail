@@ -12,10 +12,14 @@
                 {% for item in nvagation.menu_items.all %}
                     <a class="h100" 
                         href="{% if item.link_page %}{{item.link_page.url}}{% else %}{{item.link_url}}{% endif %}"
-                        {% if item.open_in_new_tab %}taget="_blank"{% endif %}
+                        {% if item.open_in_new_tab %}target="_blank"{% endif %}
                         >
                         {{item.link_title}}</a>
                 {% endfor %}
+                <a class="linkedin-menu-link" 
+                    href="{{ settings.site_settings.SocialMediaSettings.linkedin }}"
+                    target="_blank"
+                    ><img class="icon-linkedin-menu" src="{% static 'images/icon-linkedin-white.svg' %}" alt="linkedin-img">Linkedin</a>
             </nav>
         </div>
         <!-- <div class="btn-menu-close">x</div> -->

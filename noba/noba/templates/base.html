@@ -19,7 +19,7 @@
         {# Global stylesheets #}
         <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
-        <script src="https://kit.fontawesome.com/bebc13aa93.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/bebc13aa93.js" crossorigin="anonymous"></script> -->
         <link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" type="text/css" href="{% static 'css/noba.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/noba-animations.css' %}">
@@ -42,7 +42,11 @@
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/noba.js' %}"></script> 
-
+        <script type="text/javascript">
+        var _iub = _iub || [];
+        _iub.csConfiguration = {"consentOnContinuedBrowsing":false,"floatingPreferencesButtonDisplay":"bottom-right","invalidateConsentWithoutLog":true,"lang":"en","perPurposeConsent":true,"siteId":2602485,"whitelabel":false,"cookiePolicyId":19664684,"cookiePolicyUrl":"https://www.nobaventures.com/cookies-policy/","cookiePolicyInOtherWindow":1 , "banner":{ "acceptButtonDisplay":true,"applyStyles":false,"closeButtonRejects":true,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"bottom","rejectButtonDisplay":true }};
+        </script>
+        <script id="iubenda-script" type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js"  charset="UTF-8" async></script>
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}

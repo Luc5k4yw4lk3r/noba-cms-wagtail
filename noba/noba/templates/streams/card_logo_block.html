@@ -2,5 +2,5 @@
 
 {% for card in self.cards %}
     {% image card.image original  as img%}
-    <img src="{{img.url}}" class="company-logo" style="width: {{card.width}}; height: {{card.height}};" alt="{{card.alt}}">
+    <img src="{{img.url}}" class="company-logo" style="width: {{card.width}}px; height: {{card.height}}px;" alt="{{card.alt}}">
 {% endfor %}

@@ -158,7 +158,8 @@ document.addEventListener("DOMContentLoaded", function() {
         } 
 
         if(coockiesChecked !== "True"){
-            coockieModal.classList.add('active');
+            // removed old modal because there ia newone
+            // coockieModal.classList.add('active');
         }
         if (!firstScroll) {
 
@@ -185,7 +186,39 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // waiting for the modal creation dinamically by iubenda-script
+    function waitForElm(selector) {
+        return new Promise(resolve => {
+            if (document.querySelector(selector)) {
+                return resolve(document.querySelector(selector));
+            }
+    
+            const observer = new MutationObserver(mutations => {
+                if (document.querySelector(selector)) {
+                    resolve(document.querySelector(selector));
+                    observer.disconnect();
+                }
+            });
+    
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        });
+    }
 
+    waitForElm('.iubenda-cs-accept-btn').then((elm) => {
+        if(coockiesChecked !== "True"){
+            let modalAccepeted = document.querySelector('.iubenda-cs-accept-btn');
+            modalAccepeted.addEventListener('click', (e) => {
+                sessionStorage.setItem("coockies-checked", "True");
+            });        
+        } else {
+            let modalEuropa = document.querySelector('#iubenda-cs-banner');
+            modalEuropa.classList.add('display-none');
+        }
+    });
+    
     closeModalButton.forEach( button => {
         button.addEventListener("click", () => {
             let modal = button.closest('.modal-cookie');
