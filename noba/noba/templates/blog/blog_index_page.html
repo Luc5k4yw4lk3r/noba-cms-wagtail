@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}
-    <main class="mar-huge-top pad-xxl-left pad-mega-bottom">
+    <main class="mar-huge-top pad-main-xxl-left pad-mega-bottom">
         {% breadcrumbs %}
         <div class="cointainer-title">
             <div class="title b100">
@@ -25,7 +25,7 @@
         {% include 'blog/card_index_highlight.html' %}
         <section id="card-post" class="mar-xxxl only-mar-botom"></section>
         {% include 'blog/cards_post.html' %}
-        <div class="container-blog-index-footer mar-xxxl-top mar-xxl-rigth">
+        <div class="container-blog-index-footer mar-xxxl-top mar-main-xxl-right">
             <div class="arrows">
                 {% if posts_regular.has_previous %}
                     <a href="?page={{ posts_regular.previous_page_number }}#card-post"><i class="fas fa-arrow-left"></i></a>

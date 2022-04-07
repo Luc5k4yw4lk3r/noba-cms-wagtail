@@ -20,7 +20,7 @@
         <section id="initial" class="display-none">
             <p class="initial-text-1 b200">Afraid of a blank canvas?</p>
         </section>
-        <section id="initial-one"  class="initial-one pad-xxl-right pad-xxl-left">
+        <section id="initial-one"  class="initial-one pad-main-xxl-right pad-main-xxl-left">
             <div class="pad-xxxl-top"></div>
             <div class="pad-xxxl-top sp-initial display-none"></div>
             <div class="pad-xxxl-top sp-initial display-none"></div>
@@ -43,7 +43,7 @@
         </section>
     {% endif %}
     {% if page.knowledge_section %}
-        <section id="knowledge" class="pad-xxl-left" >
+        <section id="knowledge" class="pad-main-xxl-left" >
             <div class="container-noba-knowledge">
                 <div class="noba-knowledge-title">
                     <i class="b300 fas fa-arrow-right"></i> <p class="b300">NOBA Knowledge</p>
@@ -81,7 +81,7 @@
         </section>
     {% endif %}
     {% if page.approach_section %}
-        <section id="approach" class="approach pad-xxl-right pad-xxl-left dark-sections">
+        <section id="approach" class="approach pad-main-xxl-right pad-main-xxl-left dark-sections">
             <div class="container-approach">
                 <div class="pad-xxxl-top"></div>
                 <div class="approach-description fade-in">
@@ -107,7 +107,7 @@
         </section>
     {% endif %}
     {% if page.entrepreneur_section %}
-        <section id="companies" class="companies pad-xxl-right pad-xxl-left">
+        <section id="companies" class="companies pad-main-xxl-right pad-main-xxl-left">
             <div class="pad-xxxl-top"></div>
             <div class="companies-description">
                 <i class="fas fa-arrow-right b300"></i><p class="b300">Services for Companies</p>
@@ -130,7 +130,7 @@
             </div>
             <div class="pad-xxxl-top"></div>
         </section>
-        <section class="pad-xxl-left">
+        <section class="pad-main-xxl-left">
             <div class="container-companies-we-work-with ">
                 <div class="h100 mar-xl-bottom">
                     Companies we work with
@@ -145,7 +145,7 @@
             </div>
             <div class="mar-xxxl-bottom"></div>
         </section>
-        <section id="entrepreneur"  class="companies pad-xxl-right pad-xxl-left section-entrepreneurs">
+        <section id="entrepreneur"  class="companies pad-main-xxl-right pad-main-xxl-left section-entrepreneurs">
             <div class="pad-xxxl-top"></div>
             <div class="companies-description">
                 <i class="fas fa-arrow-right b300"></i><p class="b300">Services for Entrepreneurs</p>
@@ -170,7 +170,7 @@
         </section>
     {% endif %}
     {% if page.about_section %}
-        <section id="about" class="about  pad-xxl-left">
+        <section id="about" class="about  pad-main-xxl-left">
             <div class="pad-huge-top"></div>
             <div class="about-title h300">
                 {{ page.about_title }}
@@ -192,7 +192,7 @@
                 </div>
             </div>
             <div class="mar-xxxl-top"></div>
-            <div class="about-footer pad-xxl-right">
+            <div class="about-footer pad-main-xxl-right">
                 <div class="display-none-sm" ></div>
                 <a class="b300" href="{{page.about_link.url}}">Know our team</a>
                 <p class="b300" >[{{team_qt}}]</p>
@@ -201,7 +201,7 @@
         </section>
     {% endif %}
     {% if page.resources_section %}
-        <section id="resources" class="resources pad-xxl-left dark-sections">
+        <section id="resources" class="resources pad-main-xxl-left dark-sections">
             <div class="pad-huge-top"></div>
             <div class="cointainer-title">
                 <div class="title b100">
@@ -213,7 +213,7 @@
             {% include 'blog/card_index_highlight.html' %}
             <div class="mar-xxxl only-mar-botom"></div>
             {% include 'blog/cards_post.html' %}
-            <div class="container-blog-index-footer-home mar-xxxl-top mar-xxl-rigth">
+            <div class="container-blog-index-footer-home mar-xxxl-top mar-main-xxl-right">
                 <div class="display-none-sm" ></div>
                 <p><a class="b300" href="{{page.blog_link.url}}" style="color: white;">View all blog articles</a></p>
                 <p class="b300" >[{{regular_posts_qt}}]</p>

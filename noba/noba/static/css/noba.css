@@ -2510,10 +2510,10 @@ form .input:focus {
 
 
 .pad-xxl-right{padding-right: var(--sp-xxl);}
+.pad-xxl-left{padding-left: var(--sp-xxl);}
 
 .pad-mega-bottom{padding-bottom: var(--sp-mega);}
 
-.pad-xxl-left{padding-left: var(--sp-xxl);}
 
 .not-pad { padding: 0 }
 .not-pad-top { padding-top: 0 }
@@ -2526,6 +2526,16 @@ form .input:focus {
 .only-pad-top{padding-right: 0 ; padding-bottom: 0;  padding-left: 0;  }
 .only-pad-botom{padding-right: 0 ; padding-top: 0;  padding-left: 0;  }
 
+.pad-main-xxl-right{padding-right: var(--sp-xxl);}
+.pad-main-xxl-left{padding-left: var(--sp-xxl);}
+.mar-main-xxl-right{margin-right: var(--sp-xxl); }
+
+@media screen and (max-width: 480px) {
+	.pad-main-xxl-right{padding-right: 24px;}
+	.pad-main-xxl-left{padding-left: 24px;}
+	.mar-main-xxl-right{margin-right: 24px; }
+
+}
 /* Margin */
 .mar-lg{ margin: var(--sp-lg);}
 .mar-xl{ margin: var(--sp-xl);}
@@ -2539,7 +2549,7 @@ form .input:focus {
 .mar-xxxl-top{ margin-top: var(--sp-xxxl);} 
 .mar-huge-top{ margin-top: var(--sp-huge);}
 
-.mar-xxl-rigth{margin-right: var(--sp-xxl); }
+.mar-xxl-right{margin-right: var(--sp-xxl); }
 
 .mar-md-bottom{ margin-bottom: var(--sp-md);} 
 .mar-xl-bottom{ margin-bottom: var(--sp-xl);} 
