@@ -2096,7 +2096,7 @@ body.dark .card-blog-index hr{
 .approach-header{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-column-gap: var(--sp-lg);
+	/* grid-column-gap: var(--sp-lg); */
 }
 
 .approach-cards-container{
@@ -2180,6 +2180,7 @@ body.dark .card-blog-index hr{
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
 		grid-column-gap: unset;
+		grid-column-gap: var(--sp-lg);
 	}
 
 	.card-approach{

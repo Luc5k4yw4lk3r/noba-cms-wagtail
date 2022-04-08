@@ -344,11 +344,20 @@ class SimplePage(Page):
     title_screen = models.CharField(max_length=250, default='')
     body = RichTextField(blank=True, help_text='Body information')
     link_in_breadcrumbs = models.BooleanField(default=True, help_text='This option allow to set this page linkeable or not in breadcrumbs')
+    breadcrumbs_link = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text='Choose a page to link this page in the breadcrumbs',
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel('title_screen', classname="full"),
         FieldPanel('body', classname="full"),
         FieldPanel('link_in_breadcrumbs'),
+        PageChooserPanel('breadcrumbs_link'),
     ]
 
 
