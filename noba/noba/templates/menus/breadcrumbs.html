@@ -19,13 +19,8 @@
                 </p>
                 <div class="breadcrum-spacer"></div>
               {% else %}
-                {% if ancestor.specific.breadcrumbs_link %}
-                  <a href="{{ancestor.specific.breadcrumbs_link.url}}" >{{ ancestor }}</a>
-                  <div class="breadcrum-spacer"></div>
-                {% else %}
-                  <a href="{% pageurl ancestor %}" >{{ ancestor }}</a>
-                  <div class="breadcrum-spacer"></div>
-                {% endif %}
+                <a href="{% pageurl ancestor %}" >{{ ancestor }}</a>
+                <div class="breadcrum-spacer"></div>
               {% endif %}
             {% endif %}
           {% endfor %}
