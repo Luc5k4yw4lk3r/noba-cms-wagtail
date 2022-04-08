@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let startx = 0;
 
     sliders.forEach((slider) => {
+        slider.style.left = 0;
 
         slider.addEventListener('mousedown', (e) => {
             sliderGrabbed = true;
@@ -110,8 +111,16 @@ document.addEventListener("DOMContentLoaded", function() {
         slider.addEventListener('touchmove', (e) => {
             if(!pressed) return;
             x = e.targetTouches[0].clientX;
-            slider.style.left = `${x - startx}px`;  
-            // checkboundary();
+            if((x - startx) > 0){
+                slider.style.left = '0px';
+                return;
+            }
+            let status = (slider.clientWidth - (slider.firstElementChild.clientWidth * 1) - 48 - 10 )* -1;
+            if( status > (parseFloat(x) - parseFloat(startx) ) ){
+                slider.style.left = status;
+                return;
+            }
+            slider.style.left = `${x - startx}px`; 
         }, {passive: true});
 
     })
