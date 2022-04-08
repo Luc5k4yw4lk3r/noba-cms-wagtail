@@ -899,7 +899,7 @@ button.iubenda-cs-customize-btn {
 }
 
 .card-highlight:last-child {
-	padding-right: 40px;
+	margin-right: 40px;
 }
 
 
@@ -977,6 +977,10 @@ button.iubenda-cs-customize-btn {
 	.card-highlight .card-footer{
 		margin: 0px 24px 24px 24px;
 		width: calc(100% - 48px);
+	}
+
+	.card-highlight:last-child {
+		margin-right: 24px;
 	}
 }
 

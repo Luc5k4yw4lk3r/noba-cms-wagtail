@@ -1,0 +1,9 @@
+{% load wagtailimages_tags %}
+
+{% for card in self.cards %}
+    <div class="card-noba-knowledge">
+        <hr>
+        <h1 class="h100">{{card.title}}</h1>
+        <p class="b300">{{card.text}}</p>
+    </div>
+{% endfor %}

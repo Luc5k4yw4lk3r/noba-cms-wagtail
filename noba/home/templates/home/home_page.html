@@ -50,26 +50,9 @@
                 </div>
                 <div class="container-noba-knowledge-inner">
                     <div class="slider-inner cursor-drag">
-                        <div class="card-noba-knowledge">
-                            <hr>
-                            <h1 class="h100">932</h1>
-                            <p class="b300">Endeavors we’ve helped launch with corporate clients and entrepreneurs.</p>
-                        </div>
-                        <div class="card-noba-knowledge">
-                            <hr>
-                            <h1 class="h100">81%</h1>
-                            <p class="b300">Unmatched success rate on our pilot projects with multinationals and startups.</p>
-                        </div>
-                        <div class="card-noba-knowledge">
-                            <hr>
-                            <h1 class="h100">52</h1>
-                            <p class="b300">New products & services designed and launched</p>
-                        </div>
-                        <div class="card-noba-knowledge">
-                            <hr>
-                            <h1 class="h100">14</h1>
-                            <p class="b300">Countries across 5 continents operated</p>
-                        </div>
+                        {% for block in page.card_knowledge_block %}
+                            {% include_block block %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>

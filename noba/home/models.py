@@ -2,7 +2,8 @@ from django.db import models
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from streams.blocks import (CardApproachBlock, CardCompaniesBlock,
                             CardIndexBlock, CardIndexHighlightBlock,
-                            CardTeamMemberBlock, CardLogoBlocks)
+                            CardTeamMemberBlock, CardLogoBlocks,
+                            CardKnowledgeBlocks)
 from wagtail.admin.edit_handlers import (FieldPanel, InlinePanel,
                                          MultiFieldPanel, PageChooserPanel,
                                          StreamFieldPanel)
@@ -133,6 +134,14 @@ class HomePage(Page):
         blank=True,
     )
 
+    card_knowledge_block = StreamField(
+        [
+            ('card_knowledge_block', CardKnowledgeBlocks()),
+        ],
+        null=True,
+        blank=True,
+    )
+
     def get_context(self, request, *args, **kwargs):
         """Adding custom stuff to our context."""
         context = super().get_context(request, *args, **kwargs)
@@ -171,7 +180,8 @@ class HomePage(Page):
         ),
         MultiFieldPanel([
             FieldPanel('knowledge_section'),
-            FieldPanel('card_logo_block'),
+            StreamFieldPanel('card_knowledge_block'),
+            StreamFieldPanel('card_logo_block'),
         ], heading='Knowledge Section'
         ),
         MultiFieldPanel([

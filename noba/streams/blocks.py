@@ -194,3 +194,20 @@ class CardLogoBlocks(blocks.StructBlock):
         template = 'streams/card_logo_block.html'
         icon = 'placeholder'
         label = 'Logo Cards'
+
+
+class CardKnowledgeBlocks(blocks.StructBlock):
+
+    cards = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ('title', blocks.CharBlock(required=True, max_length=60, help_text='Image width value')),
+                ('text', blocks.TextBlock(required=True, help_text='Image height value')),
+            ]
+        )
+    )
+
+    class Meta:
+        template = 'streams/card_knowledge_block.html'
+        icon = 'placeholder'
+        label = 'Knowledge Cards'
