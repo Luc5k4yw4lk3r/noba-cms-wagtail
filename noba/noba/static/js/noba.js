@@ -56,16 +56,9 @@ document.addEventListener("DOMContentLoaded", function() {
             sliderGrabbed = true;
             sliderClicked = false;
             console.log('mousedown');
-
-            // slider.style.cursor = 'grabbing';
         })
     
         slider.addEventListener('mouseup', (e) => {
-            // console.log('mouseup');
-            // console.log('mouseup sliderGrabbed');
-            // console.log(sliderGrabbed);
-            // console.log('mouseup moved');
-            // console.log(moved);
             sliderGrabbed = false;
             if(!moved){
                 // console.log('mouseup clicked');
@@ -154,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let coockiesChecked = sessionStorage.getItem("coockies-checked");
     let loggedChecked = sessionStorage.getItem("logged-checked");
+    let anchorPointGlobal = sessionStorage.getItem("scroll-anchor");
     
     if(isHomePage){
         if(loggedChecked !== "True"){
@@ -200,6 +194,19 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     }
+
+    if(anchorPointGlobal !== 'False'){
+        // console.log('intial scrollAnchor');
+        // console.log(anchorPointGlobal);
+        let anchorPoint = document.querySelector(anchorPointGlobal);
+        if(anchorPoint){
+            anchorPoint.scrollIntoView({behavior: "smooth"});
+        }
+    }
+
+    sessionStorage.setItem("scroll-anchor", "False");
+    // scrollAnchor = "False";
+
 
     // waiting for the modal creation dinamically by iubenda-script
     // https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists
@@ -411,6 +418,44 @@ document.addEventListener("DOMContentLoaded", function() {
         apearsOnScrollDark.observe(darkSection);
     });
 
+    // Scroll with anchor url
+    let linksAnchor = document.querySelectorAll('[data-anchor]');
+
+    linksAnchor.forEach( (link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            let element = e.target.closest('a');
+            let hrefValue = element.getAttribute('href');
+            let anchorValue = element.dataset.anchor;
+            if(anchorValue !== ""){
+                sessionStorage.setItem("scroll-anchor", anchorValue);
+            }
+            if(hrefValue == "" && anchorValue == ""){
+                // console.log('element.href');
+                // console.log(hrefValue);
+                return;
+            } 
+
+            if(anchorValue !== ""){
+                // console.log('element.anchor');
+                // console.log('anchorValue  1');
+                // console.log(element.anchor);
+                // console.log(element.dataset.anchor);
+                sessionStorage.setItem("scroll-anchor", anchorValue);
+            }
+
+            if(hrefValue !== ""){
+                // console.log('window.location.href');
+                window.location.href = hrefValue;
+            } else {
+                // console.log('anchorValue  2');
+                let anchorPoint = document.querySelector(anchorValue);
+                anchorPoint.scrollIntoView({behavior: "smooth"});
+                sessionStorage.setItem("scroll-anchor", "False");
+            }
+
+        });
+    });
 
 });
 

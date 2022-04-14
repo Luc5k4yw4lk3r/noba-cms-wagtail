@@ -5,12 +5,13 @@ from wagtail.core.models import Orderable
 from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import (
-    FieldPanel, 
-    InlinePanel ,
-    PageChooserPanel, 
-    StreamFieldPanel, 
+    FieldPanel,
+    InlinePanel,
+    PageChooserPanel,
+    StreamFieldPanel,
     MultiFieldPanel
 )
+
 
 # Create your models here.
 class MenuItem(Orderable):
@@ -24,14 +25,15 @@ class MenuItem(Orderable):
         on_delete=models.CASCADE
     )
     open_in_new_tab = models.BooleanField(default=False)
-
     page = ParentalKey("Menu", related_name="menu_items")
+    anchor = models.CharField(blank=True, null=True, max_length=100, default='')
 
     panels = [
         FieldPanel('link_title'),
         FieldPanel('link_url'),
         PageChooserPanel('link_page'),
         FieldPanel('open_in_new_tab'),
+        FieldPanel('anchor'),
     ]
 
 
@@ -39,7 +41,6 @@ class MenuItem(Orderable):
 class Menu(ClusterableModel):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
-
 
     panels = [
         MultiFieldPanel([
