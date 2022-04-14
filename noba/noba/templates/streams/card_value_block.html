@@ -2,9 +2,12 @@
 
 <div class="container-values-page">
     {% for card in self.cards %}
-        <div class="row ">
-            <div class="h100 mar-md-bottom">{{card.title}}</div>
-            <div class="b300">{{card.text}}</div>
+        <div class="container-values-page-item">
+            <div class="row ">
+                <div class="h100 mar-md-bottom">{{card.title}}</div>
+                <div class="b300">{{card.text}}</div>
+            </div>
+            <div class="line pad-huge-bottom"></div>
         </div>
     {% endfor %}
 </div>

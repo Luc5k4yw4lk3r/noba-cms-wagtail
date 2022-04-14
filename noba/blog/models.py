@@ -141,6 +141,12 @@ class BlogPage(Page):
     title_card = models.CharField(max_length=250, default='', help_text='Title for the card')
     description_card = models.CharField(max_length=250, default='', help_text='Title for the card')
     reading_time = models.CharField(max_length=50, default='', help_text='Time reading.')
+    post_card_container_title = models.CharField(
+        max_length=250,
+        help_text='Post title container cards',
+        default="More blog articles"
+    )
+
     publication_date = models.DateTimeField(
         verbose_name=('publication date'),
         null=True,
@@ -241,6 +247,7 @@ class BlogPage(Page):
         MultiFieldPanel([
             FieldPanel('blog_cards_automatics'),
             FieldPanel('blog_items_quantity'),
+            FieldPanel('post_card_container_title'),
             StreamFieldPanel('blog_cards')
         ], heading='Blog card(s)'
         ),
