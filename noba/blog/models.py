@@ -279,7 +279,11 @@ class BlogIndexPage(Page):
     title_card = models.CharField(max_length=250, default='', help_text='Title for the card')
     blog_items_quantity = models.IntegerField(default=1, help_text='Post items quantity')
     blog_highlight_items_quantity = models.IntegerField(default=1, help_text='Post highlight items quantity')
-
+    post_card_container_title = models.CharField(
+        max_length=250,
+        help_text='Post title container cards',
+        default="Blog articles"
+    )
     blog_cards = StreamField(
         [
             ('card_block', CardIndexBlock()),

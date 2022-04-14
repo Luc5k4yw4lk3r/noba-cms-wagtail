@@ -68,7 +68,11 @@ class HomePage(Page):
     title_card = models.CharField(max_length=250, default='', help_text='Title for the card')
     blog_items_quantity = models.IntegerField(default=1, help_text='Post items quantity')
     blog_highlight_items_quantity = models.IntegerField(default=1, help_text='Post highlight items quantity')
-
+    post_card_container_title = models.CharField(
+        max_length=250,
+        help_text='Post title container cards',
+        default="Blog"
+    )
     modal_privacy_policy_link = models.ForeignKey(
         'wagtailcore.Page',
         null=True,
