@@ -1384,6 +1384,26 @@ body.dark .breadcrum-spacer{
 	background-image: url(../images/spacer-component-white.svg);
 }
 
+.breadcrum .active{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+	max-width: 180px;
+}
+
+@media screen and (max-width: 480px) {
+	.breadcrum .active{
+		max-width: 150px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.breadcrum .active{
+		max-width: 120px;
+	}
+}
+
+
 main .post-info{
 	display: flex;
 	flex-direction: row;
