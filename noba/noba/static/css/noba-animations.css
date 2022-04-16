@@ -15,3 +15,13 @@
 .fade-text.appear{
     opacity: 1;
 }
+
+@media screen and (max-width: 480px) {
+    .fade-text{
+        transition: opacity 550ms ease-in;
+    }
+
+    .card-companies .fade-in{
+        transition: opacity 180ms ease-in;
+    }
+}

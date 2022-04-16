@@ -570,7 +570,7 @@ footer .signup-newletter input[type='checkbox']:after{
 	color: black;
 	display: none;
 	position: relative;
-	top: -1px;
+	top: 1px;
 }
 
 footer .signup-newletter input[type='checkbox']:checked:after{
@@ -726,6 +726,16 @@ footer input:-webkit-autofill:active{
 footer input:focus,
 footer input:active{
 	color: black !important;
+}
+
+@media (max-width:480px) {
+	footer .signup-newletter input{
+		max-width: 320px;
+	}
+
+	footer .signup-newletter form{
+		max-width: 320px;
+	}
 }
 
 /* modal cookie */
@@ -982,6 +992,17 @@ button.iubenda-cs-customize-btn {
 	.card-highlight:last-child {
 		margin-right: 24px;
 	}
+}
+
+
+@media screen and (max-width: 380px) {
+	
+	.card-highlight{
+		height: 295px;
+		max-width: 300px;
+		min-width: 300px;
+	}
+
 }
 
 /* .nav {
