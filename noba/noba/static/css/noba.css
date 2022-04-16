@@ -2434,6 +2434,18 @@ body.dark .card-blog-index hr{
 	align-items:center;
 }
 
+/* Quote*/
+.quote-container{
+	border-left: #000 2px solid ;
+}
+
+.quote-container p{
+	margin-bottom: 0px !important;
+}
+
+body.dark .quote-container{
+	border-left: white 2px solid ;
+}
 
 /* Embed */
 
@@ -2666,6 +2678,7 @@ form .input:focus {
 
 
 .pad-xxl-right{padding-right: var(--sp-xxl);}
+.pad-xl-left{padding-left: var(--sp-xl);}
 .pad-xxl-left{padding-left: var(--sp-xxl);}
 
 .pad-huge-bottom{padding-bottom: var(--sp-huge);}

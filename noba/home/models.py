@@ -149,8 +149,8 @@ class HomePage(Page):
     def get_context(self, request, *args, **kwargs):
         """Adding custom stuff to our context."""
         context = super().get_context(request, *args, **kwargs)
-        all_academy_posts = BlogPage.objects.live().public().filter(category__name="Academy").order_by('-first_published_at')[:self.blog_highlight_items_quantity]
-        all_regular_posts = BlogPage.objects.live().public().filter(category__name="Blog regular").order_by('-first_published_at')
+        all_academy_posts = BlogPage.objects.live().public().filter(category__name="Academy").order_by('-publication_date', '-first_published_at')[:self.blog_highlight_items_quantity]
+        all_regular_posts = BlogPage.objects.live().public().filter(category__name="Blog regular").order_by('-publication_date', '-first_published_at')
         regular_posts_qt = all_regular_posts.count()
         # entrepreneurs_qt = len(context['page'].entrepreneurs_link.entrepreneurpage.card_entrepreneur_block.raw_data[0]['value']['cards'])
         companies_qt = len(context['page'].company_link.entrepreneurpage.card_entrepreneur_block.raw_data[0]['value']['cards'])

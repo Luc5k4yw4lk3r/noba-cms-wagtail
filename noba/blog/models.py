@@ -7,7 +7,7 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from streams.blocks import (CardApproachBlock, CardBlock,
                             CardEntrepreneurBlock, CardIndexBlock,
                             CardIndexHighlightBlock, CardTeamMemberBlock,
-                            CardValueBlock, RichTextBlock, TitleAndTextBlock)
+                            CardValueBlock, RichTextBlock, QuoteBlocks)
 from wagtail.admin.edit_handlers import (FieldPanel, InlinePanel,
                                          MultiFieldPanel, PageChooserPanel,
                                          StreamFieldPanel)
@@ -176,6 +176,7 @@ class BlogPage(Page):
         [
             # ('title_and_text', TitleAndTextBlock()),
             ('full_richtext', RichTextBlock()),
+            ('quotes', QuoteBlocks()),
         ],
         null=True,
         blank=True,
@@ -218,7 +219,8 @@ class BlogPage(Page):
         context = super().get_context(request, *args, **kwargs)
         # all_academy_posts = BlogPage.objects.live().public().filter(category__name="Academy").order_by('-first_published_at')[:self.blog_highlight_items_quantity]
         all_regular_posts = BlogPage.objects.live().public().filter(
-            category__name="Blog regular")
+            category__name="Blog regular").order_by('-publication_date', '-first_published_at')
+
         paginator = Paginator(all_regular_posts, self.blog_items_quantity)
         random_index = randint(1, paginator.num_pages)
         # page = request.GET.get('page')
@@ -313,8 +315,8 @@ class BlogIndexPage(Page):
     def get_context(self, request, *args, **kwargs):
         """Adding custom stuff to our context."""
         context = super().get_context(request, *args, **kwargs)
-        all_academy_posts = BlogPage.objects.live().public().filter(category__name="Academy").order_by('-first_published_at')[:self.blog_highlight_items_quantity]
-        all_regular_posts = BlogPage.objects.live().public().filter(category__name="Blog regular").order_by('-first_published_at')
+        all_academy_posts = BlogPage.objects.live().public().filter(category__name="Academy").order_by('-publication_date', '-first_published_at')[:self.blog_highlight_items_quantity]
+        all_regular_posts = BlogPage.objects.live().public().filter(category__name="Blog regular").order_by('-publication_date','-first_published_at')
         paginator = Paginator(all_regular_posts, self.blog_items_quantity)
         page = request.GET.get('page')
         try:

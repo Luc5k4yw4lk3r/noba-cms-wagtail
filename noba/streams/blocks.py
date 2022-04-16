@@ -211,3 +211,13 @@ class CardKnowledgeBlocks(blocks.StructBlock):
         template = 'streams/card_knowledge_block.html'
         icon = 'placeholder'
         label = 'Knowledge Cards'
+
+
+class QuoteBlocks(blocks.StructBlock):
+
+    text = blocks.TextBlock(required=True, help_text='Text')
+
+    class Meta:
+        template = 'streams/quote_block.html'
+        icon = 'openquote'
+        label = 'Quote'
