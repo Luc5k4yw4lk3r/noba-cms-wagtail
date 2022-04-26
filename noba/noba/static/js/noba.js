@@ -283,6 +283,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Breadcrumbs
+    let  angleButton = document.querySelector('.breadcrum-angle');
+    angleButton.addEventListener('click', (e) => {
+        window.history.back()
+    });
+
     // Video
     // It is a helper to allow run the video in safari
     let video = document.getElementById('video-play');
