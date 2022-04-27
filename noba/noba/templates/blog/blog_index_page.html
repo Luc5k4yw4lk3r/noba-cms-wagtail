@@ -30,11 +30,15 @@
                 {% if posts_regular.has_previous %}
                     <a href="?page={{ posts_regular.previous_page_number }}" 
                     data-anchor="#card-post"><i class="fas fa-arrow-left"></i></a>
+                {% else %}
+                    <i class="fas fa-arrow-left disabled"></i>
                 {% endif %}
                 {% if posts_regular.has_next %}
                     <a href="?page={{ posts_regular.next_page_number }}" 
                         data-anchor="#card-post"
                         ><i class="fas fa-arrow-right"></i></a>
+                {% else %}
+                    <i class="fas fa-arrow-right disabled"></i>
                 {% endif %}
                 <!-- <p><a href="" style="color: white;">View all blog articles</a></p> -->
             </div>

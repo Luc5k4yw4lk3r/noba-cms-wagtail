@@ -1349,11 +1349,11 @@ main .container-body .paragraph{
 }
 
 main .container-body .paragraph .left{
-	margin-left: auto;
+	margin-right: auto;
 }
 
 main .container-body .paragraph .right{
-	margin-right: auto;
+	margin-left: auto;
 }
 
 main .container-body .paragraph p{
@@ -1363,6 +1363,11 @@ main .container-body .paragraph p{
 
 main .container-body .paragraph img{
 	margin-top: calc(var(--sp-xxxl) - var(--sp-xl));
+	margin-bottom: var(--sp-xxxl);
+}
+
+main .container-body .paragraph img + p + .quote-container{
+	margin-top: 0px;
 	margin-bottom: var(--sp-xxxl);
 }
 
@@ -1437,7 +1442,7 @@ main .post-info{
 
 .main-info img{
 	max-width: 637px;
-	max-height: 485px;
+	height: 485px;
 	object-fit: cover;
 	border-radius: 32px;
 }
@@ -1645,6 +1650,11 @@ body.dark .card-blog-index a{
 
 .arrows .fa-arrow-left{
 	margin-right: 40px;
+}
+
+.arrows .disabled{
+	opacity: .4;
+	cursor: auto ;
 }
 
 .card-blog-index hr{
@@ -2463,7 +2473,13 @@ body.dark .card-blog-index hr{
 /* Quote*/
 .quote-container{
 	border-left: #000 2px solid ;
+	margin-top: var(--sp-xl);
+	margin-bottom: var(--sp-xxxl);
 }
+
+/* main .container-body > p + .quote-container + p{
+	margin-top: var(--sp-xxxl);
+} */
 
 .quote-container p{
 	margin-bottom: 0px !important;
@@ -2471,6 +2487,11 @@ body.dark .card-blog-index hr{
 
 body.dark .quote-container{
 	border-left: white 2px solid ;
+}
+
+.quote-container  + p + img{
+	/* background-color: #00a04a; */
+	margin-top: calc(var(--sp-xl) * -1) !important;
 }
 
 /* Embed */
@@ -2777,10 +2798,17 @@ form .input:focus {
 .display-none{
 	display: none;
 }
+.display-only-mobile{
+	display: none;
+}
 
 @media screen and (max-width: 480px) {
 	.display-none-sm{
 		display: none;
+	}
+
+	.display-only-mobile{
+		display: block;
 	}
 }
 

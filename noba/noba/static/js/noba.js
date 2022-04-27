@@ -291,7 +291,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-
     // Video
     // It is a helper to allow run the video in safari
     let video = document.getElementById('video-play');
