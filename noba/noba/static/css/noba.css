@@ -1124,7 +1124,7 @@ button.iubenda-cs-customize-btn {
 .card-team-member.last{
 	display: flex;
 	align-items:flex-end;
-	height: 610px;
+	height: 580px;
 }
 
 @media screen and (max-width: 480px) {
