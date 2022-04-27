@@ -275,12 +275,23 @@ document.addEventListener("DOMContentLoaded", function() {
     // Screen approach
     if(isHomePage || isApproachPage ){
         let containerApproch = document.querySelector('.approach-cards-container');
-        containerApproch.addEventListener("click", (e) => {
-            let element = e.target.closest('.card-approach-contantainer');
-            if(element){
-                element.classList.toggle('active');
-            }
-        });
+
+        if(window.mobileCheck()){
+            containerApproch.addEventListener("touchstart", (e) => {
+                let element = e.target.closest('.card-approach-contantainer');
+                if(element){
+                    element.classList.toggle('active');
+                }
+            });
+        } else {
+            containerApproch.addEventListener("click", (e) => {
+                let element = e.target.closest('.card-approach-contantainer');
+                if(element){
+                    element.classList.toggle('active');
+                }
+            });
+
+        }
     }
 
     // Breadcrumbs
@@ -350,9 +361,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Intersection Observer
     const faders = document.querySelectorAll('.fade-in');
-    const options = {
+    let options = {
         threshold:1
     };
+
+    if(window.mobileCheck()){
+        options = {
+            threshold:0.5
+        };
+    }
     
     const apearsOnScroll = new IntersectionObserver(
         function(entries, apearOnScroll){
@@ -376,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Intersection Observer Initial
     const faderTexts = document.querySelectorAll('.fade-text');
 
-    const optionsInitial = {
+    let optionsInitial = {
         threshold:0.7,
         rootMargin: '-25% 0% -25% 0%', 
     };
