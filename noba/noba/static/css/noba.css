@@ -2124,6 +2124,7 @@ body.dark .card-blog-index hr{
 	line-height: 32px;
 	font-size: 22px;
 	margin-bottom: var(--sp-xl);
+	margin-top: 0px;
 }
 
 .simple-page-body-paragraph p:last-child{
