@@ -2795,21 +2795,22 @@ form .input:focus {
 
 .width-colum-project-help{ width: 30%;}
 
-.display-none{
-	display: none;
-}
 .display-only-mobile{
 	display: none;
 }
 
 @media screen and (max-width: 480px) {
-	.display-none-sm{
-		display: none;
-	}
-
 	.display-only-mobile{
 		display: block;
 	}
+
+	.display-none-sm{
+		display: none;
+	}
+}
+
+.display-none{
+	display: none;
 }
 
 /* Cursor */

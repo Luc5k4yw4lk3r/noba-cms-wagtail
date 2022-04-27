@@ -381,6 +381,13 @@ document.addEventListener("DOMContentLoaded", function() {
         rootMargin: '-25% 0% -25% 0%', 
     };
 
+    if(window.mobileCheck()){
+        optionsInitial = {
+            threshold:0.5,
+            rootMargin: '-16% 0% -16% 0%', 
+        };
+    }
+
     const apearsOnScrollInitial = new IntersectionObserver(
         function(entries, apearOnScroll){
             entries.forEach(entry => {
