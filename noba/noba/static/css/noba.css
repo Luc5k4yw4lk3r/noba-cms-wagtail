@@ -183,6 +183,7 @@ input[type='checkbox']{
 	background-color: inherit;
 	border-color: var(--font-color-grey);
 	cursor: pointer;
+	border-radius: 0;
 }
 
 .preload * {
@@ -473,15 +474,19 @@ header.dark .logo-menu{
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
-	padding: 67px 24px;
+	/* padding: 67px 24px; */
+	padding: 24px 24px;
+
 	transition: all 700ms ease;
 }
 
 .btn-menu-close{
 	position: absolute;
 	background-image: url(../images/btn-menu-close.svg);
-	top: 67px;
-	right: 27px;
+	/* top: 67px;
+	right: 27px; */
+	top: 24px;
+	right: 34px;
 	cursor: pointer;
 	color: white;
 	width: 24.38px;
@@ -2105,8 +2110,12 @@ body.dark .card-blog-index hr{
 .simple-page-body{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-
 }
+
+.simple-page-body ul, ol{
+	overflow-wrap: break-word;
+}
+
 .simple-page-body-paragraph{
 	grid-column: 1 / span 2;
 }
@@ -2129,6 +2138,14 @@ body.dark .card-blog-index hr{
 	margin-bottom: var(--sp-xxl);
 }
 
+.simple-page-footer-title{
+	margin-bottom: var(--sp-xl);
+}
+.simple-page-footer-body p{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	line-height: 64px;
+}
 @media screen and (max-width: 1024px) {
 
 	.simple-page-body-paragraph{
@@ -2140,6 +2157,10 @@ body.dark .card-blog-index hr{
 	.simple-page-body-paragraph h2{
 		font-size: 48px;
 		line-height: 56px;
+	}
+
+	.simple-page-footer-body p{
+		line-height: 48px;
 	}
 
 }
@@ -2200,6 +2221,7 @@ body.dark .card-blog-index hr{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .card-approach-body{
@@ -2220,11 +2242,6 @@ body.dark .card-blog-index hr{
 	margin-bottom: 0px;
 }
 
-.card-approach-contantainer:hover img{
-	transform: rotate(180deg);
-	
-}
-
 .card-approach-description{
  	overflow: hidden;
 	 max-height: 0;
@@ -2240,8 +2257,12 @@ body.dark .card-blog-index hr{
 	transform: rotate(180deg);
 }
 
-.card-approach-contantainer:hover img{
-	transform: rotate(180deg);
+
+
+@media(hover: hover) and (pointer: fine) {
+	.card-approach-contantainer:hover img{
+		transform: rotate(180deg);
+	}
 }
 
 .card-approach-title img{

@@ -276,22 +276,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if(isHomePage || isApproachPage ){
         let containerApproch = document.querySelector('.approach-cards-container');
 
-        if(window.mobileCheck()){
-            containerApproch.addEventListener("touchstart", (e) => {
-                let element = e.target.closest('.card-approach-contantainer');
-                if(element){
-                    element.classList.toggle('active');
-                }
-            });
-        } else {
-            containerApproch.addEventListener("click", (e) => {
-                let element = e.target.closest('.card-approach-contantainer');
-                if(element){
-                    element.classList.toggle('active');
-                }
-            });
-
-        }
+        containerApproch.addEventListener("click", (e) => {
+            let element = e.target.closest('.card-approach-contantainer');
+            if(element){
+                element.classList.toggle('active');
+            }
+        });
     }
 
     // Breadcrumbs
