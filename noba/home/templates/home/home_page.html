@@ -20,7 +20,7 @@
         <section id="initial" class="display-none">
             <p class="initial-text-1 b200">Afraid of a blank canvas?</p>
         </section>
-        <section id="initial-one"  class="initial-one pad-main-xxl-right pad-main-xxl-left">
+        <section id="initial-one"  class="initial-one pad-main-xxl-right pad-main-xxl-left display-hide-in-mobile">
             <div class="pad-xxxl-top"></div>
             <div class="pad-xxxl-top sp-initial display-none"></div>
             <div class="pad-xxxl-top sp-initial display-none"></div>
@@ -42,10 +42,28 @@
             <div class="pad-xxxl-top"></div>
         </section>
     </div>
+    <section class="initial-one-mobile initial-full  display-only-mobile pad-main-xxl-right pad-main-xxl-left display-none">
+        <div class="screen">
+            <p class="h200 fade-text appear">We take a blank canvas…<br>And turn it into your next viable<br> business venture.</p>
+        </div>
+        <div class="screen">
+            <p class="h200 fade-text appear">We are NOBA, The Business<br> Prototyping Agency.</p>
+        </div>
+        <div class="screen">
+            <p class="h200 fade-text appear">We support companies and<br> entrepreneurs in launching new<br> products, services and business<br> models.</p>
+        </div>
+    </section>
+    <section class="initial-one-mobile-loggued initial-full  display-only-mobile pad-main-xxl-right pad-main-xxl-left display-none">
+        <div class="pad-xxxl-top"></div>
+        <p class="h200 fade-text appear">We are NOBA, The Business<br> Prototyping Agency.</p>
+        <div class="pad-xxxl-top"></div>
+        <p class="h200 fade-text appear">We support companies and<br> entrepreneurs in launching new<br> products, services and business<br> models.</p>
+        <div class="pad-xxxl-top"></div>
+    </section>
     {% endif %}
     {% if page.video_section %}
         <section id="video" class="showcase ">
-            <video id="video-play" src="{% static 'videos/noba-web.mp4' %}" muted loop autoplay playsinline ></video>
+            <video id="video-play" src="{% static 'videos/noba-home-video.mp4' %}" muted loop autoplay playsinline ></video>
         </section>
     {% endif %}
     {% if page.knowledge_section %}

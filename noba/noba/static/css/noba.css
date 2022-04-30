@@ -2349,10 +2349,56 @@ body.dark .card-blog-index hr{
 	background-size: 16px; */
 }
 
+.initial-one-mobile{
+	overflow-y: scroll;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y mandatory;
+	height: 100vh;
+	width: 100vw;
+}
+
+.initial-one-mobile .screen{
+	height: 90vh;
+	/* width: 100vw; */
+	display: flex;
+	scroll-snap-align: start;
+	justify-content: center;
+    align-items: center;
+	position: relative;
+}
+
+.initial-one-mobile .screen:last-child{
+	height: 100vh;
+}
+
 .initial-one p{
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+.intial-text1-area{
+	scroll-snap-align: start;
+}
+
+.intial-text2-area{
+	scroll-snap-align: start;
+}
+
+.intial-text3-area{
+	scroll-snap-align: start;
+}
+
+
+/* .intial-text1-area{
+	scroll-snap-stop: always;
+}
+
+.intial-text2-area{
+	scroll-snap-stop: always;
+}
+
+.intial-text3-area{
+	scroll-snap-stop: always;
+} */
 
 /* Section Companies */
 .companies{
@@ -2829,6 +2875,11 @@ form .input:focus {
 	.display-none-sm{
 		display: none;
 	}
+
+	.display-hide-in-mobile{
+		display: none;
+	}
+
 }
 
 .display-none{

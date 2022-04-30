@@ -141,6 +141,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const coockieModal = document.querySelector('.modal-cookie');
     const logoHeader = document.querySelector('.logo');
     const initial = document.querySelector('#initial');
+    const initialOneMobile = document.querySelector('.initial-one-mobile');
+    const initialOneMobileLogged = document.querySelector('.initial-one-mobile-loggued');
     const spaceInitial = document.querySelectorAll('.sp-initial');
     const fadeText = document.querySelectorAll('.fade-text');
     let firstScroll = false;
@@ -148,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let coockiesChecked = sessionStorage.getItem("coockies-checked");
     let loggedChecked = sessionStorage.getItem("logged-checked");
     let anchorPointGlobal = sessionStorage.getItem("scroll-anchor");
-    
+
     if(isHomePage){
         if(loggedChecked !== "True"){
             // document.body.classList.remove('initial-overflow');
@@ -156,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // overlayModal.classList.add('active');
             header.classList.add('first');
             initial.classList.remove('display-none');
+            initialOneMobile.classList.remove('display-none');
             spaceInitial.forEach( item => {
                 item.classList.remove('display-none');
             })
@@ -164,7 +167,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 item.classList.remove('appear');
             })
             initial.classList.add('initial');
-        } 
+        } else{
+            initialOneMobileLogged.classList.remove('display-none');
+        }
+
+
 
         if(coockiesChecked !== "True"){
             // removed old modal because there ia newone
