@@ -175,6 +175,13 @@ section{
 	scroll-behavior: smooth;
 }
 
+input{
+	border-radius: 0;
+	appearance: none;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
 input[type='checkbox']{
 	appearance: none;
 	-webkit-appearance: none;
@@ -183,8 +190,9 @@ input[type='checkbox']{
 	background-color: inherit;
 	border-color: var(--font-color-grey);
 	cursor: pointer;
-	border-radius: 0;
 }
+
+
 
 .preload * {
 	-webkit-transition: none !important;
