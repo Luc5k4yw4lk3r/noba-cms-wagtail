@@ -2126,6 +2126,7 @@ body.dark .card-blog-index hr{
 
 .simple-page-body-paragraph{
 	grid-column: 1 / span 2;
+	overflow-wrap: break-word;
 }
 
 .simple-page-body-paragraph p{
@@ -2133,7 +2134,15 @@ body.dark .card-blog-index hr{
 	font-size: 22px;
 	margin-bottom: var(--sp-xl);
 	margin-top: 0px;
+	overflow-wrap: break-word;
 }
+
+.simple-page-body-paragraph li{
+	line-height: 32px;
+	font-size: 22px;
+	overflow-wrap: break-word;
+}
+
 
 .simple-page-body-paragraph p:last-child{
 	margin-bottom: 0px;
@@ -2145,6 +2154,10 @@ body.dark .card-blog-index hr{
 	font-size: 64px;
 	line-height: 68px;
 	margin-bottom: var(--sp-xxl);
+}
+
+.simple-page-footer{
+	overflow-wrap: break-word;
 }
 
 .simple-page-footer-title{
