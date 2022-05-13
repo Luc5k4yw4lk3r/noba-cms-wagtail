@@ -1618,7 +1618,7 @@ main.blog-index{
 }
 
 .container-blog-index-items-inner .slider-inner{
-	position: relative;
+	position: absolute;
 	display: flex;
 	top: 0;
 	left: 0;

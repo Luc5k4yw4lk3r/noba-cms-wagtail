@@ -9,7 +9,7 @@
 
 .fade-text{
     opacity: 0;
-    transition: opacity 350ms ease-in;
+    transition: opacity 450ms ease-in;
 }
 
 .fade-text.appear{

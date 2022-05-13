@@ -359,6 +359,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    //Blog post heigh calculation
+    let heighBlogIndexInner =  document.querySelector('.container-blog-index-items-inner .slider-inner');
+    if(heighBlogIndexInner){
+        // console.log(heighBlogIndexInner.clientHeight);
+        let containerHeighBlogIndexInner = document.querySelector('.container-blog-index-items-inner');
+        containerHeighBlogIndexInner.style.minHeight = `${heighBlogIndexInner.clientHeight}px`;
+    }
+
     // Intersection Observer
     const faders = document.querySelectorAll('.fade-in');
     let options = {
@@ -395,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let optionsInitial = {
         threshold:0.7,
-        rootMargin: '-25% 0% -25% 0%', 
+        rootMargin: '-18% 0% -20% 0%', 
     };
 
     if(window.mobileCheck()){
