@@ -76,7 +76,7 @@
             </div>
         </div>
         {% if self.blog_cards_automatics %}
-            {% include 'blog/cards_post.html' %}
+            {% include 'blog/cards_post.html' with carrousel="true" %}
         {% else %}
             {% for block in page.blog_cards %}
                 {% include_block block %}

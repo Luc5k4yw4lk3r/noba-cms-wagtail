@@ -4,7 +4,7 @@
     <div class="container-blog-title mar-xl only-mar-botom b300">
         <i class="fas fa-arrow-right"></i>{{ self.post_card_container_title  }}
     </div>
-    <div class="container-blog-index-items mar-main-xxl-right">
+    <div class="container-blog-index-items mar-main-xxl-right {% if carrousel == "true" %} display-none-sm {% endif %}">
         {% for card in posts_regular %}
             <div class="card-blog-index">
                 <a href="{{ card.url }}">
@@ -23,4 +23,24 @@
             </div>
         {% endfor %}
     </div>
+    {% if carrousel == "true" %} 
+        <div class="container-blog-index-items-inner display-only-mobile">
+            <div class="slider-inner ">
+                {% for card in posts_regular %}
+                    <div class="card-blog-index" data-href="{{ card.url }}" >
+                        <div class="card-blog-info">
+                            <hr>
+                            <div class="info b200">
+                                    <p>{{ card.publication_date_value|date:'M d Y'}}</p>
+                                    <p>{{ card.reading_time }}</p>
+                                    <p>Article</p>
+                            </div>
+                            <p class="description b300">{{card.title_card}}</p>
+                        </div>
+                        {% image card.post_image_thumb original  as img %}
+                        <img src="{{img.url}}" alt="{{img.alt}}">
+                    </div>
+                {% endfor %}
+        </div>
+    {% endif %}
 </div>

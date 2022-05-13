@@ -1605,6 +1605,62 @@ main.blog-index{
 	grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
 }
 
+.container-blog-index-items-inner{
+	min-height: 359px;
+    background-color: inherit;
+    display: flex;
+    transition: 3s;
+    position: relative;
+    /* right: 0%; */
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.container-blog-index-items-inner .slider-inner{
+	position: relative;
+	display: flex;
+	top: 0;
+	left: 0;
+	gap: 32px;
+	min-height: 359px;
+}
+
+
+.container-blog-index-items-inner .slider-inner .card-blog-index{
+	/* max-width: 416px; */
+	/* max-height: 440px; */
+	/* min-height: 348px; */
+	/* min-width: 268px; */
+	display: flex;
+	flex-direction: column;
+	background-color: inherit;
+	width: 268px;
+	text-decoration: none;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	background-color: inherit;
+	min-height: 359px;
+	justify-content:space-between;
+	border: none !important;
+}
+
+
+body.dark .container-blog-index-items-inner .slider-inner .card-blog-index {
+	color: white;
+}
+
+.container-blog-index-items-inner .slider-inner .card-blog-index img{
+	width: 268px;
+	height: 204px;
+}
+
+.container-blog-index-items-inner .slider-inner .card-blog-index:last-child {
+	padding-right: 24px;
+	box-sizing: content-box;
+}
+
 .card-blog-index{
 	/* max-width: 416px; */
 	/* max-height: 440px; */
@@ -1638,6 +1694,11 @@ body.dark .card-blog-index a{
 #resources .card-blog-index hr{
     background-color: white;
 }
+
+#resources .container-blog-index-items-inner .slider-inner .card-blog-index{
+	color: white;
+}
+
 .container-blog-index-footer{
 	display: flex;
 	flex-direction: row;
@@ -2018,7 +2079,7 @@ body.dark .card-blog-index hr{
 }
 
 .company-logo:last-child{
-	margin-right: var(--sp-xxl);
+	margin-right: -96px;
 }
 
 .sadabel-logo{

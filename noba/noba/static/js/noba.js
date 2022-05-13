@@ -66,6 +66,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(!card){
                     card = e.target.closest('.card-team-member');
                 }
+                if(!card){
+                    card = e.target.closest('.card-blog-index');
+                }
                 if(card.dataset.href !== ' '){
                     window.location.href = card.dataset.href;
                 }
