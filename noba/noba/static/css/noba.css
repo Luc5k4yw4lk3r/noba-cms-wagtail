@@ -1657,7 +1657,7 @@ body.dark .container-blog-index-items-inner .slider-inner .card-blog-index {
 }
 
 .container-blog-index-items-inner .slider-inner .card-blog-index:last-child {
-	padding-right: 24px;
+	margin-right: -24px;
 	box-sizing: content-box;
 }
 
@@ -2079,7 +2079,13 @@ body.dark .card-blog-index hr{
 }
 
 .company-logo:last-child{
-	margin-right: -96px;
+	margin-right: 48px;
+}
+
+@media screen and (max-width: 480px) {
+	.company-logo:last-child{
+		margin-right: -182px;
+	}
 }
 
 .sadabel-logo{

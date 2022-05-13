@@ -69,9 +69,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(!card){
                     card = e.target.closest('.card-blog-index');
                 }
-                if(card.dataset.href !== ' '){
-                    window.location.href = card.dataset.href;
+                try{
+                    if(card.dataset.href !== ' '){
+                        window.location.href = card.dataset.href;
+                    }
+                }catch (error) {
+                    // console.error(error);
                 }
+
             }
             moved = false;
             // slider.style.cursor = 'grab';
