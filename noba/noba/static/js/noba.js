@@ -156,7 +156,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let firstScroll = false;
 
     let coockiesChecked = sessionStorage.getItem("coockies-checked");
-    let loggedChecked = sessionStorage.getItem("logged-checked");
+    // let loggedChecked = sessionStorage.getItem("logged-checked");
+    let loggedChecked = "True";
     let anchorPointGlobal = sessionStorage.getItem("scroll-anchor");
 
     if(isHomePage){
