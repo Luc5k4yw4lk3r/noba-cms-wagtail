@@ -308,6 +308,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Progress bar
+    let paddingNav = 64*2;
+    if(window.innerWidth < 480){
+        paddingNav = 24*2;
+    }
+    let nWidth = 57;
+    let BAWidth = 27;
+    let menuWith = 28.8;
+    let oWidth = 101.7;
+    let maxSizeProgressBar = window.innerWidth - paddingNav - nWidth - BAWidth - menuWith - 20 - oWidth;
+    let oProgressBar = document.querySelector('.logo-o');
+    oProgressBar.style.width = `${oWidth}px`
+
+    window.onscroll = function() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        oProgressBar.style.width = `${oWidth + maxSizeProgressBar * scrolled / 100}px`        
+    };
+
     // Video
     // It is a helper to allow run the video in safari
     let video = document.getElementById('video-play');

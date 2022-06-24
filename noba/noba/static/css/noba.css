@@ -380,7 +380,7 @@ header{
 	padding: 24px;
 	/* background-color: inherit; */
 	opacity: 1;
-	gap: 48px;
+	/* gap: 48px; */
 	z-index: var(--z-index-6);
 	
 }
@@ -401,6 +401,38 @@ header .logo{
 	height: 23px;
 	transition: all 1s;
 } 
+
+header .logo-o{
+	border: solid black 1.65px;
+	height: 23px;
+	width: 102px;
+	border-radius: 12px;
+	position: relative;
+	left: -2px;
+	transition: border-color 1s;
+} 
+
+
+header .logo-N{
+	background-image: url(../images/brand-logo-small-black-N.svg);
+	transition: all 1s;
+	width: 27px;
+	height: 23px;
+} 
+
+header .logo-BA{
+	background-image: url(../images/logo-BA.svg);
+	transition: all 1s;
+	width: 57px;
+	height: 23px;
+	position: relative;
+	left: -13px;
+} 
+
+.logo-progress{
+	display: flex;
+}
+
 
 header.first .logo{
 	position: absolute;
@@ -432,6 +464,20 @@ body.dark header .logo-menu{
 	background-image: url(../images/menu-logo-white.svg);
 }
 
+body.dark header .logo-o{
+	border-color: white;
+} 
+
+
+body.dark header .logo-N{
+	background-image: url(../images/brand-logo-small-white-N.svg);
+} 
+
+body.dark header .logo-BA{
+	background-image: url(../images/logo-BA-white.svg);
+} 
+
+
 header.dark .logo{
 	background-image: url(../images/brand-logo-small-white.svg);
 }
@@ -439,6 +485,19 @@ header.dark .logo{
 header.dark .logo-menu{
 	background-image: url(../images/menu-logo-white.svg);
 }
+
+header.dark .logo-o{
+	border-color: white;
+} 
+
+
+header.dark .logo-N{
+	background-image: url(../images/brand-logo-small-white-N.svg);
+} 
+
+header.dark .logo-BA{
+	background-image: url(../images/logo-BA-white.svg);
+} 
 
 @media (min-width:480px) {
 	header{
